@@ -10,7 +10,7 @@ copyright: false
 - 站名： duck ya
 - 站长： 呆鸭
 - 地址： https://shoka.lostyu.me
-- 标志： ![霜月琉璃](https://cdn.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg){height="100" width="100"}
+- 标志： ![呆鸭](/images/avatar.jpg){height="100" width="100"}
 - 简介： 呆鸭的编程笔记
 
 # 申请方法
