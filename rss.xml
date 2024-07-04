@@ -3,8 +3,8 @@
     <channel>
         <title>呆鸭不呆</title>
         <subtitle></subtitle>
-        <icon>http://example.com/images/favicon.ico</icon>
-        <link>http://example.com</link>
+        <icon>https://zhudaidai416.github.io/dai-blog/images/favicon.ico</icon>
+        <link>https://zhudaidai416.github.io/dai-blog</link>
         <author>
           <name>呆鸭</name>
         </author>
@@ -13,11 +13,11 @@
         <pubDate>Thu, 04 Jul 2024 21:40:59 +0800</pubDate>
         <lastBuildDate>Thu, 04 Jul 2024 21:40:59 +0800</lastBuildDate>
         <item>
-            <guid isPermalink="true">http://example.com/2024/07/04/note/Java%E5%85%A5%E9%97%A8/</guid>
+            <guid isPermalink="true">https://zhudaidai416.github.io/dai-blog/note/Java%E5%85%A5%E9%97%A8/</guid>
             <title>Java 入门</title>
-            <link>http://example.com/2024/07/04/note/Java%E5%85%A5%E9%97%A8/</link>
-            <category term="Java" scheme="http://example.com/categories/Java/" />
-            <category term="Java" scheme="http://example.com/tags/Java/" />
+            <link>https://zhudaidai416.github.io/dai-blog/note/Java%E5%85%A5%E9%97%A8/</link>
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/Java/" />
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
             <pubDate>Thu, 04 Jul 2024 21:40:59 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;技术体系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#技术体系&#34;&gt;#&lt;/a&gt; 技术体系&lt;/h2&gt;
 &lt;ul&gt;
@@ -118,11 +118,11 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2024/07/04/note/Java%E5%9F%BA%E7%A1%80/</guid>
+            <guid isPermalink="true">https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80/</guid>
             <title>Java 基础</title>
-            <link>http://example.com/2024/07/04/note/Java%E5%9F%BA%E7%A1%80/</link>
-            <category term="Java" scheme="http://example.com/categories/Java/" />
-            <category term="Java" scheme="http://example.com/tags/Java/" />
+            <link>https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80/</link>
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/Java/" />
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
             <pubDate>Thu, 04 Jul 2024 21:40:59 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;java-基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java-基础语法&#34;&gt;#&lt;/a&gt; Java 基础语法&lt;/h2&gt;
 &lt;h3 id=&#34;注释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注释&#34;&gt;#&lt;/a&gt; 注释&lt;/h3&gt;
@@ -662,9 +662,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2024/07/04/hello/</guid>
+            <guid isPermalink="true">https://zhudaidai416.github.io/dai-blog/hello/</guid>
             <title>Hello</title>
-            <link>http://example.com/2024/07/04/hello/</link>
+            <link>https://zhudaidai416.github.io/dai-blog/hello/</link>
             <pubDate>Thu, 04 Jul 2024 16:57:09 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
 &lt;p&gt;欢迎来到呆鸭的笔记空间，&lt;/p&gt;

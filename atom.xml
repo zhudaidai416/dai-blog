@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://zhudaidai416.github.io/dai-blog</id>
     <title>呆鸭不呆</title>
     <subtitle></subtitle>
-    <icon>http://example.com/images/favicon.ico</icon>
-    <link href="http://example.com" />
+    <icon>https://zhudaidai416.github.io/dai-blog/images/favicon.ico</icon>
+    <link href="https://zhudaidai416.github.io/dai-blog" />
     <author>
       <name>呆鸭</name>
     </author>
     <updated>2024-07-04T13:40:59.606Z</updated>
     <entry>
-        <id>http://example.com/2024/07/04/note/Java%E5%85%A5%E9%97%A8/</id>
+        <id>https://zhudaidai416.github.io/dai-blog/note/Java%E5%85%A5%E9%97%A8/</id>
         <title>Java 入门</title>
-        <link rel="alternate" href="http://example.com/2024/07/04/note/Java%E5%85%A5%E9%97%A8/"/>
+        <link rel="alternate" href="https://zhudaidai416.github.io/dai-blog/note/Java%E5%85%A5%E9%97%A8/"/>
         <content type="html">&lt;h2 id=&#34;技术体系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#技术体系&#34;&gt;#&lt;/a&gt; 技术体系&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Java SE 标准版&lt;/li&gt;
@@ -110,14 +110,14 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 </content>
-        <category term="Java" scheme="http://example.com/categories/Java/" />
-        <category term="Java" scheme="http://example.com/tags/Java/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/Java/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
         <updated>2024-07-04T13:40:59.606Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/07/04/note/Java%E5%9F%BA%E7%A1%80/</id>
+        <id>https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80/</id>
         <title>Java 基础</title>
-        <link rel="alternate" href="http://example.com/2024/07/04/note/Java%E5%9F%BA%E7%A1%80/"/>
+        <link rel="alternate" href="https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80/"/>
         <content type="html">&lt;h2 id=&#34;java-基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java-基础语法&#34;&gt;#&lt;/a&gt; Java 基础语法&lt;/h2&gt;
 &lt;h3 id=&#34;注释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注释&#34;&gt;#&lt;/a&gt; 注释&lt;/h3&gt;
 &lt;p&gt;写在程序中对代码进行解释说明的文字，方便自己和其他人查看，以便理解程序&lt;/p&gt;
@@ -654,14 +654,14 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 </content>
-        <category term="Java" scheme="http://example.com/categories/Java/" />
-        <category term="Java" scheme="http://example.com/tags/Java/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/Java/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
         <updated>2024-07-04T13:40:59.556Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/07/04/hello/</id>
+        <id>https://zhudaidai416.github.io/dai-blog/hello/</id>
         <title>Hello</title>
-        <link rel="alternate" href="http://example.com/2024/07/04/hello/"/>
+        <link rel="alternate" href="https://zhudaidai416.github.io/dai-blog/hello/"/>
         <content type="html">&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
 &lt;p&gt;欢迎来到呆鸭的笔记空间，&lt;/p&gt;
 </content>
