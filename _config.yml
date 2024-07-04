@@ -43,7 +43,7 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-syntax_highlighter: highlight.js
+syntax_highlighter: # empty
 highlight:
   line_number: true
   auto_detect: false
@@ -102,5 +102,5 @@ theme: shoka
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:zhudaidai416/zhudaidai416.github.io.git
+  repo: git@github.com:zhudaidai416/dai-blog.git
   branch: gh-pages
