@@ -40,7 +40,7 @@ external_link:
   exclude: ""
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter:
@@ -67,7 +67,7 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
-  Java笔记: note
+  Java: note
 tag_map:
 
 # Metadata elements

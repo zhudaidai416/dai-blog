@@ -6,16 +6,21 @@ subtitle: 呆鸭不呆
 description: 个人技术文档
 keywords: 欢迎来到呆鸭的笔记空间 ~
 author: 小呆
-language: zh-CN #中文为 zh-CN
+language: zh-CN # 中文为 zh-CN
 timezone: "Asia/Shanghai" # 东八区时区
 
+# 社交
 social:
   github: https://github.com/zhudaidai416 || github || "#191717"
-  # zhihu: https://www.zhihu.com/people/rurismzk || zhihu || "#1e88e5"
-  # music: https://music.163.com/#/user/home?id=12886823 || cloud-music || "#e60026"
-  # weibo: https://weibo.com/amehime || weibo || "#ea716e"
   about: https://zhudaidai416.github.io/myblog/ || address-card || "#3b5998"
+  email: email:1790386623@qq.com || envelope || "#55acd5"
 
+# 边栏配置
+sidebar:
+  # Sidebar Position.
+  position: right
+
+# 菜单
 menu:
   home: / || home
   posts:
@@ -23,8 +28,9 @@ menu:
     archives: /archives/ || list-alt
     categories: /categories/ || th
     tags: /tags/ || tags
-  friends: /friends/ || heart
+  友链: /friends/ || heart
 
+# 页尾全站统计
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
   since: 2024
@@ -33,3 +39,43 @@ footer:
 # 文章界面统计
 post:
   count: true
+
+# 背景音乐
+audio:
+  - https://music.163.com/#/song?id=1993462019
+  - https://music.163.com/#/song?id=2164205699
+  - https://music.163.com/#/song?id=2153739229
+  - https://music.163.com/#/song?id=2083463774
+  - https://music.163.com/#/song?id=2083464797
+  - https://music.163.com/#/song?id=551400874
+
+# 文章评论
+valine:
+  appId: gGxG93WjCl6eXLiG73LRlxf0-gzGzoHsz
+  appKey: WvYaUtOXUXnoQ6MeuBUpuI0n
+  placeholder: ヽ(○´∀`)ﾉ♪ # Comment box placeholder
+  avatar: mp # Gravatar style : mp, identicon, monsterid, wavatar, robohash, retro
+  pageSize: 10 # Pagination size
+  lang: zh-CN
+  visitor: true # 文章访问量统计
+  NoRecordIP: false # 不记录 IP
+  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+  powerMode: true # 默认打开评论框输入特效
+  tagMeta:
+    visitor: 新朋友
+    master: 主人
+    friend: 小伙伴
+    investor: 金主粑粑
+  tagColor:
+    master: "var(--color-orange)"
+    friend: "var(--color-aqua)"
+    investor: "var(--color-pink)"
+  tagMember:
+    master:
+      # - hash of master@email.com
+      # - hash of master2@email.com
+    friend:
+      # - hash of friend@email.com
+      # - hash of friend2@email.com
+    investor:
+      # - hash of investor1@email.com

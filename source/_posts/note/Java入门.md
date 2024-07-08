@@ -2,6 +2,7 @@
 title: Java 入门
 categories: Java
 tags: Java
+cover: https://pic2.zhimg.com/v2-cf44c2fdebc32c350cd4fd1c432401bd_r.jpg
 ---
 
 ## 技术体系
@@ -43,11 +44,11 @@ tags: Java
 - 编译代码
 - 运行代码
 
-![Java运行步骤](/assets/images/Java运行步骤.png)
+![Java运行步骤](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/Java运行步骤.png)
 
 ## JDK 组成
 
-![JDK的组成](/assets/images/JDK的组成.png)
+![JDK的组成](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/JDK的组成.png)
 
 ## Java 跨平台原理
 
@@ -59,7 +60,7 @@ tags: Java
 
 跨平台性的原理是因为在**不同版本的操作系统**中安装有**不同版本的 Java 虚拟机**，Java 程序的运行只依赖于 Java 虚拟机，和操作系统并没有直接关系。**从而做到一处编译，处处运行**。
 
-![Java跨平台原理](/assets/images/Java跨平台原理.png)
+![Java跨平台原理](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/Java跨平台原理.png)
 
 ## IDEA 常用快捷键
 
