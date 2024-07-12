@@ -500,7 +500,7 @@ System.out.println(d); // 5
 byte x = 10;
 byte y = 30;
 x = x + y; // 报错
-x+=y; // 等价于 byte x = (byte)(x+y); 这里有隐含的强制类型转换
+x += y; // 等价于 byte x = (byte)(x+y); 这里有隐含的强制类型转换
 ```
 
 ## 关系运算符
@@ -563,3 +563,282 @@ x+=y; // 等价于 byte x = (byte)(x+y); 这里有隐含的强制类型转换
 | ^    | 逻辑异或 | 2 > 1 ^ 3 > 1     |      前后条件的结果相同，就直接返回 false<br>前后条件的结果不同，才返回 true      |
 | &&   | 短路与   | 2 > 10 && 3 > 2   | 判断结果与“&”一样，过程不同：<font color="red">左边为 false</font>，右边则不执行  |
 | \|\| | 短路或   | 2 > 1 \| \| 3 < 5 | 判断结果与“\|”一样，过程不同：<font color="red">左边为 true</font>， 右边则不执行 |
+
+> :warning: 注：
+>
+> 在 java 中， “&” 、 “|”：无论左边是  false 还是 true，<font color="red">右边都要执行</font>
+>
+> 由于 &&、|| 运算效率更高，在开发中用的更多
+
+```java
+int i = 10;
+int j = 20;
+
+System.out.println(i > 100 && ++j > 99); // false
+System.out.println(j); // 20
+
+System.out.println(i > 100 & ++j > 99); // false
+System.out.println(j); // 21
+```
+
+## 三元运算符
+
+格式：`关系表达式? 值1 : 值2;`
+
+执行流程：首先计算关系表达式的值，如果关系表达式的值为 true，则返回值1；如果关系表达式的值为 false，则返回值2
+
+```java
+int i = 10;
+int j = 45;
+int k = 34;
+
+// 需求1：找出2个整数中的较大值，并输出
+int max = i > j ? i : j;
+System.out.println(max);
+
+// 需求2：找3个整数中的较大值
+int temp = i > j ? i : j;
+int max2 = temp > k ? temp : k;
+System.out.println(max2);
+i > j && i > k ? i : j < k ? j : k
+```
+
+## 运算优先级
+
+| 优先级 | 运算符                    |
+| :----: | ------------------------- |
+|   1    | ()                        |
+|   2    | !、-、++、--              |
+|   3    | *、/、%                   |
+|   4    | +、-                      |
+|   5    | <<、>>、>>>               |
+|   6    | <、<=、>、>=、instanceof  |
+|   7    | ==、!=                    |
+|   8    | &                         |
+|   9    | ^                         |
+|   10   | \|                        |
+|   11   | &&                        |
+|   12   | \|\|                      |
+|   13   | ?:                        |
+|   14   | =、+=、-=、*=、/=、%=、&= |
+
+```java
+// 这里&&先算，相当于 true || false 结果为 true
+System.out.println(10 > 3 || 10 > 3 && 10 < 3); // true
+
+
+// 在实际开发中，其实我们很少考虑运算优先级，因为如果想让某些数据先运算，其实加()就可以了，这样阅读性更高
+System.out.println((10 > 3 || 10 > 3) && 10 < 3); // false
+```
+
+## 案例知识：键盘录入技术
+
+API（Application Programming Interface：应用程序编程接口）
+
+- Java 写好的程序，咱们程序员可以直接拿来调用
+- Java 为自己写好的程序提供了相应的程序使用说明书（[API 文档](https://www.oracle.com/java/technologies/javase-jdk17-doc-downloads.html)）
+
+```java
+package com.itheima.scanner;
+import java.util.Scanner; // 1、导包（自动导包）
+
+public class Test {
+  public static void main(String[] args) {
+    // 2、创建一个扫描器对象
+    Scanner sc = new Scanner(System.in); 
+    System.out.println("请输入你的年龄：");
+    // 3、等待接收用户的数据
+    int age = sc.nextInt(); // 等待用户输入一个整数，直到用户按了回车键，才会拿到数据
+    System.out.println("你的年龄是：" + age);
+    
+    System.out.println("请输入你的名字：");
+    String name = sc.next(); // 等待用户输入一个字符串，直到用户按了回车键，才会拿到数据
+    System.out.println("欢迎，" + name);
+  }
+}
+```
+
+# 程序流程控制
+
+- 顺序结构：自上而下的执行代码
+- 分支结构：根据条件，选择对应代码执行
+
+- 循环结构：控制某段代码重复执行
+
+## 分支结构
+
+### if
+
+根据条件（真或假）来决定执行某段代码
+
+```java
+// 形式1
+if (条件表达式) {
+  代码;	
+}
+
+// 形式2
+if (条件表达式) {
+  代码1;	
+} else {
+  代码2;	
+}
+
+// 形式3
+if (条件表达式1) {
+  代码1;	
+} else if (条件表达式2) {
+  代码2;	
+} else if (条件表达式3) {
+  代码3;	
+} 
+. . .
+else {
+  代码n;
+}
+```
+
+> :warning: 注：if 语句中，如果大括号控制的只有一行代码，则<font color="red">大括号可以省略不写</font>（不推荐）
+
+### switch
+
+通过比较值来决定执行哪条分支
+
+```java
+switch (表达式) {
+  case 值1:
+    执行代码...;
+    break;
+  case 值2:
+    执行代码...;
+    break;
+    ...
+  case 值n-1:
+    执行代码...;
+    break;
+  default:
+    执行代码n;
+}
+```
+
+> :warning: 注：
+>
+> - 表达式类型只能 <font color="red">byte、short、int、char</font>，JDK5 开始支持枚举，JDK7 开始支持 String
+>
+>   <font color="red">不支持 double、float、long</font>
+>
+> - case 给出的值不允许重复，且<font color="red">只能是字面量</font>，不能是变量
+>
+> - 正常使用 switch 的时候，<font color="red">不要忘记写 break</font>，否则会出现穿透现象
+
++++success if、switch 的比较，以及各自适合什么业务场景？
+
+- if 在功能上远远强大于 switch
+- 当前条件是区间的时候，应该使用 if 分支结构
+- 当条件是与一个一个的值比较的时候，switch 分支更合适：格式良好，性能较好，代码优雅
+
++++
+
++++primary 利用 switch 穿透性简化代码
+
+当存在多个 case 分支的代码相同时，可以把相同的代码放到一个 case 块中，其他的 case 块都通过穿透性穿透到该 case 块执行代码即可，这样可以简化代码
+
+```java
+String week = "周二"
+switch (week) {
+  case "周一":
+  case "周二":
+  case "周三":
+  case "周四":
+  case "周五":
+    System.out.println("上班");
+    break;
+  case "周六":
+    System.out.println("逛街");
+    break;
+  case "周日":
+    System.out.println("在家休息");
+    break;
+  default:
+    System.out.println("你输入的星期不存在");
+}
+```
+
++++
+
+## 循环结构
+
+### for
+
+控制一段代码反复执行很多次
+
+```java
+for (初始化语句; 循环条件; 迭代语句) {
+  循环体语句(重复执行的代码);
+}
+
+* 初始化语句：一般是定义一个变量，并给初始值
+* 循环条件：一般是一个关系表达式，结果必须是 true 或者 false
+* 迭代语句：用于对条件进行控制，一般是自增或者自减
+* 循环语句体：需要重复执行的代码
+
+// 输出3次 Hello World
+for(int i = 0; i < 3; i++) {
+  System.out.println("Hello World");
+}
+```
+
+### while
+
+```java
+初始化语句;
+while () {
+  循环体语句（重复执行的代码）;
+  迭代语句;
+}
+
+// 需求：打印5行 Hello World
+int i = 0;
+while (i < 5) {
+  // i = 0 1 2 3 4
+  System.out.println("Hello World");
+  i++;
+}
+```
+
++++primary while 和 for 有什么区别？什么时候用 for，什么时候用 while？
+
+功能上是完全一样的，for 能解决的 while 也能解决，反之亦然
+
+使用规范：
+
+- 知道循环几次：使用 for
+- 不知道循环几次建议：使用while
+
++++
+
+### do-while
+
+```java
+初始化语句;
+do {
+  循环体语句;
+  迭代语句;
+} while (循环条件); 
+```
+
+###  死循环
+
+死循环就是停不下来的循环
+
++++primary 死循环有什么应用场景呢？
+
+最典型的是可以用死循环来做服务器程序， 比如百度的服务器程序就是一直在执行的，你随时都可以通过浏览器去访问百度。
+
+如果哪一天百度的服务器停止了运行，有就意味着所有的人都用不了百度提供的服务了。
+
++++
+
+### 循环嵌套
+
+### 案例
