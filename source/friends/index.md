@@ -17,6 +17,7 @@ copyright: false
 
 - 添加本站后，在本页留言，格式如下
 
+````yml
 ```yml
 - site: #网站的名字
   owner: #您的名字
@@ -25,6 +26,7 @@ copyright: false
   image: #一张图片
   color: #方块颜色
 ```
+````
 
 # 小伙伴们
 
