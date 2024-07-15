@@ -1,8 +1,9 @@
 ---
-title: Java 基础
+title: Java 基础（上）
 categories: Java
 tags: Java
-cover: https://img-baofun.zhhainiao.com/fs/2f1e640b85a2b8df12b7216915cea51c.jpg
+# cover: https://img-baofun.zhhainiao.com/fs/2f1e640b85a2b8df12b7216915cea51c.jpg
+cover: https://img0.baidu.com/it/u=3953094305,3191906254&fm=253&fmt=auto&app=138&f=JPEG?w=1422&h=800
 ---
 
 # Java 基础语法
@@ -295,7 +296,7 @@ double d = c; // 8位，发生自动类型转换
 System.out.println(d); // 100.0
 
 char ch = 'a'; // 'a' 97 ➡ 00000000 01100001
-int i = ch; // 发生自动类型转换 ➡  00000000 00000000 00000000 01100001
+int i = ch; // 发生自动类型转换 ➡ 00000000 00000000 00000000 01100001
 System.out.println(i); // 97
 ```
 
@@ -391,7 +392,6 @@ System.out.println(a + 'a' + "daidai"); // "102daidai"
 
 
 // 例子（数值拆分）：一个三位数，将其拆分为个位、十位、百位后，打印在控制台
-
 公式总结：
 个位 ：数值 % 10
 十位 ：数值 / 10 % 10
@@ -566,7 +566,7 @@ x += y; // 等价于 byte x = (byte)(x+y); 这里有隐含的强制类型转换
 
 > :warning: 注：
 >
-> 在 java 中， “&” 、 “|”：无论左边是  false 还是 true，<font color="red">右边都要执行</font>
+> 在 java 中， “&” 、 “|”：无论左边是 false 还是 true，<font color="red">右边都要执行</font>
 >
 > 由于 &&、|| 运算效率更高，在开发中用的更多
 
@@ -585,18 +585,18 @@ System.out.println(j); // 21
 
 格式：`关系表达式? 值1 : 值2;`
 
-执行流程：首先计算关系表达式的值，如果关系表达式的值为 true，则返回值1；如果关系表达式的值为 false，则返回值2
+执行流程：首先计算关系表达式的值，如果关系表达式的值为 true，则返回值 1；如果关系表达式的值为 false，则返回值 2
 
 ```java
 int i = 10;
 int j = 45;
 int k = 34;
 
-// 需求1：找出2个整数中的较大值，并输出
+// 例子1：找出2个整数中的较大值，并输出
 int max = i > j ? i : j;
 System.out.println(max);
 
-// 需求2：找3个整数中的较大值
+// 例子2：找3个整数中的较大值
 int temp = i > j ? i : j;
 int max2 = temp > k ? temp : k;
 System.out.println(max2);
@@ -605,22 +605,22 @@ i > j && i > k ? i : j < k ? j : k
 
 ## 运算优先级
 
-| 优先级 | 运算符                    |
-| :----: | ------------------------- |
-|   1    | ()                        |
-|   2    | !、-、++、--              |
-|   3    | *、/、%                   |
-|   4    | +、-                      |
-|   5    | <<、>>、>>>               |
-|   6    | <、<=、>、>=、instanceof  |
-|   7    | ==、!=                    |
-|   8    | &                         |
-|   9    | ^                         |
-|   10   | \|                        |
-|   11   | &&                        |
-|   12   | \|\|                      |
-|   13   | ?:                        |
-|   14   | =、+=、-=、*=、/=、%=、&= |
+| 优先级 | 运算符                     |
+| :----: | -------------------------- |
+|   1    | ()                         |
+|   2    | !、-、++、--               |
+|   3    | \*、/、%                   |
+|   4    | +、-                       |
+|   5    | <<、>>、>>>                |
+|   6    | <、<=、>、>=、instanceof   |
+|   7    | ==、!=                     |
+|   8    | &                          |
+|   9    | ^                          |
+|   10   | \|                         |
+|   11   | &&                         |
+|   12   | \|\|                       |
+|   13   | ?:                         |
+|   14   | =、+=、-=、\*=、/=、%=、&= |
 
 ```java
 // 这里&&先算，相当于 true || false 结果为 true
@@ -631,7 +631,7 @@ System.out.println(10 > 3 || 10 > 3 && 10 < 3); // true
 System.out.println((10 > 3 || 10 > 3) && 10 < 3); // false
 ```
 
-## 案例知识：键盘录入技术
+## 案例：键盘录入技术
 
 API（Application Programming Interface：应用程序编程接口）
 
@@ -645,12 +645,12 @@ import java.util.Scanner; // 1、导包（自动导包）
 public class Test {
   public static void main(String[] args) {
     // 2、创建一个扫描器对象
-    Scanner sc = new Scanner(System.in); 
+    Scanner sc = new Scanner(System.in);
     System.out.println("请输入你的年龄：");
     // 3、等待接收用户的数据
     int age = sc.nextInt(); // 等待用户输入一个整数，直到用户按了回车键，才会拿到数据
     System.out.println("你的年龄是：" + age);
-    
+
     System.out.println("请输入你的名字：");
     String name = sc.next(); // 等待用户输入一个字符串，直到用户按了回车键，才会拿到数据
     System.out.println("欢迎，" + name);
@@ -674,24 +674,24 @@ public class Test {
 ```java
 // 形式1
 if (条件表达式) {
-  代码;	
+  代码;
 }
 
 // 形式2
 if (条件表达式) {
-  代码1;	
+  代码1;
 } else {
-  代码2;	
+  代码2;
 }
 
 // 形式3
 if (条件表达式1) {
-  代码1;	
+  代码1;
 } else if (条件表达式2) {
-  代码2;	
+  代码2;
 } else if (条件表达式3) {
-  代码3;	
-} 
+  代码3;
+}
 . . .
 else {
   代码n;
@@ -731,7 +731,7 @@ switch (表达式) {
 >
 > - 正常使用 switch 的时候，<font color="red">不要忘记写 break</font>，否则会出现穿透现象
 
-+++success if、switch 的比较，以及各自适合什么业务场景？
++++success if、switch 的比较以及适合的业务场景
 
 - if 在功能上远远强大于 switch
 - 当前条件是区间的时候，应该使用 if 分支结构
@@ -773,6 +773,7 @@ switch (week) {
 控制一段代码反复执行很多次
 
 ```java
+// 快捷方式：fori+回车
 for (初始化语句; 循环条件; 迭代语句) {
   循环体语句(重复执行的代码);
 }
@@ -783,7 +784,7 @@ for (初始化语句; 循环条件; 迭代语句) {
 * 循环语句体：需要重复执行的代码
 
 // 输出3次 Hello World
-for(int i = 0; i < 3; i++) {
+for (int i = 0; i < 3; i++) {
   System.out.println("Hello World");
 }
 ```
@@ -797,25 +798,47 @@ while () {
   迭代语句;
 }
 
-// 需求：打印5行 Hello World
+// 例子：打印5行 Hello World
 int i = 0;
 while (i < 5) {
-  // i = 0 1 2 3 4
   System.out.println("Hello World");
   i++;
 }
 ```
 
-+++primary while 和 for 有什么区别？什么时候用 for，什么时候用 while？
+;;;id1 案例
 
-功能上是完全一样的，for 能解决的 while 也能解决，反之亦然
+:::success no-icon
 
-使用规范：
+需求：世界最高山峰珠穆朗玛峰高度是：8848.86 米=8848860 毫米，假如我有一张足够大的它的厚度是 0.1 毫米
 
-- 知道循环几次：使用 for
-- 不知道循环几次建议：使用while
+请问：该纸张折叠多少次，可以折成珠穆朗玛峰的高度？
 
-+++
+:::
+
+;;;
+
+;;;id1 代码
+
+```java
+// 1、定义变量记住珠穆朗玛峰的高度和纸张的高度
+double peakHeight = 8848860;
+double paperThickness = 0.1;
+
+// 3、定义一个变量count用于记住纸张折叠了多少次
+int count = 0;
+
+// 2、定义while循环控制纸张开始折叠
+while (paperThickness < peakHeight) {
+    // 把纸张进行折叠，把纸张的厚度变成原来的2倍
+  paperThickness = paperThickness * 2;
+  count++;
+}
+System.out.println("需要折叠多少次：" + count);
+System.out.println("最终纸张的厚度是：" + paperThickness);
+```
+
+;;;
 
 ### do-while
 
@@ -824,21 +847,138 @@ while (i < 5) {
 do {
   循环体语句;
   迭代语句;
-} while (循环条件); 
+} while (循环条件);
 ```
 
-###  死循环
++++danger 三种循环的区别
 
-死循环就是停不下来的循环
+- for 循环和 while 循环（<font color="red">先判断后执行</font>）； do...while （<font color="red">先执行后判断</font>）
 
-+++primary 死循环有什么应用场景呢？
+- 使用规范：
 
-最典型的是可以用死循环来做服务器程序， 比如百度的服务器程序就是一直在执行的，你随时都可以通过浏览器去访问百度。
+  - 如果已知循环次数建议使用 for 循环
 
-如果哪一天百度的服务器停止了运行，有就意味着所有的人都用不了百度提供的服务了。
+  - 如果不清楚要循环次数建议使用 while 循环
+
+- 其他区别：
+
+  - for 循环中，控制循环的变量只在循环中使用
+  - while 循环中，控制循环的变量在循环后还可以继续使用
+
++++
+
+### 死循环
+
+可以一直执行下去的一种循环，如果没有干预不会停下来
+
+```java
+for ( ; ; ) {
+  System.out.println("Hello World1");
+}
+
+while (true) {
+  System.out.println("Hello World2");
+}
+
+do {
+  System.out.println("Hello World3");
+} while (true);
+```
+
++++success 死循环的应用场景
+
+最典型的是可以用死循环来做服务器程序， 比如百度的服务器程序就是一直在执行的，你随时都可以通过浏览器去访问百度
+
+如果哪一天百度的服务器停止了运行，有就意味着所有的人都用不了百度提供的服务了
 
 +++
 
 ### 循环嵌套
 
-### 案例
+循环中又包含循环，特点：外部循环每循环一次，内部循环会全部执行完一轮
+
+```java
+// 例子：在控制台使用*打印出3行4列的矩形
+for (int i = 0; i < 3; i++) {
+  for (int j = 0; j < 4; j++) {
+    System.out.print("*"); // 不换行
+  }
+  System.out.println(); // 换行
+}
+```
+
+## 跳转关键字
+
+- break：跳出并结束当前所在循环的执行
+- continue：用于跳出当前循环的当次执行，直接进入循环的下一次执行
+
+> :warning: 注：
+>
+> - break：只能用于结束所在循环，或者结束所在 switch 分支的执行
+> - continue：只能在循环中进行使用
+
+## 案例
+
+;;;id2 生成随机数
+
+```java
+// 1、导包。import java.util.Random; (idea会自动完成)
+import java.util.Random;
+public class RandomDemo1 {
+  public static void main(String[] args) {
+    // 2、创建一个Random对象，用于生成随机数。
+    Random r = new Random();
+    // 3、调用Random提供的功能：nextInt得到随机数。
+    for (int i = 1; i <= 20; i++) {
+      int data = r.nextInt(10); // 0 - 9
+      System.out.println(data);
+    }
+  }
+}
+```
+
+;;;
+
+;;;id2 猜数字
+
+:::success no-icon
+
+需求：随机生成一个1-100之间的数据，提示用户猜测，猜大提示过大，猜小提示过小，直到猜中结束游戏
+
+:::
+
+```java
+import java.util.Random;
+import java.util.Scanner;
+
+public class RandomTest2 {
+  public static void main(String[] args) {
+    // 1、随机产生一个1-100之间的数据，做为中奖号码
+    Random r = new Random();
+    int luckNumber = r.nextInt(100) + 1;
+
+    // 2、定义一个死循环，让用户不断的猜测数据
+    Scanner sc = new Scanner(System.in);
+    while (true) {
+      // 提示用户猜测
+      System.out.println("请输入你猜测的数字：");
+      int guessNumber = sc.nextInt();
+
+      // 3、判断用户猜测的数字与幸运号码的大小情况
+      if(guessNumber > luckNumber){
+        System.out.println("你猜测的数字过大~~");
+      }else if(guessNumber < luckNumber){
+        System.out.println("你猜测的数字过小~~");
+      }else {
+        System.out.println("恭喜你猜测成功了~~");
+        break; // 结束死循环
+      }
+    }
+  }
+}
+```
+
+;;;
+
+
+
