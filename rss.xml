@@ -3,8 +3,8 @@
     <channel>
         <title>呆鸭不呆</title>
         <subtitle></subtitle>
-        <icon>https://zhudaidai416.github.io/images/favicon.ico</icon>
-        <link>https://zhudaidai416.github.io</link>
+        <icon>https://zhudaidai416.github.io/dai-blog/images/favicon.ico</icon>
+        <link>https://zhudaidai416.github.io/dai-blog</link>
         <author>
           <name>呆鸭</name>
         </author>
@@ -13,11 +13,11 @@
         <pubDate>Sat, 13 Jul 2024 22:26:43 +0800</pubDate>
         <lastBuildDate>Sat, 13 Jul 2024 22:26:43 +0800</lastBuildDate>
         <item>
-            <guid isPermalink="true">https://zhudaidai416.github.io/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/</guid>
+            <guid isPermalink="true">https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/</guid>
             <title>Java 基础（下）</title>
-            <link>https://zhudaidai416.github.io/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/</link>
-            <category term="Java" scheme="https://zhudaidai416.github.io/categories/note/" />
-            <category term="Java" scheme="https://zhudaidai416.github.io/tags/Java/" />
+            <link>https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/</link>
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/note/" />
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
             <pubDate>Sat, 13 Jul 2024 22:26:43 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;数组&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h1&gt;
 &lt;p&gt;数组就是一个容器，用来存一批同种类型的数据&lt;/p&gt;
@@ -126,11 +126,11 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://zhudaidai416.github.io/note/Java%E5%85%A5%E9%97%A8/</guid>
+            <guid isPermalink="true">https://zhudaidai416.github.io/dai-blog/note/Java%E5%85%A5%E9%97%A8/</guid>
             <title>Java 入门</title>
-            <link>https://zhudaidai416.github.io/note/Java%E5%85%A5%E9%97%A8/</link>
-            <category term="Java" scheme="https://zhudaidai416.github.io/categories/note/" />
-            <category term="Java" scheme="https://zhudaidai416.github.io/tags/Java/" />
+            <link>https://zhudaidai416.github.io/dai-blog/note/Java%E5%85%A5%E9%97%A8/</link>
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/note/" />
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
             <pubDate>Wed, 10 Jul 2024 18:22:03 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;技术体系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#技术体系&#34;&gt;#&lt;/a&gt; 技术体系&lt;/h1&gt;
 &lt;ul&gt;
@@ -231,11 +231,11 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://zhudaidai416.github.io/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/</guid>
+            <guid isPermalink="true">https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/</guid>
             <title>Java 基础（上）</title>
-            <link>https://zhudaidai416.github.io/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/</link>
-            <category term="Java" scheme="https://zhudaidai416.github.io/categories/note/" />
-            <category term="Java" scheme="https://zhudaidai416.github.io/tags/Java/" />
+            <link>https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/</link>
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/note/" />
+            <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
             <pubDate>Wed, 10 Jul 2024 18:22:03 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;java-基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java-基础语法&#34;&gt;#&lt;/a&gt; Java 基础语法&lt;/h1&gt;
 &lt;h2 id=&#34;注释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注释&#34;&gt;#&lt;/a&gt; 注释&lt;/h2&gt;
@@ -972,11 +972,11 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://zhudaidai416.github.io/hello/</guid>
+            <guid isPermalink="true">https://zhudaidai416.github.io/dai-blog/hello/</guid>
             <title>Hello</title>
-            <link>https://zhudaidai416.github.io/hello/</link>
-            <category term="hexo" scheme="https://zhudaidai416.github.io/tags/hexo/" />
-            <category term="教程" scheme="https://zhudaidai416.github.io/tags/%E6%95%99%E7%A8%8B/" />
+            <link>https://zhudaidai416.github.io/dai-blog/hello/</link>
+            <category term="hexo" scheme="https://zhudaidai416.github.io/dai-blog/tags/hexo/" />
+            <category term="教程" scheme="https://zhudaidai416.github.io/dai-blog/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Thu, 04 Jul 2024 16:57:09 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h1&gt;
 &lt;p&gt;欢迎来到呆鸭的笔记空间～&lt;/p&gt;
