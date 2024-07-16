@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://zhudaidai416.github.io/dai-blog</id>
+    <id>https://zhudaidai416.github.io</id>
     <title>呆鸭不呆</title>
     <subtitle></subtitle>
-    <icon>https://zhudaidai416.github.io/dai-blog/images/favicon.ico</icon>
-    <link href="https://zhudaidai416.github.io/dai-blog" />
+    <icon>https://zhudaidai416.github.io/images/favicon.ico</icon>
+    <link href="https://zhudaidai416.github.io" />
     <author>
       <name>呆鸭</name>
     </author>
     <updated>2024-07-13T14:26:43.484Z</updated>
     <entry>
-        <id>https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/</id>
+        <id>https://zhudaidai416.github.io/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/</id>
         <title>Java 基础（下）</title>
-        <link rel="alternate" href="https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
+        <link rel="alternate" href="https://zhudaidai416.github.io/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
         <content type="html">&lt;h1 id=&#34;数组&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h1&gt;
 &lt;p&gt;数组就是一个容器，用来存一批同种类型的数据&lt;/p&gt;
 &lt;h2 id=&#34;静态初始化数组&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#静态初始化数组&#34;&gt;#&lt;/a&gt; 静态初始化数组&lt;/h2&gt;
@@ -118,14 +118,14 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661444896100.png&#34; alt=&#34;1661444896100&#34; /&gt;&lt;/p&gt;
 </content>
-        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/note/" />
-        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/categories/note/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/tags/Java/" />
         <updated>2024-07-13T14:26:43.484Z</updated>
     </entry>
     <entry>
-        <id>https://zhudaidai416.github.io/dai-blog/note/Java%E5%85%A5%E9%97%A8/</id>
+        <id>https://zhudaidai416.github.io/note/Java%E5%85%A5%E9%97%A8/</id>
         <title>Java 入门</title>
-        <link rel="alternate" href="https://zhudaidai416.github.io/dai-blog/note/Java%E5%85%A5%E9%97%A8/"/>
+        <link rel="alternate" href="https://zhudaidai416.github.io/note/Java%E5%85%A5%E9%97%A8/"/>
         <content type="html">&lt;h1 id=&#34;技术体系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#技术体系&#34;&gt;#&lt;/a&gt; 技术体系&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Java SE 标准版&lt;/li&gt;
@@ -223,14 +223,14 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 </content>
-        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/note/" />
-        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/categories/note/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/tags/Java/" />
         <updated>2024-07-10T10:22:03.718Z</updated>
     </entry>
     <entry>
-        <id>https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/</id>
+        <id>https://zhudaidai416.github.io/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/</id>
         <title>Java 基础（上）</title>
-        <link rel="alternate" href="https://zhudaidai416.github.io/dai-blog/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
+        <link rel="alternate" href="https://zhudaidai416.github.io/note/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
         <content type="html">&lt;h1 id=&#34;java-基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java-基础语法&#34;&gt;#&lt;/a&gt; Java 基础语法&lt;/h1&gt;
 &lt;h2 id=&#34;注释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注释&#34;&gt;#&lt;/a&gt; 注释&lt;/h2&gt;
 &lt;p&gt;写在程序中对代码进行解释说明的文字，方便自己和其他人查看，以便理解程序&lt;/p&gt;
@@ -964,14 +964,14 @@
 &lt;/div&gt;
 &lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Random&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;RandomTest2&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; args&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;// 1、随机产生一个 1-100 之间的数据，做为中奖号码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;Random&lt;/span&gt; r &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Random&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; luckNumber &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; r&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;nextInt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt; sc &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;in&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;// 2、定义一个死循环，让用户不断的猜测数据&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token comment&#34;&gt;// 提示用户猜测&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;请输入你猜测的数字：&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; guessNumber &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; sc&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;nextInt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token comment&#34;&gt;// 3、判断用户猜测的数字与幸运号码的大小情况&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;guessNumber &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; luckNumber&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;你猜测的数字过大~~&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;guessNumber &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; luckNumber&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;你猜测的数字过小~~&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;恭喜你猜测成功了~~&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 结束死循环&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 </content>
-        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/categories/note/" />
-        <category term="Java" scheme="https://zhudaidai416.github.io/dai-blog/tags/Java/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/categories/note/" />
+        <category term="Java" scheme="https://zhudaidai416.github.io/tags/Java/" />
         <updated>2024-07-10T10:22:03.711Z</updated>
     </entry>
     <entry>
-        <id>https://zhudaidai416.github.io/dai-blog/hello/</id>
+        <id>https://zhudaidai416.github.io/hello/</id>
         <title>Hello</title>
-        <link rel="alternate" href="https://zhudaidai416.github.io/dai-blog/hello/"/>
+        <link rel="alternate" href="https://zhudaidai416.github.io/hello/"/>
         <content type="html">&lt;h1 id=&#34;介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h1&gt;
 &lt;p&gt;欢迎来到呆鸭的笔记空间～&lt;/p&gt;
 &lt;h1 id=&#34;博客搭建过程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#博客搭建过程&#34;&gt;#&lt;/a&gt; 博客搭建过程&lt;/h1&gt;
@@ -990,8 +990,8 @@
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9mdWZhbjEwMjUuZ2l0aHViLmlvLzIwMjQvMDMvMDcvU2hva2ElRTQlQkQlQkYlRTclOTQlQTglRTglODclQUElRTUlQjclQjElRTclOUElODQlRTUlOUIlQkUlRTUlQkElOEEv&#34;&gt;Shoka 使用自己的图床 | FuFan&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kb2NzLmthaXRha3UueHl6Lw==&#34;&gt;Hexo-theme-ShokaX&lt;/span&gt;&lt;/p&gt;
 </content>
-        <category term="hexo" scheme="https://zhudaidai416.github.io/dai-blog/tags/hexo/" />
-        <category term="教程" scheme="https://zhudaidai416.github.io/dai-blog/tags/%E6%95%99%E7%A8%8B/" />
+        <category term="hexo" scheme="https://zhudaidai416.github.io/tags/hexo/" />
+        <category term="教程" scheme="https://zhudaidai416.github.io/tags/%E6%95%99%E7%A8%8B/" />
         <updated>2024-07-04T08:57:09.564Z</updated>
     </entry>
 </feed>
