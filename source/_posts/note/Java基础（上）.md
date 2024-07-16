@@ -922,19 +922,40 @@ for (int i = 0; i < 3; i++) {
 ;;;id2 生成随机数
 
 ```java
-// 1、导包。import java.util.Random; (idea会自动完成)
+// 1、导包(idea会自动完成)
 import java.util.Random;
-public class RandomDemo1 {
+public class RandomTest1 {
   public static void main(String[] args) {
-    // 2、创建一个Random对象，用于生成随机数。
+    // 2、创建一个Random对象，用于生成随机数
     Random r = new Random();
-    // 3、调用Random提供的功能：nextInt得到随机数。
-    for (int i = 1; i <= 20; i++) {
-      int data = r.nextInt(10); // 0 - 9
+    
+    for (int i = 1; i <= 20; i++) { // 快捷键：选中要循环的代码，ctrl+alt+t，选择for循环回车
+      // 3、调用Random提供的功能：nextInt得到随机数
+      int data = r.nextInt(10); // 0-9
       System.out.println(data);
     }
   }
 }
+```
+
+;;;
+
+> :warning: 注：nextInt(n) 功能只能生成：[0,n) 之间的随机数，即 0 至 n-1
+
+;;;id2 区间随机数
+
+```java
+// 生成1-10的随机数 ➡ -1 ➡ [0,9]+1
+int data = r.nextInt(10) + 1;
+
+// 生成3-17的随机数 ➡ -3 ➡ [0,14]+3
+int data = r.nextInt(15) + 3;
+
+// 生成65-91的随机数 ➡ -65 ➡ [0,26]+65
+int data = r.nextInt(27) + 65;
+
+//  java给了功能可以得到指定区间，jdk1.8不支持
+int data = r.nextInt(10,31) // 生成10-31的随机数
 ```
 
 ;;;
@@ -957,19 +978,19 @@ public class RandomTest2 {
     Random r = new Random();
     int luckNumber = r.nextInt(100) + 1;
 
-    // 2、定义一个死循环，让用户不断的猜测数据
     Scanner sc = new Scanner(System.in);
+    // 2、定义一个死循环，让用户不断的猜测数据
     while (true) {
       // 提示用户猜测
       System.out.println("请输入你猜测的数字：");
       int guessNumber = sc.nextInt();
 
       // 3、判断用户猜测的数字与幸运号码的大小情况
-      if(guessNumber > luckNumber){
+      if (guessNumber > luckNumber) {
         System.out.println("你猜测的数字过大~~");
-      }else if(guessNumber < luckNumber){
+      } else if (guessNumber < luckNumber) {
         System.out.println("你猜测的数字过小~~");
-      }else {
+      } else {
         System.out.println("恭喜你猜测成功了~~");
         break; // 结束死循环
       }
