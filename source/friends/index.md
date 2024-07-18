@@ -9,7 +9,7 @@ copyright: false
 
 - 站名： duck ya
 - 站长： 呆鸭
-- 地址： https://shoka.lostyu.me
+- 地址： https://www.zhudaidai.top
 - 标志： ![呆鸭](/images/avatar.jpg){height="100" width="100"}
 - 简介： 呆鸭的编程笔记
 

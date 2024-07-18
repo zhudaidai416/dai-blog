@@ -8,14 +8,22 @@
 - site: 🎐清风.
   owner: gddFeng
   url: https://blog.gddfeng.com
-  color: "#e9546b"
+  color: "#9d5b8b"
 
 - site: 囧o(╯□╰)o囧
   owner: 囧o(╯□╰)o囧
-  url: https://blog.twinkling.top/
-  color: "#e9546b"
+  url: https://blog.twinkling.top
+  image: https://blog.twinkling.top/images/avatar.jpg
+  color: "#c6d9a3"
 
 - site: FuFan
   owner: FuFan
-  url: https://fufan1025.github.io/
-  color: "#e9546b"
+  url: https://fufan1025.github.io
+  image: https://cdn.jsdelivr.net/gh/fufan1025/fufan1025.github.io@master/assets/avatar.webp
+  color: "#499dd9"
+
+- site: 安知鱼
+  owner: 安知鱼
+  url: https://blog.anheyu.com
+  image: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+  color: "#9d5b8b"

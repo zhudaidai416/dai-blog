@@ -19,6 +19,7 @@ social:
 sidebar:
   # Sidebar Position.
   position: right
+  avatar: avatar.jpg
 
 # 菜单
 menu:
@@ -28,7 +29,10 @@ menu:
     archives: /archives/ || list-alt
     categories: /categories/ || th
     tags: /tags/ || tags
-  友链: /friends/ || heart
+  friends: /friends/ || heart
+  about:
+    default: / || user
+    bangumis: /bangumis/ || paper-plane
 
 # 页尾全站统计
 footer:
@@ -57,7 +61,7 @@ valine:
   avatar: mp # Gravatar style : mp, identicon, monsterid, wavatar, robohash, retro
   pageSize: 10 # Pagination size
   lang: zh-CN
-  visitor: true # 文章访问量统计
+  visitor: false # 文章访问量统计
   NoRecordIP: false # 不记录 IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   powerMode: true # 默认打开评论框输入特效
@@ -72,11 +76,10 @@ valine:
     investor: "var(--color-pink)"
   tagMember:
     master:
-      - 1790386623@qq.com
-      - 66897b1a21b81106932504fa
+      - 76be4947ad3ab9264ab911b8f6595945
       # - hash of master2@email.com
     friend:
-      # - hash of friend@email.com
+      - 2c189912069dbfdfeb6aa1b27576562f
       # - hash of friend2@email.com
     investor:
       # - hash of investor1@email.com

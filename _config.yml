@@ -13,7 +13,7 @@ timezone: ""
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://zhudaidai416.github.io/dai-blog
+url: https://www.zhudaidai.top # https://zhudaidai416.github.io/dai-blog
 root: /
 permalink: :title/
 permalink_defaults:
@@ -139,6 +139,7 @@ markdown:
         enable: true
         options:
           title: "你知道得太多了"
+
 minify:
   html:
     enable: true
@@ -163,6 +164,7 @@ autoprefixer:
   exclude:
     - "*.min.css"
 
+# algolia 搜索
 algolia:
   appId: "M05MCUUFJD"
   apiKey: "68f7fb8108f83be6fc592d2c8ce6238c"
@@ -205,3 +207,17 @@ feed:
     enable: true
     template: "themes/shoka/layout/_alternate/json.ejs"
     output: "feed.json"
+
+# 追番插件
+# https://github.com/HCLonely/hexo-bilibili-bangumi
+bangumi:
+  enable: true
+  source: bili
+  bgmInfoSource: "bgmv0"
+  path: bangumis/index.html # 番剧页面路径
+  vmid: 420455865
+  title: "我的追番"
+  quote: "生命不息，追番不止！"
+  show: 0 # 初始显示页面：0: 想看 , 1: 在看 , 2: 看过，默认为 1
+  lazyload: true
+  metaColor: "#94A270" # meta 部分 (简介上方) 字体颜色
