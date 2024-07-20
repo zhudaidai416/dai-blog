@@ -1,6 +1,7 @@
 ---
 title: Java 入门
-categories: Java
+category:
+  - [Java, 语法]
 tags: Java
 cover: https://pic2.zhimg.com/v2-cf44c2fdebc32c350cd4fd1c432401bd_r.jpg
 ---

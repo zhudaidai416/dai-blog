@@ -1,6 +1,7 @@
 ---
 title: Java 基础（下）
-categories: Java
+category:
+  - [Java, 语法]
 tags: Java
 cover: https://pic2.zhimg.com/v2-ffbff74f8591a4a8e78133481588222d_r.jpg
 ---
@@ -45,7 +46,7 @@ int[] arr = {12, 24, 36};
 // 访问数组
 System.out.println(arr[0]); // 12
 // 超过最大索引，会出现 ArrayIndexOutOfBoundsException 索引越界异常
-// System.out.println(arr[3]); 
+// System.out.println(arr[3]);
 
 // 修改数组数据
 arr[0] = 66;
@@ -148,7 +149,7 @@ int[] arr = new int[3]; // 初始 arr = [0, 0, 0]
 - 栈：方法运行时所进入的内存区域，由于变量在方法中，所以变量也在这一块区域中
 - 堆：new 出来的东西会在这块内存中开辟空间并产生地址
 - 本地方法栈
-- 寄存器 
+- 寄存器
 
 ### 数组的执行原理
 
@@ -207,7 +208,7 @@ System.out.println("最大值是：" + max);
 :::
 
 ```java
-int[] arr = {10, 20, 30, 40, 50};  
+int[] arr = {10, 20, 30, 40, 50};
 
 // 定义一个循环，设计2个变量，一个在前，一个在后
 for (int i = 0, j = arr.length - 1; i < j; i++, j--) {
@@ -231,7 +232,7 @@ for (int i = 0; i < arr.length; i++) {
 
 :::success
 
-需求：某公司开发部 5 名开发人员，要进行项目进展汇报演讲，现在采取随机排名后进行汇报。请先依次录入5名员工的工号，然后展示出一组随机的排名顺序
+需求：某公司开发部 5 名开发人员，要进行项目进展汇报演讲，现在采取随机排名后进行汇报。请先依次录入 5 名员工的工号，然后展示出一组随机的排名顺序
 
 :::
 
@@ -339,7 +340,7 @@ public static void print(int n){
   // 错误写法
   public static void main(String[] args) {
     public static void add(){
-      
+
     }
   }
   ```
@@ -350,7 +351,7 @@ public static void print(int n){
 
 - return 语句的下面，不能编写代码，属于无效的代码，执行不到这儿
 
-- 方法不调用就不会执行,  调用方法时，传给方法的数据，必须严格匹配方法的参数情况
+- 方法不调用就不会执行, 调用方法时，传给方法的数据，必须严格匹配方法的参数情况
 
 ### 调用方法
 
@@ -366,10 +367,10 @@ public static void print(int n){
     // 赋值调用：可以定义变量接收结果
     int rs = sum(5);
     System.out.println("1-5的和是：" + rs);
-    
+
     // 输出调用
     System.out.println("1-5的和是：" + sum(5));
-    
+
     // 直接调用
     sum(5);
     ```
@@ -397,8 +398,8 @@ public class MethodDemo {
     System.out.println(rs);
 }
   public static int sum(int a, int b ){
-    int c = a + b; 
-    return c;  
+    int c = a + b;
+    return c;
   }
 }
 ```
@@ -457,7 +458,7 @@ Java 的参数传递机制都是：值传递
 
 :::success
 
-需求：输出一个int类型的数组内容，要求输出格式为：[11, 22, 33, 44, 55]
+需求：输出一个 int 类型的数组内容，要求输出格式为：[11, 22, 33, 44, 55]
 
 :::
 
@@ -473,7 +474,7 @@ public class Test {
     int[] arr3 = {};
     printArray(arr3); // []
   }
-  
+
   public static void printArray(int[] arr){
     if(arr == null){
       System.out.println(arr); // null
@@ -516,11 +517,11 @@ public class Test {
     if(arr1 == null || arr2 == null) {
       return false; // 不相等
     }
-    
+
     if(arr1.length != arr2.length){
       return false; // 不相等
     }
-    
+
     for (int i = 0; i < arr1.length; i++) {
       if(arr1[i] != arr2[i]){
         return false; // 不相等的
@@ -602,7 +603,7 @@ public static void divide(int a , int b){
     return; // 直接跳出并结束当前方法
   }
   int c = a / b;
-  System.out.println("计算结果是："+c); 
+  System.out.println("计算结果是："+c);
 }
 ```
 
@@ -681,7 +682,7 @@ public class 类名{
 >
 > 当堆内存中的对象，没有被任何变量引用（指向）时，就会被判定为内存中的“垃圾”
 >
-> Java存在自动垃圾回收机制，会自动清除掉垃圾对象，程序员不用操心
+> Java 存在自动垃圾回收机制，会自动清除掉垃圾对象，程序员不用操心
 
 ## this 关键字
 
@@ -689,11 +690,11 @@ public class 类名{
 
 ## 封装性
 
-## 实体JavaBean
+## 实体 JavaBean
 
 ## 成员变量和局部变量
 
-# 常用API
+# 常用 API
 
 ## 包
 

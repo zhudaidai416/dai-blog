@@ -1,6 +1,7 @@
 ---
 title: Java 基础（上）
-categories: Java
+category:
+  - [Java, 语法]
 tags: Java
 # cover: https://img-baofun.zhhainiao.com/fs/2f1e640b85a2b8df12b7216915cea51c.jpg
 cover: https://img0.baidu.com/it/u=3953094305,3191906254&fm=253&fmt=auto&app=138&f=JPEG?w=1422&h=800
@@ -928,7 +929,7 @@ public class RandomTest1 {
   public static void main(String[] args) {
     // 2、创建一个Random对象，用于生成随机数
     Random r = new Random();
-    
+
     for (int i = 1; i <= 20; i++) { // 快捷键：选中要循环的代码，ctrl+alt+t，选择for循环回车
       // 3、调用Random提供的功能：nextInt得到随机数
       int data = r.nextInt(10); // 0-9
@@ -964,7 +965,7 @@ int data = r.nextInt(10,31) // 生成10-31的随机数
 
 :::success no-icon
 
-需求：随机生成一个1-100之间的数据，提示用户猜测，猜大提示过大，猜小提示过小，直到猜中结束游戏
+需求：随机生成一个 1-100 之间的数据，提示用户猜测，猜大提示过大，猜小提示过小，直到猜中结束游戏
 
 :::
 
@@ -1000,6 +1001,3 @@ public class RandomTest2 {
 ```
 
 ;;;
-
-
-
