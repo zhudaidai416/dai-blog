@@ -93,9 +93,13 @@ npm install hexo-feed --save
 
 ## 文章评论
 
-+++
+:::primary no-icon
 
-[LeanCloud](https://console.leancloud.cn/) ➡ 登录 ➡ 数据存储 ➡ 结构化数据 ➡ Comment ➡ 数据（mailMd5 的值）
+**问题**：设置评论身份
+
+**解决**：获取邮箱的md5加密值：[LeanCloud](https://console.leancloud.cn/) ➡ 登录 ➡ 数据存储 ➡ 结构化数据 ➡ Comment ➡ 数据（mailMd5 的值）
+
+:::
 
 ```yml
 valine:
@@ -114,6 +118,69 @@ valine:
       # - hash of investor@email.com
 ```
 
-访问不到
+:::primary no-icon
 
-设置 ➡ 安全中心 ➡ Web 安全域名 ➡ 添加域名即可访问
+**问题**：valine 获取不到评论
+
+**解决**：设置 ➡ 安全中心 ➡ Web 安全域名 ➡ 添加域名即可访问
+
+:::
+
+## 标签页
+
+**问题**：标签页不显示下划线
+
+**解决**：找到 `shoka/source/css/_common/components/tags/tabs.styl`，删掉第 6 行的 `overflow: hidden;`
+
+# 插件
+
+## [追番](https://github.com/HCLonely/hexo-bilibili-bangumi)
+
+[:broken_heart:重要！重要！确保哔哩哔哩的追番列表是公开的！]{.label .danger}
+
+1、安装
+
+```sh
+npm install hexo-bilibili-bangumi --save
+```
+
+2、新建页面
+
+```sh
+hexo new page bangumis
+```
+
+3、修改配置（在站点的配置文件 _config.yml 里添加）
+
+```yml
+bangumi:
+  enable: true
+  source: bili
+  bgmInfoSource: "bgmv0"
+  path: bangumis/index.html # 番剧页面路径，bangumis/index.html（默认）
+  vmid: # 哔哩哔哩番剧页面的 vmid(uid)
+  title: "我的追番"
+  quote: "生命不息，追番不止！"
+  show: 0 # 初始显示页面：0: 想看 , 1: 在看 , 2: 看过，默认为 1
+  lazyload: true
+  metaColor: "#94A270" # meta 部分 (简介上方) 字体颜色
+```
+
+4、运行命令
+
+```sh
+# 在 hexo generate 或 hexo deploy 之前使用
+# 命令更新番剧数据
+hexo bangumi -u
+
+# 删除数据命令
+hexo bangumi -d
+```
+
+## live2d
+
+```sh
+npm install hexo-helper-live2d --save
+npm install live2d-widget-model-tororo
+```
+
