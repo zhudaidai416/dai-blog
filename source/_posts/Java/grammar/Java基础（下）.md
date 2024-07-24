@@ -339,11 +339,15 @@ public static void print(int n){
   ```java
   // 错误写法
   public static void main(String[] args) {
-    public static void add(){
+    public static void add() {
 
     }
   }
   ```
+
+- 方法的编写顺序无所谓
+
+- 方法与方法之间是平级关系，不能嵌套定义
 
 - 方法没有申明返回值类型（<font color="red">void</font>），内部不能使用 return 返回数据
 
@@ -351,7 +355,7 @@ public static void print(int n){
 
 - return 语句的下面，不能编写代码，属于无效的代码，执行不到这儿
 
-- 方法不调用就不会执行, 调用方法时，传给方法的数据，必须严格匹配方法的参数情况
+- 方法不调用就不会执行，调用方法时，传给方法的数据，必须严格匹配方法的参数情况
 
 ### 调用方法
 
@@ -367,10 +371,10 @@ public static void print(int n){
     // 赋值调用：可以定义变量接收结果
     int rs = sum(5);
     System.out.println("1-5的和是：" + rs);
-
+    
     // 输出调用
     System.out.println("1-5的和是：" + sum(5));
-
+    
     // 直接调用
     sum(5);
     ```
@@ -397,7 +401,7 @@ public class MethodDemo {
     int rs = sum(10, 20);
     System.out.println(rs);
 }
-  public static int sum(int a, int b ){
+  public static int sum(int a, int b ) {
     int c = a + b;
     return c;
   }
@@ -415,7 +419,7 @@ public class Demo2Method {
   public static void main(String[] args) {
     study();
   }
-  public static void study(){
+  public static void study() {
     eat();
     System.out.println("学习");
     sleep();
@@ -423,7 +427,7 @@ public class Demo2Method {
   public static void eat(){
     System.out.println("吃饭");
   }
-  public static void sleep(){
+  public static void sleep() {
     System.out.println("睡觉");
   }
 }
@@ -475,8 +479,8 @@ public class Test {
     printArray(arr3); // []
   }
 
-  public static void printArray(int[] arr){
-    if(arr == null){
+  public static void printArray(int[] arr) {
+    if (arr == null) {
       System.out.println(arr); // null
       return; // 跳出当前方法
     }
@@ -509,21 +513,21 @@ public class Test {
     System.out.println(equals(arr1, arr2));
   }
 
-  public static boolean equals(int[] arr1, int[] arr2){
-    if(arr1 == null && arr2 == null){
+  public static boolean equals(int[] arr1, int[] arr2) {
+    if (arr1 == null && arr2 == null) {
       return true; // 相等的
     }
 
-    if(arr1 == null || arr2 == null) {
+    if (arr1 == null || arr2 == null) {
       return false; // 不相等
     }
 
-    if(arr1.length != arr2.length){
+    if (arr1.length != arr2.length) {
       return false; // 不相等
     }
 
     for (int i = 0; i < arr1.length; i++) {
-      if(arr1[i] != arr2[i]){
+      if (arr1[i] != arr2[i]) {
         return false; // 不相等的
       }
     }
@@ -552,25 +556,25 @@ public class Test {
     test(100);
   }
 
-  public static void test(){
+  public static void test() {
     System.out.println("===test1===");
   }
 
-  public static void test(int a){
+  public static void test(int a) {
     System.out.println("===test2===" + a);
   }
 
-  void test(double a){
+  void test(double a) {
 
   }
 
-  void test(double a, int b){
+  void test(double a, int b) {
   }
 
-  void test(int b, double a){
+  void test(int b, double a) {
   }
 
-  int test(int a, int b){
+  int test(int a, int b) {
     return a + b;
   }
 }
@@ -597,8 +601,8 @@ public class Test {
 - continue：结束当前所在循环的当次继续，进入下一次执行
 
 ```java
-public static void divide(int a , int b){
-  if(b == 0){
+public static void divide(int a , int b) {
+  if (b == 0) {
     System.err.println("被除数不能为0”);
     return; // 直接跳出并结束当前方法
   }
@@ -619,7 +623,7 @@ class 也就是类，也称为对象的设计图（或者对象的模板）
 对象是用类 new 出来的，有了类就可以创建出对象
 
 ```java
-public class 类名{
+public class 类名 {
   1、变量，用来说明对象可以处理什么数据
   2、方法，描述对象有什么功能，也就是可以对数据进行什么样的处理
   ...
@@ -702,4 +706,4 @@ public class 类名{
 
 ## ArrayList 类
 
-### 常用方法
+### 常用方法 
