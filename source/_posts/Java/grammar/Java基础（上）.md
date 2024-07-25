@@ -144,13 +144,13 @@ cover: https://img0.baidu.com/it/u=3953094305,3191906254&fm=253&fmt=auto&app=138
   - 1 GB = 1024 MB
   - 1 TB = 1024 GB
 
-![字节](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/字节.png)
+![字节](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/字节.png)
 
 ## 字符的存储原理
 
 ASCII 编码表：即美国信息交换标准编码，规定了现代英语、数字字符、和其他西欧字符对应的数字编号
 
-![ASCII编码表](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/ASCII编码表.png)
+![ASCII编码表](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/ASCII编码表.png)
 
 ## 图片的存储原理
 
@@ -159,7 +159,7 @@ ASCII 编码表：即美国信息交换标准编码，规定了现代英语、�
 
 ## 声音的存储原理
 
-![声音存储](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/声音存储.png)
+![声音存储](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/声音存储.png)
 
 ## 数据的其他表示形式
 
@@ -167,7 +167,7 @@ ASCII 编码表：即美国信息交换标准编码，规定了现代英语、�
 
 十进制 ➡ 二进制：除二取余法
 
-![十进制转二进制](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/十进制转二进制.png)
+![十进制转二进制](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/十进制转二进制.png)
 
 ```java
 // 二进制 ➡ 十进制
@@ -285,11 +285,11 @@ float score = 99.5F;
 
 类型范围小的变量，可以直接赋值给类型范围大的变量
 
-![自动类型转换原理](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/自动类型转换原理.png)
+![自动类型转换原理](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/自动类型转换原理.png)
 
 **自动类型转换的其它形式：**
 
-![自动类型转换](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/自动类型转换.png)
+![自动类型转换](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/自动类型转换.png)
 
 ```java
 int c = 100; // 4位
@@ -341,7 +341,7 @@ byte b = (byte)a;
 
 强行把前面几个字节砍掉，但是有数据丢失的风险
 
-![强制类型转换原理](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/强制类型转换原理.png)
+![强制类型转换原理](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/强制类型转换原理.png)
 
 > :warning: ​**注意事项：**
 >

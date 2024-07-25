@@ -34,7 +34,7 @@ double[] scores = new double[]{19.88, 4.16, 59.5, 88.0};
 
 **数组在计算机中的基本原理**
 
-![1661353166416](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661353166416.png)
+![1661353166416](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1661353166416.png)
 
 ### 数组访问
 
@@ -96,7 +96,7 @@ System.out.println("数组总和：" + sum);
 int[] arr = new int[3]; // 初始 arr = [0, 0, 0]
 ```
 
-![1661356063895](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661356063895.png)
+![1661356063895](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1661356063895.png)
 
 > :warning: 注：静态初始化和动态初始化数组的写法是独立的，不可以混用
 >
@@ -153,7 +153,7 @@ int[] arr = new int[3]; // 初始 arr = [0, 0, 0]
 
 ### 数组的执行原理
 
-![1661438278304](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661438278304.png)
+![1661438278304](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1661438278304.png)
 
 ### 多个变量指向同一个数组
 
@@ -278,7 +278,7 @@ for (int i = 0; i < codes.length; i++) {
 - 启动后，代码会停留在打断点的这一行
 - 点击箭头按钮，一行一行往下执行
 
-![1661444896100](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661444896100.png)
+![1661444896100](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1661444896100.png)
 
 # 方法
 
@@ -371,10 +371,10 @@ public static void print(int n){
     // 赋值调用：可以定义变量接收结果
     int rs = sum(5);
     System.out.println("1-5的和是：" + rs);
-    
+
     // 输出调用
     System.out.println("1-5的和是：" + sum(5));
-    
+
     // 直接调用
     sum(5);
     ```
@@ -389,7 +389,7 @@ public static void print(int n){
 
 在栈中运行的原因：保证一个方法调用完另一个方法后，可以回来
 
-![1661692070922](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661692070922.png)
+![1661692070922](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1661692070922.png)
 
 +++success 案例
 
@@ -408,7 +408,7 @@ public class MethodDemo {
 }
 ```
 
-![1661694127049](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661694127049.png)
+![1661694127049](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1661694127049.png)
 
 ;;;
 
@@ -433,7 +433,7 @@ public class Demo2Method {
 }
 ```
 
-![1661696067585](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661696067585.png)
+![1661696067585](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1661696067585.png)
 
 ;;;
 
@@ -450,11 +450,11 @@ Java 的参数传递机制都是：值传递
 
 ### 基本类型
 
-![1661725470322](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1661725470322.png)
+![1661725470322](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1661725470322.png)
 
 ### 引用类型
 
-![引用类型参数传递机制](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/引用类型参数传递机制.png)
+![引用类型参数传递机制](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/引用类型参数传递机制.png)
 
 +++success 案例
 
@@ -638,7 +638,7 @@ public class 类名 {
 - 每次 new Student()，就是在堆内存中开辟一块内存区域代表一个学生对象
 - s1 变量里面记住的是学生对象的地址
 
-![1662213744520](https://cdn.jsdelivr.net/gh/zhudaidai416/blog-image/1662213744520.png)
+![1662213744520](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1662213744520.png)
 
 ## 注意事项
 
@@ -706,4 +706,4 @@ public class 类名 {
 
 ## ArrayList 类
 
-### 常用方法 
+### 常用方法
