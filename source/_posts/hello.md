@@ -177,10 +177,41 @@ hexo bangumi -u
 hexo bangumi -d
 ```
 
-## live2d
+## [live2d](https://github.com/EYHN/hexo-helper-live2d)
+
+1、安装
 
 ```sh
 npm install hexo-helper-live2d --save
 npm install live2d-widget-model-tororo
+```
+
+2、配置（在站点的配置文件 _config.yml 里添加）
+
+```yml
+live2d:
+  enable: true
+  scriptFrom: local # 默认
+  pluginModelPath: node_modules/live2d-widget-model-tororo # 模型文件相对与插件根目录路径
+  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
+  debug: false # 调试, 是否在控制台输出日志
+  model:
+    use: live2d-widget-model-tororo # 模型名字
+    scale: 1
+    hHeadPos: 0.5
+    vHeadPos: 0.618
+  display:
+    superSample: 2
+    width: 150 # 显示位置及大小
+    height: 300
+    position: left
+    hOffset: 40 # 控制看板娘平行位置
+    vOffset: -60 # 控制看板娘垂直位置
+  mobile:
+    show: true # 手机显示开关，建议关闭
+    scale: 0.5
+  react:
+    opacityDefault: 0.7
+    opacityOnHover: 0.2
 ```
 

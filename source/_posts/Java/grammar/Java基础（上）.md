@@ -220,58 +220,57 @@ System.out.pirntln(0x61); // 97
 4 大类 8 种
 
 <table>
-  <tbody align="center"> 
-    <tr>
-      <th style="text-align:center;" colspan=2>数据类型</th>
-      <th style="text-align:center;">内存占用(字节数)</th>
-      <th style="text-align:center;">数据范围</th>
-    </tr>
-    <tr>
-      <td rowspan=4>整型</td>
-      <td>byte</td>
-      <td>1</td>
-      <td>-128~127</td>
-    </tr>
-    <tr>
-      <td>short</td>
-      <td>2</td>
-      <td>-32768~32767</td>
-    </tr>
-    <tr>
-      <td>int<font color="red">（默认）</font></td>
-      <td>4</td>
-      <td>-2147483648~2147483647（10位数，大概21亿多）</td>
-    </tr>
-    <tr>
-      <td>long</td>
-      <td>8</td>
-      <td>-9223372036854775808 ~ 9223372036854775807（19位数）</td>
-    </tr>
-    <tr>
-      <td rowspan=2>浮点型（小数）</td>
-      <td>float</td>
-      <td>4</td>
-      <td>1.401298 E -45 到 3.4028235 E +38</td>
-    </tr>
-    <tr>
-      <td>double<font color="red">（默认）</font></td>
-      <td>8</td>
-      <td>4.9000000 E -324 到1.797693 E +308</td>
-    </tr>
-    <tr>
-      <td>字符型</td>
-      <td>char</td>
-      <td>2</td>
-      <td>0-65535</td>
-    </tr>
-    <tr>
-      <td>布尔型</td>
-      <td>boolean</td>
-      <td>1</td>
-      <td>true，false</td>
-    </tr>
-  </tbody>
+  <tr>
+    <th colspan=2>数据类型</th>
+    <th>内存占用(字节数)</th>
+    <th>数据范围</th>
+  </tr>
+  <tr>
+    <td rowspan=4>整型</td>
+    <td>byte</td>
+    <td>1</td>
+    <td>-128~127</td>
+  </tr>
+  <tr>
+    <td>short</td>
+    <td>2</td>
+    <td>-32768~32767</td>
+  </tr>
+  <tr>
+    <td>int<font color="red">（默认）</font></td>
+    <td>4</td>
+    <td>-2147483648~2147483647（10位数，大概21亿多）</td>
+  </tr>
+  <tr>
+    <td>long</td>
+    <td>8</td>
+    <td>-9223372036854775808 ~ 9223372036854775807（19位数）</td>
+  </tr>
+  <tr>
+    <td rowspan=2>浮点型（小数）</td>
+    <td>float</td>
+    <td>4</td>
+    <td>1.401298 E -45 到 3.4028235 E +38</td>
+  </tr>
+  <tr>
+    <td>double<font color="red">（默认）</font></td>
+    <td>8</td>
+    <td>4.9000000 E -324 到1.797693 E +308</td>
+  </tr>
+  <tr>
+    <td>字符型</td>
+    <td>char</td>
+    <td>2</td>
+    <td>0-65535</td>
+  </tr>
+  <tr>
+    <td>布尔型</td>
+    <td>boolean</td>
+    <td>1</td>
+    <td>true，false</td>
+  </tr>
 </table>
+
 
 ```java
 // long 类型，需要在其后面加上 L/l
@@ -444,56 +443,55 @@ System.out.println(d); // 5
 ## 赋值运算符
 
 <table>
-  <tbody align="center"> 
-    <tr>
-      <th style="text-align:center;"></th>
-      <th style="text-align:center;">符号</th>
-      <th style="text-align:center;">用法</th>
-      <th style="text-align:center;">说明</th>
-      <th style="text-align:center;">底层代码形式</th>
-    </tr>
-    <tr>
-      <td>基本的赋值运算符</td>
-      <td>=</td>
-      <td>int a = 10;</td>
-      <td>从右边往左看</td>
-      <td>把数据 10 赋值给左边的变量 a 存储</td>
-    </tr>
-    <tr>
-      <td rowspan=6>扩展的赋值运算符</td>
-    </tr>
-    <tr>
-      <td>+=</td>
-      <td>a+=b</td>
-      <td>加后赋值</td>
-      <td>a = (a的类型)(a + b);</td>
-    </tr>
-    <tr>
-      <td>-=</td>
-      <td>a-=b</td>
-      <td>减后赋值</td>
-      <td>a = (a的类型)(a - b);</td>
-    </tr>
-    <tr>
-     	<td>*=</td>
-      <td>a*=b</td>
-      <td>乘后赋值</td>
-      <td>a = (a的类型)(a * b);</td>
-    </tr>
-    <tr>
-     	<td>/=</td>
-      <td>a/=b</td>
-      <td>除后赋值</td>
-      <td>a = (a的类型)(a / b);</td>
-    </tr>
-    <tr>
-     	<td>%=</td>
-      <td>a%=b</td>
-      <td>取余后赋值</td>
-      <td>a = (a的类型)(a % b);</td>
-    </tr>
-  </tbody>
+  <tr>
+    <th></th>
+    <th>符号</th>
+    <th>用法</th>
+    <th>说明</th>
+    <th>底层代码形式</th>
+  </tr>
+  <tr>
+    <td>基本的赋值运算符</td>
+    <td>=</td>
+    <td>int a = 10;</td>
+    <td>从右边往左看</td>
+    <td>把数据 10 赋值给左边的变量 a 存储</td>
+  </tr>
+  <tr>
+    <td rowspan=6>扩展的赋值运算符</td>
+  </tr>
+  <tr>
+    <td>+=</td>
+    <td>a+=b</td>
+    <td>加后赋值</td>
+    <td>a = (a的类型)(a + b);</td>
+  </tr>
+  <tr>
+    <td>-=</td>
+    <td>a-=b</td>
+    <td>减后赋值</td>
+    <td>a = (a的类型)(a - b);</td>
+  </tr>
+  <tr>
+    <td>*=</td>
+    <td>a*=b</td>
+    <td>乘后赋值</td>
+    <td>a = (a的类型)(a * b);</td>
+  </tr>
+  <tr>
+    <td>/=</td>
+    <td>a/=b</td>
+    <td>除后赋值</td>
+    <td>a = (a的类型)(a / b);</td>
+  </tr>
+  <tr>
+    <td>%=</td>
+    <td>a%=b</td>
+    <td>取余后赋值</td>
+    <td>a = (a的类型)(a % b);</td>
+  </tr>
 </table>
+
 
 > :warning: 注：<font color="red">扩展的赋值运算符隐含了强制类型转换</font>
 
