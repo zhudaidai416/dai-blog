@@ -1,10 +1,11 @@
 ---
 title: Hello
 sticky: true
-cover: https://b0.bdstatic.com/f91548eaea79cf41c10e0fe2b9c49f6e.jpg@h_1280
+date: 2024-07-04 16:57:09
 tags:
   - hexo
   - 教程
+cover: https://b0.bdstatic.com/f91548eaea79cf41c10e0fe2b9c49f6e.jpg@h_1280
 ---
 
 # 介绍
@@ -59,6 +60,7 @@ npm install hexo-feed --save
 ### 参考
 
 {% links %}
+
 - site: 優萌初華
   owner: 霜月琉璃
   url: https://shoka.lostyu.me/computer-science/note/theme-shoka-doc
@@ -97,7 +99,7 @@ npm install hexo-feed --save
 
 **问题**：设置评论身份
 
-**解决**：获取邮箱的md5加密值：[LeanCloud](https://console.leancloud.cn/) ➡ 登录 ➡ 数据存储 ➡ 结构化数据 ➡ Comment ➡ 数据（mailMd5 的值）
+**解决**：获取邮箱的 md5 加密值：[LeanCloud](https://console.leancloud.cn/) ➡ 登录 ➡ 数据存储 ➡ 结构化数据 ➡ Comment ➡ 数据（mailMd5 的值）
 
 :::
 
@@ -150,7 +152,7 @@ npm install hexo-bilibili-bangumi --save
 hexo new page bangumis
 ```
 
-3、修改配置（在站点的配置文件 _config.yml 里添加）
+3、修改配置（在站点的配置文件 \_config.yml 里添加）
 
 ```yml
 bangumi:
@@ -186,7 +188,7 @@ npm install hexo-helper-live2d --save
 npm install live2d-widget-model-tororo
 ```
 
-2、配置（在站点的配置文件 _config.yml 里添加）
+2、配置（在站点的配置文件 \_config.yml 里添加）
 
 ```yml
 live2d:
@@ -214,4 +216,3 @@ live2d:
     opacityDefault: 0.7
     opacityOnHover: 0.2
 ```
-

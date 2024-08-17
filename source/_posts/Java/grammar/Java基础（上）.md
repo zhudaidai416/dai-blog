@@ -1,9 +1,9 @@
 ---
 title: Java 基础（上）
+date: 2024-07-10 18:22:04
 category:
   - [Java, 语法]
 tags: Java
-# cover: https://img-baofun.zhhainiao.com/fs/2f1e640b85a2b8df12b7216915cea51c.jpg
 cover: https://img0.baidu.com/it/u=3953094305,3191906254&fm=253&fmt=auto&app=138&f=JPEG?w=1422&h=800
 ---
 
@@ -271,7 +271,6 @@ System.out.pirntln(0x61); // 97
   </tr>
 </table>
 
-
 ```java
 // long 类型，需要在其后面加上 L/l
 long number = 73642422442424L;
@@ -491,7 +490,6 @@ System.out.println(d); // 5
     <td>a = (a的类型)(a % b);</td>
   </tr>
 </table>
-
 
 > :warning: 注：<font color="red">扩展的赋值运算符隐含了强制类型转换</font>
 
