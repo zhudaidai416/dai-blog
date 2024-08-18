@@ -14,7 +14,7 @@ timezone: ""
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://www.zhudaidai.top # https://zhudaidai416.github.io/dai-blog
-root: /
+root: / # 部署在 vercel 要写root: /，部署在 github page 可删除
 permalink: :title/
 permalink_defaults:
 pretty_urls:

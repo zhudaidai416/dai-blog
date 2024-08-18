@@ -1,0 +1,13 @@
+- site: MDN | Web 开发者指南
+  url: https://developer.mozilla.org/zh-CN
+  image: https://developer.mozilla.org/apple-touch-icon.6803c6f0.png
+  color: "#e9546b"
+
+- site: jQuery API
+  url: https://jquery.cuishifeng.cn
+  color: "#e9546b"
+
+- site: TypeScript
+  url: https://www.tslang.cn
+  image: https://www.typescriptlang.org/icons/icon-72x72.png?v=8944a05a8b601855de116c8a56d3b3ae
+  color: "#e9546b"

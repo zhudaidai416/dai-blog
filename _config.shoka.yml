@@ -33,6 +33,7 @@ menu:
   about:
     default: / || user
     bangumis: /bangumis/ || paper-plane
+  portal: /portal/ || magic
 
 # 页尾全站统计
 footer:
