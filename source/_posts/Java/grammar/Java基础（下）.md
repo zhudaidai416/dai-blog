@@ -2,7 +2,7 @@
 title: Java 基础（下）
 date: 2024-07-13 22:26:43
 category:
-  - [Java, 语法]
+  - [Java, Java基础]
 tags: Java
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/2.jpg
 ---
@@ -372,10 +372,10 @@ public static void print(int n) {
     // 赋值调用：可以定义变量接收结果
     int rs = sum(5);
     System.out.println("1-5的和是：" + rs);
-
+  
     // 输出调用
     System.out.println("1-5的和是：" + sum(5));
-
+  
     // 直接调用
     sum(5);
     ```
@@ -865,5 +865,47 @@ public class Student {
 | 内存位置不同 | 堆内存                     | 栈内存                                     |
 | 作用域不同   | 整个对象                   | 在所归属的大括号中                         |
 | 生命周期不同 | 与对象共存亡               | 随着方法的调用而生，随着方法的运行结束而亡 |
+
+# 包
+
+用来分门别类的管理各种不同程序的，类似于文件夹，建包有利于程序的管理和维护
+
+```java
+// 建包的语法格式
+package com.itheima.javabean;
+public class 类名 {
+  ...
+}
+```
+
+在自己程序中调用其他包下的程序的**注意事项**：
+
+- 要调用自己所在包下的其他程序，可以直接调用<font color="red">（同一个包下的类，互相可以直接调用）</font>
+
+- 要调用其他包下的程序，则必须在当前程序中导包, 才可以访问！导包格式：`import 包名.类名;`
+
+- 要调用 Java 提供的程序，也需要先导包才可以使用；但是 Java.lang 包下的程序是不需要导包的，可以直接使用
+
+  ```java
+  import java.util.Random;
+  public class Test {
+    public static void main(String[] args) {
+      Random r = new Random();
+    }
+  }
+  ```
+
+- 要调用多个不同包下的程序，而这些程序名正好一样，此时默认只能导入一个程序，另一个程序必须带包名访问
+
+  ```java
+  import com.test.Demo;
+  public class Test {
+    public static void main(String[] args) {
+      Demo d = new Demo();
+      // 带包访问
+      com.test2.Demo d = new com.test2.Demo();
+    }
+  }
+  ```
 
 # [ATM 综合案例](https://github.com/zhudaidai416/ATM-system)

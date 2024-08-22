@@ -2,52 +2,31 @@
 title: 常用API
 date: 2024-08-17 23:36:08
 category:
-  - [Java, 语法]
+  - [Java, Java基础, Java基础加强]
 tags: Java
 cover: https://img1.baidu.com/it/u=289468411,697847454&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500
 ---
 
-# 包
+# API
 
-用来分门别类的管理各种不同程序的，类似于文件夹，建包有利于程序的管理和维护
+API（Application Programming Interface）：应用程序编程接口
 
-```java
-// 建包的语法格式
-package com.itheima.javabean;
-public class 类名 {
-  ...
-}
-```
+就是 Java 帮我们已经写好一些程序，如：类、方法等，我们直接拿过来用就可以解决一些问题
 
-在自己程序中调用其他包下的程序的**注意事项**：
-
-- 要调用自己所在包下的其他程序，可以直接调用<font color="red">（同一个包下的类，互相可以直接调用）</font>
-
-- 要调用其他包下的程序，则必须在当前程序中导包, 才可以访问！导包格式：`import 包名.类名;`
-
-- 要调用 Java 提供的程序，也需要先导包才可以使用；但是 Java.lang 包下的程序是不需要导包的，可以直接使用
-
-  ```java
-  import java.util.Random;
-  public class Test {
-    public static void main(String[] args) {
-      Random r = new Random();
-    }
-  }
-  ```
-
-- 要调用多个不同包下的程序，而这些程序名正好一样，此时默认只能导入一个程序，另一个程序必须带包名访问
-
-  ```java
-  import com.test.Demo;
-  public class Test {
-    public static void main(String[] args) {
-      Demo d = new Demo();
-      // 带包访问
-      com.test2.Demo d = new com.test2.Demo();
-    }
-  }
-  ```
+| Object           | LocalTime     | Set             | FileOutputStream    | Properties         |
+| ---------------- | ------------- | --------------- | ------------------- | ------------------ |
+| objects          | LocalDateTime | HashSet         | Reader              | Thread             |
+| Integer          | Duration      | LinkedHashSet   | FileReader          | Runnable           |
+| StringBuilder    | Period        | TreeSet         | Writer              | Callable           |
+| StringBuffer     | ZoneId        | Map             | FileWriter          | ExecutorService    |
+| Math             | ZonedDateTime | HashMap         | BufferdInputStream  | ThreadPoolExecutor |
+| System           | Arrays        | LinkedHashMap   | BufferdOutputStream | Socket             |
+| Runtime          | Comparable    | TreeMap         | BufferedReader      | ServerSocket       |
+| BigDecimal       | Comparator    | Iterator        | BufferedWriter      | Class              |
+| Date             | Collection    | Stream          | PrintStream         | Method             |
+| SimpleDateFormat | List          | InputStream     | PrintWriter         | Constructor        |
+| Calendar         | ArrayList     | FileInputStream | ObjectInputStream   | Field              |
+| LocalDate        | LinkedList    | OutputStream    | ObjectOutputStream  | Proxy ...          |
 
 # String
 
@@ -72,10 +51,10 @@ String 创建对象封装字符串数据的方式
 
   ```java
   String rs1 = new String("abc");
-
+  
   char[] chars = {'a', 'b', 'c'};
   String rs2 = new String(chars);
-
+  
   byte[] bytes = {97, 98, 99};
   String rs3 = new String(bytes);
   ```
@@ -445,6 +424,29 @@ public class Test {
 ```
 
 ++++
+
+# Object
+
+Object 类是 Java 中所有类的祖宗类，Java 中所有类的对象都可以直接使用 Object 类中提供的一些方法
+
+## 常见方法
+
+| 方法名                          | 说明                       |
+| ------------------------------- | -------------------------- |
+| public String toString()        | 返回对象的字符串表示形式。 |
+| public boolean equals(Object o) | 判断两个对象是否相等。     |
+| protected Object clone()        | 对象克隆                   |
+
+- toString 存在的意义：为了被子类重写，以便返回对象具体的内容
+- equals 存在的意义：为了被子类重写，以便子类自己来定制比较规则（比如比较对象内容），直接比较两个对象的地址是否相同完全可以用“==”替代 equals
+
+# Objects
+
+
+
+# 包装类
+
+
 
 # StringBuilder
 

@@ -2,7 +2,7 @@
 title: Java 入门
 date: 2024-07-10 18:22:03
 category:
-  - [Java, 语法]
+  - [Java, Java基础]
 tags: Java
 cover: https://pic2.zhimg.com/v2-cf44c2fdebc32c350cd4fd1c432401bd_r.jpg
 ---

@@ -2,7 +2,7 @@
 title: Java 基础（上）
 date: 2024-07-10 18:22:04
 category:
-  - [Java, 语法]
+  - [Java, Java基础]
 tags: Java
 cover: https://img0.baidu.com/it/u=3953094305,3191906254&fm=253&fmt=auto&app=138&f=JPEG?w=1422&h=800
 ---
