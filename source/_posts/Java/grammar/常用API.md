@@ -429,24 +429,237 @@ public class Test {
 
 Object 类是 Java 中所有类的祖宗类，Java 中所有类的对象都可以直接使用 Object 类中提供的一些方法
 
-## 常见方法
+## 常用方法
 
-| 方法名                          | 说明                       |
-| ------------------------------- | -------------------------- |
-| public String toString()        | 返回对象的字符串表示形式。 |
-| public boolean equals(Object o) | 判断两个对象是否相等。     |
-| protected Object clone()        | 对象克隆                   |
+| 方法名                          | 说明                                                         |
+| ------------------------------- | ------------------------------------------------------------ |
+| public String toString()        | 返回对象的字符串表示形式<br>默认的格式：`包名.类名@哈希值16进制` |
+| public boolean equals(Object o) | 判断两个对象是否相等（判断地址）                             |
+| protected Object clone()        | 对象克隆                                                     |
 
-- toString 存在的意义：为了被子类重写，以便返回对象具体的内容
-- equals 存在的意义：为了被子类重写，以便子类自己来定制比较规则（比如比较对象内容），直接比较两个对象的地址是否相同完全可以用“==”替代 equals
+- toString 存在的意义：让子类重写，以便返回对象具体的内容
+
+- equals 存在的意义：让子类重写，以便用于比较对象的内容是否相同
+
+  直接比较两个对象的地址是否相同完全可以用“==”替代 equals
+
+## toString()
+
+idea 可自动生成
+
+```java
+public class Student {
+  private String name;
+  private int age;
+  
+  // 重写 toString()方法
+  @Override
+  public String toString() {
+    return "Student{" +
+            "name='" + name + '\'' +
+            ", age=" + age +
+            '}';
+  }
+  // get和set方法...
+}
+```
+
+## equals()
+
+idea 可自动生成
+
+```java
+public class Student {
+  private String name;
+  private int age;
+  
+  @Override
+  public boolean equals(Object o) {
+    // 1、判断是否是同一个对象比较，如果是返回true
+    if (this == o) return true;
+    // 2、如果o是null返回false
+    // 如果o不是学生类型返回false  ...Student != ...Pig
+    if (o == null || getClass() != o.getClass()) return false;
+    // 3、说明o一定是学生类型而且不为null
+    Student student = (Student) o;
+    return age == student.age && Objects.equals(name, student.name);
+  }
+  // get和set方法...
+}
+```
+
+## clone()
+
+当某个对象调用这个方法时，这个方法会复制一个一模一样的新对象返回
+
+- 浅克隆：拷贝出的新对象，与原对象中的数据一模一样（引用类型拷贝的只是地址）
+
+  ![1665757187877](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1665757187877.png)
+
+- 深克隆：对象中基本类型的数据直接拷贝
+
+  对象中的字符串数据拷贝的还是地址
+
+  对象中包含的其他对象，不会拷贝地址，会创建新对象
+
+  ![1665757265609](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1665757265609.png)
+
++++success 演示
+
+```java
+public class User implements Cloneable{
+  private String id;
+  private String username;
+  private String password;
+  private double[] scores;
+
+  public User() {
+  }
+
+  public User(String id, String username, String password, double[] scores) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+    this.scores = scores;
+  }
+  // get和set方法自己加上...
+  
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+    // 浅克隆
+    return super.clone();
+    
+    // 深克隆
+    // 先克隆得到一个新对象
+    User u = (User) super.clone();
+    // 再将新对象中的引用类型数据，再次克隆
+    u.scores = u.scores.clone();
+    return u;
+  }
+}
+```
+
+```java
+// 测试类验证
+public class Test {
+  public static void main(String[] args) throws CloneNotSupportedException {
+    User u1 = new User(1, "daidai", "123", new double[] {99.0, 99.5});
+    User u2 = (User) u1.clone();
+    System.out.println(u2.getId());
+    System.out.println(u2.getUsername());
+    System.out.println(u2.getPassword());
+    System.out.println(u2.getScores()); 
+  }
+}
+```
+
++++
 
 # Objects
 
+Objects 是一个工具类，提供了很多操作对象的静态方法给我们使用
 
+## 常用方法
+
+| 方法名                                           | 说明                                               |
+| ------------------------------------------------ | -------------------------------------------------- |
+| public static boolean equals(Object a, Object b) | 先做非空判断，再比较两个对象                       |
+| public static boolean isNull(Object obj)         | 判断对象是否为 null，为 null 返回 true，反之       |
+| public static boolean nonNull(Object obj)        | 判断对象是否不为 null，不为 null 则返回 true，反之 |
+
+使用 Objects 类提供的 equals 方法来比较两个对象更安全
+
+```java
+// 源码分析
+public static boolean equals(Object a, Object b) {
+  return (a == b) || (a != null && a.equals(b));
+}
+```
+
++++success 演示
+
+```java
+public class Test {
+  public static void main(String[] args) {
+    String s1 = null;
+    String s2 = "itheima";
+
+    // 会出现 NullPointerException 异常，调用者不能为 null
+    System.out.println(s1.equals(s2));
+    // 此时不会有 NullPointerException 异常，底层会自动先判断空
+    System.out.println(Objects.equals(s1,s2));
+
+    System.out.println(Objects.isNull(s1)); // true
+    System.out.println(s1 == null); // true
+
+    System.out.println(Objects.nonNull(s2)); // true
+    System.out.println(s2 != null); // true
+  }
+}
+```
+
++++
 
 # 包装类
 
+把基本类型的数据包装成对象
 
+| **基本数据类型** | **对应的包装类（引用数据类型）**   |
+| ---------------- | ---------------------------------- |
+| byte             | Byte                               |
+| short            | Short                              |
+| int              | <font color="red">Integer</font>   |
+| long             | Long                               |
+| char             | <font color="red">Character</font> |
+| float            | Float                              |
+| double           | Double                             |
+| boolean          | Boolean                            |
+
+- 自动装箱：基本数据类型可以自动转换为包装类型
+- 自动拆箱：包装类型可以自动转换为基本数据类型
+
+```java
+Integer a = Integer.valueOf(10);
+
+// 自动装箱 and 自动拆箱
+Integer a1 = 10;
+int a2 = a1;
+```
+
+泛型和集合不支持基本数据类型，因此可以使用包装类进行转换
+
+## 包装类的方法
+
+1、基本类型的数据转换成字符串
+
+| public static String toString(double d) |
+| --------------------------------------- |
+| public String toString()                |
+
+```java
+Integer a = 12;
+
+String s1 = Integer.toString(a);
+String s2 = a.toString();
+String s3 = a + "";
+String s4 = String.valueOf(a);
+```
+
+2、字符串类型的数值转换成对应的基本数据类型
+
+| public static int parseInt(String s)    |
+| --------------------------------------- |
+| public static Integer valueOf(String s) |
+
+```java
+String ageStr = "29";
+int age = Integer.parseInt(ageStr);
+int age = Integer.valueOf(ageStr);
+
+String scoreStr = "3.14";
+double score = Double.prarseDouble(scoreStr);
+double score = Double.valueOf(scoreStr);
+```
 
 # StringBuilder
 
