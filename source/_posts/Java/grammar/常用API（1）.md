@@ -1,5 +1,5 @@
 ---
-title: 常用API
+title: 常用API（1）
 date: 2024-08-17 23:36:08
 category:
   - [Java, Java基础, Java基础加强]
@@ -49,6 +49,8 @@ String 创建对象封装字符串数据的方式
   | public String(char[] chars)    | 根据字符数组的内容，来创建字符串对象   |
   | public String(byte[] bytes)    | 根据字节数组的内容，来创建字符串对象   |
 
+  +++success 演示
+
   ```java
   String rs1 = new String("abc");
   
@@ -58,6 +60,8 @@ String 创建对象封装字符串数据的方式
   byte[] bytes = {97, 98, 99};
   String rs3 = new String(bytes);
   ```
+
+  +++
 
 ## 常用方法
 
@@ -120,6 +124,8 @@ public static void main(String[] args) {
 
 ![1662618651517](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/1662618651517.png)
 
++++success 演示
+
 ```java
 // 案例1
 String s2 = new String("abc"); // 创建2个对象：常量池、堆内存
@@ -138,6 +144,8 @@ String s2 = "a" + "b" + "c";
 System.out.println(s1 == s2); // true
 // Java 存在编译优化机制，程序在编译时："a" + "b" + "c"（确定的值）会直接转成"abc"，以提高程序的执行性能
 ```
+
++++
 
 ## 案例
 
@@ -246,6 +254,8 @@ ArrayList<String> list = new ArrayList<>();
 | public boolean remove(Object o)      |    删除指定的元素，返回删除是否成功    |
 | public E set(int index,E element)    | 修改指定索引处的元素，返回被修改的元素 |
 
++++success 演示
+
 ```java
 list.add("呆呆");
 list.add(1,"daidai");
@@ -256,6 +266,8 @@ System.out.println(list.remove("daidai"));
 
 System.out.println(list.set(0, "123")); // 呆呆
 ```
+
++++
 
 ## 案例
 
@@ -431,11 +443,11 @@ Object 类是 Java 中所有类的祖宗类，Java 中所有类的对象都可�
 
 ## 常用方法
 
-| 方法名                          | 说明                                                         |
-| ------------------------------- | ------------------------------------------------------------ |
+| 方法名                          | 说明                                                             |
+| ------------------------------- | ---------------------------------------------------------------- |
 | public String toString()        | 返回对象的字符串表示形式<br>默认的格式：`包名.类名@哈希值16进制` |
-| public boolean equals(Object o) | 判断两个对象是否相等（判断地址）                             |
-| protected Object clone()        | 对象克隆                                                     |
+| public boolean equals(Object o) | 判断两个对象是否相等（判断地址）                                 |
+| protected Object clone()        | 对象克隆                                                         |
 
 - toString 存在的意义：让子类重写，以便返回对象具体的内容
 
@@ -451,7 +463,7 @@ idea 可自动生成
 public class Student {
   private String name;
   private int age;
-  
+
   // 重写 toString()方法
   @Override
   public String toString() {
@@ -472,7 +484,7 @@ idea 可自动生成
 public class Student {
   private String name;
   private int age;
-  
+
   @Override
   public boolean equals(Object o) {
     // 1、判断是否是同一个对象比较，如果是返回true
@@ -523,12 +535,12 @@ public class User implements Cloneable{
     this.scores = scores;
   }
   // get和set方法自己加上...
-  
+
   @Override
   protected Object clone() throws CloneNotSupportedException {
     // 浅克隆
     return super.clone();
-    
+
     // 深克隆
     // 先克隆得到一个新对象
     User u = (User) super.clone();
@@ -548,7 +560,7 @@ public class Test {
     System.out.println(u2.getId());
     System.out.println(u2.getUsername());
     System.out.println(u2.getPassword());
-    System.out.println(u2.getScores()); 
+    System.out.println(u2.getScores());
   }
 }
 ```
@@ -663,30 +675,254 @@ double score = Double.valueOf(scoreStr);
 
 # StringBuilder
 
+代表可变字符串对象，相当于是一个容器，它里面装的字符串是可以改变的，就是用来操作字符串的
+
+**好处**：StringBuilder 比 String 更适合做字符串的修改操作，效率会更高，代码也会更简洁
+
+| 构造器                           | 说明                                           |
+| -------------------------------- | ---------------------------------------------- |
+| public StringBuilder()           | 创建一个空白的可变的字符串对象，不包含任何内容 |
+| public StringBuilder(String str) | 创建一个指定字符串内容的可变字符串对象         |
+
+| 方法名称                              | 说明                                                     |
+| ------------------------------------- | -------------------------------------------------------- |
+| public StringBuilder append(任意类型) | 添加数据并返回 StringBuilder 对象本身                    |
+| public StringBuilder reverse()        | 将对象的内容反转                                         |
+| public int length()                   | 返回对象内容长度                                         |
+| public String toString()              | 通过 toString() 就可以实现把 StringBuilder 转换为 String |
+
++++success 演示
+
+```java
+// StringBuilder s = new StringBuilder();
+StringBuilder s = new StringBuilder("daidai");
+
+s.append(true);
+s.append(416);
+System.out.println(s); // daidaitrue416
+
+// 支持链式编程
+s.append("朱呆呆").append("hi");
+s.reverse();
+System.out.println(s);
+
+String rs = s.toString();
+System.out.println(rs);
+```
+
++++
+
+> :warning: 注：
+>
+> - String 是不可变字符串、频繁操作字符串会产生很多无用对象，性能差
+> - 对于字符串相关的操作，如频繁的拼接、修改等，建议用 StringBuidler，效率更高
+> - 如果操作字符串较少，或者不需要操作，以及定义字符串变量，还是建议用 String
+
+**StringBuffer 与 StringBuilder**
+
+- StringBuffer 的用法与 StringBuilder 是一模一样的
+- 但 StringBuilder 是线程不安全的 StringBuffer 是线程安全的
+
++++success 案例：返回任意整型数组的内容
+
+```java
+public class Test {
+  public static void main(String[] args) {
+    System.out.println(getArrayData(new int[]{11, 22, 33}));
+  }
+
+  public static String getArrayData(int[] arr) {
+    if (arr == null) return null;
+    StringBuilder s = new StringBuilder();
+    s.append("[");
+    for (int i = 0; i < arr.length; i++) {
+      s.append(arr[i]).append(i == arr.length - 1 ? "]" : ", ");
+    }
+    return s.toString();
+  }
+}
+```
+
++++
+
 # StringJoiner
+
+JDK8 出现的一个可变的、操作字符串的容器，跟 StringBuilder 一样
+
+**好处**：不仅能提高字符串的操作效率，并且在有些场景下使用它操作字符串，代码会更简洁
+
+| 构造器                                            | 说明                                                                 |
+| ------------------------------------------------- | -------------------------------------------------------------------- |
+| public StringJoiner(间隔符号)                     | 创建一个 StringJoiner 对象，指定拼接时的间隔符号                     |
+| public StringJoiner(间隔符号，开始符号，结束符号) | 创建一个 StringJoiner 对象，指定拼接时的间隔符号、开始符号、结束符号 |
+
+🍋
+
+| 方法名称                             | 说明                                         |
+| ------------------------------------ | -------------------------------------------- |
+| public StringJoiner add (添加的内容) | 添加数据，并返回对象本身                     |
+| public int length()                  | 返回长度（字符出现的个数）                   |
+| public String toString()             | 返回一个字符串（该字符串就是拼接之后的结果） |
+
++++success 改写 StringBuilder 的案例
+
+```java
+public class Test {
+  public static void main(String[] args) {
+    System.out.println(getArrayData(new int[]{11, 22, 33}));
+  }
+
+  public static String getArrayData(int[] arr) {
+    if (arr == null) return null;
+    StringJoiner s = new StringJoiner(", ", "[", "]");
+    for (int i = 0; i < arr.length; i++) {
+      s.add(String.valueOf(arr[i]));
+    }
+    return s.toString();
+  }
+}
+```
+
++++
 
 # Math
 
+代表数学，是一个工具类，里面提供的都是对数据进行操作的一些静态方法
+
+| 方法名                                      | 说明                                     |
+| ------------------------------------------- | ---------------------------------------- |
+| public static int abs(int a)                | 获取参数绝对值                           |
+| public static double ceil(double a)         | 向上取整                                 |
+| public static double floor(double a)        | 向下取整                                 |
+| public static int round(float a)            | 四舍五入                                 |
+| public static int max(int a,int b)          | 获取两个 int 值中的较大值                |
+| public static double pow(double a,double b) | 返回 a 的 b 次幂的值                     |
+| public static double random()               | 返回值为 double 的随机值，范围[0.0, 1.0) |
+
++++success 演示
+
+```java
+System.out.println(Math.abs(-12)); // 12
+
+System.out.println(Math.ceil(1.0001)); // 2.0
+System.out.println(Math.ceil(1.0000)); // 1.0
+
+System.out.println(Math.floor(1.9999)); // 1.0
+System.out.println(Math.floor(1.0000)); // 1.0
+
+System.out.println(Math.round(1.4999)); // 1
+System.out.println(Math.round(1.5001)); // 2
+```
+
++++
+
 # System
+
+代表程序所在的系统，也是一个工具类
+
+| 方法名                                 | 说明                         |
+| -------------------------------------- | ---------------------------- |
+| public static void exit(int status)    | 终止当前运行的 Java 虚拟机   |
+| public static long currentTimeMillis() | 返回当前系统的时间毫秒值形式 |
+
++++success 演示
+
+```java
+// 该参数用作状态代码，按照惯例，非零状态代码表示异常终止
+System.exit(0); // 人为的终止虚拟机(不要使用)
+
+// 指的是从 1970-1-1 0:0:0 开始走到此刻的总的毫秒值，1s = 1000ms
+long time = System.currentTimeMillis();
+System.out.println(time);
+```
+
++++
 
 # Runtime
 
+代表程序所在的运行环境，是一个单例类
+
+| 方法名                              | 说明                                     |
+| ----------------------------------- | ---------------------------------------- |
+| public static Runtime getRuntime()  | 返回与当前 Java 应用程序关联的运行时对象 |
+| public void exit(int status)        | 终止当前运行的虚拟机                     |
+| public int availableProcessors()    | 返回 Java 虚拟机可用的处理器数           |
+| public long totalMemory()           | 返回 Java 虚拟机中的内存总量             |
+| public long freeMemory()            | 返回 Java 虚拟机中的可用内存             |
+| public Process exec(String command) | 启动某个程序，并返回代表该程序的对象     |
+
++++success 演示
+
+```java
+import java.io.IOException;
+public class Test {
+  public static void main(String[] args) throws IOException, InterruptedException {
+
+    Runtime r = Runtime.getRuntime();
+    // r.exit(0);
+    System.out.println(r.availableProcessors());
+    System.out.println(r.totalMemory() / 1024.0 / 1024.0 + "MB");
+    System.out.println(r.freeMemory() / 1024.0 / 1024.0 + "MB");
+
+    Process p = r.exec("D:\\QQ\\Bin\\QQScLauncher.exe");
+    Thread.sleep(5000); // 暂停5s后才往下走
+    p.destroy(); // 销毁关闭程序
+  }
+}
+```
+
++++
+
 # BigDecimal
 
-# Date
+用于解决浮点型运算时，出现结果失真的问题
 
-# SimpleDateFormat
+| 构造器                                                       | 说明                        |
+| ------------------------------------------------------------ | --------------------------- |
+| public BigDecimal(double val) <font color="red">注意：不推荐使用这个</font> | 将 double 转换为 BigDecimal |
+| public BigDecimal(String val)                                | 把 String 转成 BigDecimal   |
 
-# Calendar
+🍋
 
-# JDK8 日期、时间、日期时间
+| 方法名                                                       | 说明                          |
+| ------------------------------------------------------------ | ----------------------------- |
+| public static BigDecimal valueOf(double val)                 | 转换一个 double 成 BigDecimal |
+| public BigDecimal add(BigDecimal b)                          | 加法                          |
+| public BigDecimal subtract(BigDecimal b)                     | 减法                          |
+| public BigDecimal multiply(BigDecimal b)                     | 乘法                          |
+| public BigDecimal divide(BigDecimal b)                       | 除法                          |
+| public BigDecimal divide(另一个 BigDecimal 对象，精确几位，舍入模式) | 除法、可以控制精确到小数几位  |
+| public double doubleValue()                                  | 将 BigDecimal 转换为 double   |
 
-# JDK8 日期（时区）
++++success 演示
 
-# JDK8 日期（Instant 类）
+```java
+public class Test {
+  public static void main(String[] args) {
+    double a = 0.1;
+    double b = 0.2;
 
-# JDK8 日期（格式化器）
+    // BigDecimal a1 = new BigDecimal(Double.toString(a));
+    // 推荐用以下方式更简洁
+    BigDecimal a1 = BigDecimal.valueOf(a);
+    BigDecimal b1 = BigDecimal.valueOf(b);
 
-# JDK8 日期（Period 类）
+    BigDecimal c1 = a1.add(b1);
+    BigDecimal c2 = a1.subtract(b1);
+    BigDecimal c3 = a1.multiply(b1);
+    BigDecimal c4 = a1.divide(b1);
 
-# JDK8 日期（Duration 类）
+    // 除法：divide方法会报错，可以设置精确几位
+    BigDecimal d1 = BigDecimal.valueOf(0.1);
+    BigDecimal d2 = BigDecimal.valueOf(0.3);
+    BigDecimal d3 = d1.divide(d2, 2, RoundingMode.HALF_UP); // 0.33
+    System.out.println(d3);
+
+    // 转换成 double 类型
+    double rs1 = d3.doubleValue();
+    double rs2 = c1.doubleValue();
+  }
+}
+```
+
++++
