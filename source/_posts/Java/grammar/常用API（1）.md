@@ -4,7 +4,7 @@ date: 2024-08-17 23:36:08
 category:
   - [Java, Java基础, Java基础加强]
 tags: Java
-cover: https://img1.baidu.com/it/u=289468411,697847454&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/5.jpg
 ---
 
 # API
