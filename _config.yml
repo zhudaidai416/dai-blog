@@ -70,6 +70,8 @@ default_category: uncategorized
 category_map:
   Java: Java
   语法: grammar
+  数据库: database
+  杂七杂八: other
 
 tag_map:
 
