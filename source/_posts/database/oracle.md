@@ -7,11 +7,11 @@ tags: oracle
 cover: https://pic2.zhimg.com/v2-cf44c2fdebc32c350cd4fd1c432401bd_r.jpg
 ---
 
-:spiral_notepad: [教程 1](https://blog.csdn.net/lLlLlL__lL/article/details/132261592)
+📑 [教程 1](https://blog.csdn.net/lLlLlL__lL/article/details/132261592)
 
-:spiral*notepad: [教程 2](https://blog.csdn.net/Smileaway*/article/details/118511529)
+📑 [教程 2](https://blog.csdn.net/Smileaway_/article/details/118511529)
 
-:spiral_notepad: [教程 3：例子多点](https://blog.csdn.net/qq_54525448/article/details/123979746)
+📑 [教程 3：例子多点](https://blog.csdn.net/qq_54525448/article/details/123979746)
 
 # 数据类型
 
@@ -144,6 +144,59 @@ select 字段 from 表名 where 字段 between 条件1 and 条件2;
 -- 查询工资在1000~2000之间的员工
 select ename,sal from emp where sal between 1000 and 2000;
 ```
+
+## 函数
+
+### 字符串函数
+
+```sql
+-- 大小写控制（upper、lower）
+➡ upper：转大写
+➡ lower：转小写
+
+select lower(ename) 小写名字 from emp;
+select upper('aaaa') 大写字母 from dual;
+
+
+-- 首字母大写（initcap）
+select initcap(lower(ename)) 首字母大写 from emp;
+
+
+-- 字符串拼接（concat、||）
+select concat('Dear',ename) DearName from emp;
+select 'Dear' || lower(ename) from emp;
+
+
+-- 字符串提取（sunstr）
+select ename,substr(ename,3,2) from emp; -- 从第3位开始，取2位
+
+
+-- 字符串查找（instr）
+select ename,instr(ename,'I',2) from emp; -- 最后数字表示截取几位
+select instr('Hello world!','wo') from dual; -- 截取字符串 Hello world！当中的 wo
+
+
+-- 返回字符的长度（length、lengthb）
+select length(sname) 字符数,lengthb(sname) 字节数 from student;
+
+
+-- 左右填充函数（lpad、rpad）
+➡ lpad：左填充
+➡ rpad：右填充
+
+select lpad(ename,10,'*') from emp; -- 给 SMITH 右边填充 3 个星号
+select rpad(ename,8,'*') from emp;
+
+
+-- 去除字符串前后的字符（trim）：使用from连接
+select trim('*' from rpad(ename,8,'*')) 去除星号 from emp;
+
+
+-- 字符串替换（replace）
+select replace(concat('Dear',ename),'Dear','-') from emp;
+```
+
+
 
 # DQL
 
