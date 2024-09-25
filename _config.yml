@@ -68,11 +68,12 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  计算机与科学: computer-science
   Java: Java
   语法: grammar
   数据库: database
   杂七杂八: other
-  Csharp: Csharp
+  C#: Csharp
 
 tag_map:
 

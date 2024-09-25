@@ -2,7 +2,7 @@
 title: 常用API（3）
 date: 2024-08-28 17:22:48
 category:
-  - [Java, Java基础加强]
+  - [计算机与科学, Java, Java基础加强]
 tags: Java
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/7.jpg
 ---
@@ -13,13 +13,13 @@ cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/7.jpg
 
 ## 基本使用
 
-| 方法名                                                       | 说明                             |
-| ------------------------------------------------------------ | -------------------------------- |
-| public static String toString(类型[] arr)                    | 返回数组的内容                   |
-| public static int[] copyOfRange(类型[] arr, 起始索引, 结束索引) | 拷贝数组（指定范围）             |
-| public static copyOf(类型[] arr, int newLength)              | 拷贝数组                         |
+| 方法名                                                              | 说明                             |
+| ------------------------------------------------------------------- | -------------------------------- |
+| public static String toString(类型[] arr)                           | 返回数组的内容                   |
+| public static int[] copyOfRange(类型[] arr, 起始索引, 结束索引)     | 拷贝数组（指定范围）             |
+| public static copyOf(类型[] arr, int newLength)                     | 拷贝数组                         |
 | public static setAll(double[] array, IntToDoubleFunction generator) | 把数组中的原数据改为新数据       |
-| public static void sort(类型[] arr)                          | 对数组进行排序（默认是升序排序） |
+| public static void sort(类型[] arr)                                 | 对数组进行排序（默认是升序排序） |
 
 +++success 演示
 
@@ -85,7 +85,7 @@ public class Student implements Comparable<Student> {
     //   return -1;
     // }
     // return 0;
-    
+
     // 写法二
     return this.age - o.age; // 升序
     // return o.age - this.age ; // 降序
@@ -151,7 +151,7 @@ public class Test {
         //   return -1;
         // }
         // return 0;
-        
+
         // 写法二
         // return Double.compare(o1.getHeight(), o2.getHeight()); // 升序
         return Double.compare(o2.getHeight(), o1.getHeight()); // 降序

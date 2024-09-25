@@ -2,7 +2,7 @@
 title: Java 基础（下）
 date: 2024-07-13 22:26:43
 category:
-  - [Java, Java基础]
+  - [计算机与科学, Java, Java基础]
 tags: Java
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/2.jpg
 ---
@@ -372,10 +372,10 @@ public static void print(int n) {
     // 赋值调用：可以定义变量接收结果
     int rs = sum(5);
     System.out.println("1-5的和是：" + rs);
-  
+
     // 输出调用
     System.out.println("1-5的和是：" + sum(5));
-  
+
     // 直接调用
     sum(5);
     ```

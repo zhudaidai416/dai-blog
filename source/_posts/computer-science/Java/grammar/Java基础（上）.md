@@ -2,7 +2,7 @@
 title: Java 基础（上）
 date: 2024-07-10 18:22:04
 category:
-  - [Java, Java基础]
+  - [计算机与科学, Java, Java基础]
 tags: Java
 cover: https://img0.baidu.com/it/u=3953094305,3191906254&fm=253&fmt=auto&app=138&f=JPEG?w=1422&h=800
 ---
@@ -155,7 +155,7 @@ ASCII 编码表：即美国信息交换标准编码，规定了现代英语、�
 ## 图片的存储原理
 
 - 图片就是无数个像素点组成
-- 每个像素点的数据：用 0 ~ 255* 255* 255 表示其颜色
+- 每个像素点的数据：用 0 ~ 255*255* 255 表示其颜色
 
 ## 声音的存储原理
 
@@ -505,7 +505,7 @@ x += y; // 等价于 byte x = (byte)(x+y); 这里有隐含的强制类型转换
 判断数据是否满足条件，最终会返回一个判断的结果，这个结果是布尔类型的值：true 或 false
 
 <table>
-  <tbody align="center"> 
+  <tbody align="center">
     <tr>
       <th style="text-align:center;">符号</th>
       <th style="text-align:center;">用法</th>

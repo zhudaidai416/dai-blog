@@ -2,7 +2,7 @@
 title: JDK8新特性
 date: 2024-08-28 22:31:27
 category:
-  - [Java, Java基础加强]
+  - [计算机与科学, Java, Java基础加强]
 tags: Java
 cover: https://img1.baidu.com/it/u=289468411,697847454&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500
 ---

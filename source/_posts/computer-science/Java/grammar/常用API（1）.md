@@ -2,7 +2,7 @@
 title: 常用API（1）
 date: 2024-08-17 23:36:08
 category:
-  - [Java, Java基础, Java基础加强]
+  - [计算机与科学, Java, Java基础, Java基础加强]
 tags: Java
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/5.jpg
 ---
@@ -53,10 +53,10 @@ String 创建对象封装字符串数据的方式
 
   ```java
   String rs1 = new String("abc");
-  
+
   char[] chars = {'a', 'b', 'c'};
   String rs2 = new String(chars);
-  
+
   byte[] bytes = {97, 98, 99};
   String rs3 = new String(bytes);
   ```
@@ -877,22 +877,22 @@ public class Test {
 
 用于解决浮点型运算时，出现结果失真的问题
 
-| 构造器                                                       | 说明                        |
-| ------------------------------------------------------------ | --------------------------- |
+| 构造器                                                                      | 说明                        |
+| --------------------------------------------------------------------------- | --------------------------- |
 | public BigDecimal(double val) <font color="red">注意：不推荐使用这个</font> | 将 double 转换为 BigDecimal |
-| public BigDecimal(String val)                                | 把 String 转成 BigDecimal   |
+| public BigDecimal(String val)                                               | 把 String 转成 BigDecimal   |
 
 🍋
 
-| 方法名                                                       | 说明                          |
-| ------------------------------------------------------------ | ----------------------------- |
-| public static BigDecimal valueOf(double val)                 | 转换一个 double 成 BigDecimal |
-| public BigDecimal add(BigDecimal b)                          | 加法                          |
-| public BigDecimal subtract(BigDecimal b)                     | 减法                          |
-| public BigDecimal multiply(BigDecimal b)                     | 乘法                          |
-| public BigDecimal divide(BigDecimal b)                       | 除法                          |
+| 方法名                                                               | 说明                          |
+| -------------------------------------------------------------------- | ----------------------------- |
+| public static BigDecimal valueOf(double val)                         | 转换一个 double 成 BigDecimal |
+| public BigDecimal add(BigDecimal b)                                  | 加法                          |
+| public BigDecimal subtract(BigDecimal b)                             | 减法                          |
+| public BigDecimal multiply(BigDecimal b)                             | 乘法                          |
+| public BigDecimal divide(BigDecimal b)                               | 除法                          |
 | public BigDecimal divide(另一个 BigDecimal 对象，精确几位，舍入模式) | 除法、可以控制精确到小数几位  |
-| public double doubleValue()                                  | 将 BigDecimal 转换为 double   |
+| public double doubleValue()                                          | 将 BigDecimal 转换为 double   |
 
 +++success 演示
 

@@ -2,7 +2,7 @@
 title: 常用API（2）—— 关于日期时间
 date: 2024-08-26 18:13:15
 category:
-  - [Java, Java基础加强]
+  - [计算机与科学, Java, Java基础加强]
 tags: Java
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/6.jpg
 ---
@@ -123,7 +123,7 @@ public class Test {
     String end = "2024年11月11日 0:10:0";
     String user1 = "2024年11月11日 0:01:16";
     String user2 = "2024年11月11日 0:10:02";
-    
+
     // 解析
     SimpleDateFormat d = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
     Date start_date = d.parse(start);
@@ -233,9 +233,9 @@ public class Test {
 - LocalTime：代表本地时间（时、分、秒、纳秒）
 - LocalDateTime：代表本地日期、时间（年、月、日、星期、时、分、秒、纳秒）
 
-| 方法名                                                 | 示例                                                         |
-| ------------------------------------------------------ | ------------------------------------------------------------ |
-| public static Xxxx now()：获取系统当前时间对应的该对象 | LocaDate ld = LocalDate.now();<br>LocalTime lt = LocalTime.now();<br>LocalDateTime ldt = LocalDateTime.now(); |
+| 方法名                                                 | 示例                                                                                                                                                                               |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| public static Xxxx now()：获取系统当前时间对应的该对象 | LocaDate ld = LocalDate.now();<br>LocalTime lt = LocalTime.now();<br>LocalDateTime ldt = LocalDateTime.now();                                                                      |
 | public static Xxxx of(…)：获取指定时间的对象           | LocalDate localDate1 = LocalDate.of(2099 , 11,11);<br>LocalTime localTime1 = LocalTime.of(9, 8, 59);<br>LocalDateTime localDateTime1 = LocalDateTime.of(2025, 11, 16, 14, 30, 01); |
 
 ## LocalDate（年月日）
@@ -307,13 +307,13 @@ public class Test {
 
 年、月、日、星期、时、分、秒、纳秒
 
-| 方法名                                                       | 说明                                      |
-| ------------------------------------------------------------ | ----------------------------------------- |
+| 方法名                                                                                                      | 说明                                      |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
 | getYear、getMonthValue、getDayOfMonth、getDayOfYear<br>getDayOfWeek、getHour、getMinute、getSecond、getNano | 获取年月日、时分秒、纳秒等                |
-| withYear、withMonth、withDayOfMonth、withDayOfYear<br>withHour、withMinute、withSecond、withNano | 修改某个信息，返回新日期时间对象          |
-| plusYears、plusMonths、plusDays、plusWeeks<br>plusHours、plusMinutes、plusSeconds、plusNanos | 把某个信息加多少，返回新日期时间对象      |
-| minusYears、minusMonths、minusDays、minusWeeks<br>minusHours、minusMinutes、minusSeconds、minusNanos | 把某个信息减多少，返回新日期时间对象      |
-| equals、isBefore、isAfter                                    | 判断 2 个时间对象，是否相等，在前还是在后 |
+| withYear、withMonth、withDayOfMonth、withDayOfYear<br>withHour、withMinute、withSecond、withNano            | 修改某个信息，返回新日期时间对象          |
+| plusYears、plusMonths、plusDays、plusWeeks<br>plusHours、plusMinutes、plusSeconds、plusNanos                | 把某个信息加多少，返回新日期时间对象      |
+| minusYears、minusMonths、minusDays、minusWeeks<br>minusHours、minusMinutes、minusSeconds、minusNanos        | 把某个信息减多少，返回新日期时间对象      |
+| equals、isBefore、isAfter                                                                                   | 判断 2 个时间对象，是否相等，在前还是在后 |
 
 ## 转换
 
@@ -352,14 +352,14 @@ LocalDateTime ldt2 = LocalDateTime.of(ld, lt);
 
 带时区的时间
 
-| 方法名                                                       | 说明                              |
-| ------------------------------------------------------------ | --------------------------------- |
-| public static ZonedDateTime now()                            | 获取当前时区的 ZonedDateTime 对象 |
-| public static ZonedDateTime now(ZoneId zone)                 | 获取指定时区的 ZonedDateTime 对象 |
+| 方法名                                                                                                  | 说明                              |
+| ------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| public static ZonedDateTime now()                                                                       | 获取当前时区的 ZonedDateTime 对象 |
+| public static ZonedDateTime now(ZoneId zone)                                                            | 获取指定时区的 ZonedDateTime 对象 |
 | getYear、getMonthValue、getDayOfMonth、getDayOfYeargetDayOfWeek、getHour、getMinute、getSecond、getNano | 获取年月日、时分秒、纳秒等        |
-| public ZonedDateTime withXxx(时间)                           | 修改时间系列的方法                |
-| public ZonedDateTime minusXxx(时间)                          | 减少时间系列的方法                |
-| public ZonedDateTime plusXxx(时间)                           | 增加时间系列的方法                |
+| public ZonedDateTime withXxx(时间)                                                                      | 修改时间系列的方法                |
+| public ZonedDateTime minusXxx(时间)                                                                     | 减少时间系列的方法                |
+| public ZonedDateTime plusXxx(时间)                                                                      | 增加时间系列的方法                |
 
 +++success 演示
 
@@ -382,10 +382,10 @@ public class Test {
 
     ZonedDateTime utc = ZonedDateTime.now(Clock.systemUTC());
     System.out.println("世界标准时间：" + utc);
-    
+
     ZonedDateTime now2 = ZonedDateTime.now();
     System.out.println("系统默认时区的时间：" + now2);
-    
+
     // Calendar instance = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
   }
 }
@@ -443,11 +443,11 @@ public class Test {
 | public static DateTimeFormatter ofPattern(时间格式) | 获取格式化器对象 |
 | public String format(时间对象)                      | 格式化时间       |
 
-LocalDateTime提供的格式化、解析时间的方法
+LocalDateTime 提供的格式化、解析时间的方法
 
-| 方法名                                                       | 说明       |
-| ------------------------------------------------------------ | ---------- |
-| public String format(DateTimeFormatter formatter)            | 格式化时间 |
+| 方法名                                                                           | 说明       |
+| -------------------------------------------------------------------------------- | ---------- |
+| public String format(DateTimeFormatter formatter)                                | 格式化时间 |
 | public static LocalDateTime parse(CharSequencetext, DateTimeFormatter formatter) | 解析时间   |
 
 +++success 演示
@@ -462,7 +462,7 @@ public class Test {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH:mm:ss");
     LocalDateTime now = LocalDateTime.now();
     System.out.println(now); // 2024-08-28T16:43:56.407816900
-    
+
     // 方式一：正向格式化
     String rs = formatter.format(now); // 2024年08月28日 16:43:56
     // 方式二：反向格式化
@@ -497,7 +497,7 @@ public class Test {
     LocalDate start = LocalDate.of(2024, 3, 5);
     LocalDate end = LocalDate.of(2029, 4, 16);
     Period between = Period.between(start, end);
-    
+
     System.out.println("间隔年数：" + between.getYears()); // 间隔年数：5
     System.out.println("间隔月数：" + between.getMonths()); // 间隔月数：1
     System.out.println("间隔天数：" + between.getDays()); // 间隔天数：11
@@ -513,15 +513,15 @@ public class Test {
 
 支持 LocalTime、LocalDateTime、Instant 等时间
 
-| 方法名                                                       | 说明                                 |
-| ------------------------------------------------------------ | ------------------------------------ |
-| public static Duration between(开始时间对象1, 截止时间对象2) | 传入两个时间对象，得到 Duration 对象 |
-| public long toDays()                                         | 计算隔多少天，并返回                 |
-| public long toHours()                                        | 计算隔多少小时，并返回               |
-| public long toMinutes()                                      | 计算隔多少分，并返回                 |
-| public long toSeconds()                                      | 计算隔多少秒，并返回                 |
-| public long toMillis()                                       | 计算隔多少毫秒，并返回               |
-| public long toNanos()                                        | 计算隔多少纳秒，并返回               |
+| 方法名                                                         | 说明                                 |
+| -------------------------------------------------------------- | ------------------------------------ |
+| public static Duration between(开始时间对象 1, 截止时间对象 2) | 传入两个时间对象，得到 Duration 对象 |
+| public long toDays()                                           | 计算隔多少天，并返回                 |
+| public long toHours()                                          | 计算隔多少小时，并返回               |
+| public long toMinutes()                                        | 计算隔多少分，并返回                 |
+| public long toSeconds()                                        | 计算隔多少秒，并返回                 |
+| public long toMillis()                                         | 计算隔多少毫秒，并返回               |
+| public long toNanos()                                          | 计算隔多少纳秒，并返回               |
 
 +++success 演示
 
@@ -534,7 +534,7 @@ public class Test {
     LocalDateTime start = LocalDateTime.of(2024, 8, 28, 11, 10, 10);
     LocalDateTime end = LocalDateTime.of(2024, 8, 28, 11, 11, 11);
     Duration between = Duration.between(start, end);
-    
+
     System.out.println(between.toDays()); // 0
     System.out.println(between.toHours()); // 0
     System.out.println(between.toMinutes()); // 1
