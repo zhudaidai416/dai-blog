@@ -1,3 +1,5 @@
+# [安装](https://www.cnblogs.com/purvis/p/15137637.html)
+
 # 开源项目
 
 📑 [项目1](https://github.com/bsf-gnls/TimeManage.git)
@@ -23,12 +25,38 @@
 - 右键刚创建的选项卡 "DevExpress"，点击 "选择项"
 - 在 framework 筛选出 DevExpress
 
-# 打开新窗口
+# 窗口
 
 ```c#
 Form2 form2 = new Form2();
-this.Hide();
-form2.ShowDialog();
+this.Hide(); // 关闭当前的窗口
+form2.ShowDialog(); // 打开新窗口
 this.Dispose();
+```
+
+# 连接mysql数据库
+
+出现 `MySql.Data.MySqlClient.MySqlException:“Host 'DESKTOP-1B2EKUI' is not allowed to connect to this MySQL` 错误
+
+解决：https://gitcode.csdn.net/65e83e951a836825ed78b4cc.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTk5NDE2MywiZXhwIjoxNzI4MDIxMjA3LCJpYXQiOjE3Mjc0MTY0MDcsInVzZXJuYW1lIjoibTBfNDg3MDE2NTQifQ.vx4FfLoO6Vq184GfjSOQsyuwu-YHWmd5FREFZFpiiHw&spm=1001.2101.3001.6650.10&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-10-122933316-blog-98814628.235%5Ev43%5Epc_blog_bottom_relevance_base6&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-10-122933316-blog-98814628.235%5Ev43%5Epc_blog_bottom_relevance_base6
+
+https://blog.csdn.net/weixin_46076729/article/details/117897946
+
+# 表格
+
+```c#
+DataTable dt = new DataTable("学生表");
+dt.Columns.Add("序号", typeof(int));
+dt.Columns.Add("姓名", typeof(string));
+dt.Columns.Add("性别", typeof(string));
+dt.Columns.Add("年龄", typeof(string));
+dt.Columns.Add("班级", typeof(string));
+dt.Columns.Add("班主任", typeof(string));
+
+dt.Rows.Add(new object[] { 1, "朱呆呆", "女", "24", "一年级", "李四" });
+dt.Rows.Add(new object[] { 1, "朱呆呆", "女", "24", "一年级", "李四" });
+dt.Rows.Add(new object[] { 1, "呆呆", "女", "24", "一年级", "李四" });
+dt.Rows.Add(new object[] { 1, "朱朱", "男", "32", "二年级", "李四" });
+dt.Rows.Add(new object[] { 1, "朱呆呆", "女", "24", "三年级", "李四" });
 ```
 
