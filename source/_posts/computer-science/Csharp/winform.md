@@ -1,3 +1,26 @@
+# 介绍
+
+windows 桌面端应用开发框架
+
+https://github.com/dotnet/winforms
+
+**项目结构：**
+
+```json
+Program.cs // 入口程序
+xxx.Designer.cs // 布局
+xxx.cs // 页面逻辑
+```
+
+**基本布局：**
+
+```json
+Dock // 停靠
+Anchor // 锚点
+```
+
+
+
 # [安装](https://www.cnblogs.com/purvis/p/15137637.html)
 
 # 开源项目
@@ -60,3 +83,4 @@ dt.Rows.Add(new object[] { 1, "朱朱", "男", "32", "二年级", "李四" });
 dt.Rows.Add(new object[] { 1, "朱呆呆", "女", "24", "三年级", "李四" });
 ```
 
+https://www.cnblogs.com/my---world/p/12044302.html
