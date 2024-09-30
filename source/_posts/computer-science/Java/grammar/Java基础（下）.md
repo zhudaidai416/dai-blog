@@ -4,7 +4,7 @@ date: 2024-07-13 22:26:43
 category:
   - [计算机与科学, Java, Java基础]
 tags: Java
-cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/2.jpg
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/1-2.jpg
 ---
 
 # 数组

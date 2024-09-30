@@ -4,7 +4,7 @@ date: 2024-08-28 17:22:48
 category:
   - [计算机与科学, Java, Java基础加强]
 tags: Java
-cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/7.jpg
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/1-7.jpg
 ---
 
 # Arrays

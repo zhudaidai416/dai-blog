@@ -1,8 +1,17 @@
+---
+title: winform
+date: 2024-09-26 10:24:41
+category:
+  - [计算机与科学, C#]
+tags: DevExpress
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/2-3.jpg
+---
+
 # 介绍
 
 windows 桌面端应用开发框架
 
-https://github.com/dotnet/winforms
+<https://github.com/dotnet/winforms>
 
 **项目结构：**
 
@@ -19,15 +28,13 @@ Dock // 停靠
 Anchor // 锚点
 ```
 
-
-
 # [安装](https://www.cnblogs.com/purvis/p/15137637.html)
 
 # 开源项目
 
-📑 [项目1](https://github.com/bsf-gnls/TimeManage.git)
+📑 [项目 1](https://github.com/bsf-gnls/TimeManage.git)
 
-📑 [项目2](https://github.com/leighDEV/simple-todolist-winforms.git)
+📑 [项目 2](https://github.com/leighDEV/simple-todolist-winforms.git)
 
 # 组件库
 
@@ -57,13 +64,13 @@ form2.ShowDialog(); // 打开新窗口
 this.Dispose();
 ```
 
-# 连接mysql数据库
+# 连接 mysql 数据库
 
 出现 `MySql.Data.MySqlClient.MySqlException:“Host 'DESKTOP-1B2EKUI' is not allowed to connect to this MySQL` 错误
 
-解决：https://gitcode.csdn.net/65e83e951a836825ed78b4cc.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTk5NDE2MywiZXhwIjoxNzI4MDIxMjA3LCJpYXQiOjE3Mjc0MTY0MDcsInVzZXJuYW1lIjoibTBfNDg3MDE2NTQifQ.vx4FfLoO6Vq184GfjSOQsyuwu-YHWmd5FREFZFpiiHw&spm=1001.2101.3001.6650.10&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-10-122933316-blog-98814628.235%5Ev43%5Epc_blog_bottom_relevance_base6&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-10-122933316-blog-98814628.235%5Ev43%5Epc_blog_bottom_relevance_base6
+解决：<https://gitcode.csdn.net/65e83e951a836825ed78b4cc.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTk5NDE2MywiZXhwIjoxNzI4MDIxMjA3LCJpYXQiOjE3Mjc0MTY0MDcsInVzZXJuYW1lIjoibTBfNDg3MDE2NTQifQ.vx4FfLoO6Vq184GfjSOQsyuwu-YHWmd5FREFZFpiiHw&spm=1001.2101.3001.6650.10&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-10-122933316-blog-98814628.235%5Ev43%5Epc_blog_bottom_relevance_base6&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-10-122933316-blog-98814628.235%5Ev43%5Epc_blog_bottom_relevance_base6>
 
-https://blog.csdn.net/weixin_46076729/article/details/117897946
+<https://blog.csdn.net/weixin_46076729/article/details/117897946>
 
 # 表格
 
@@ -83,4 +90,4 @@ dt.Rows.Add(new object[] { 1, "朱朱", "男", "32", "二年级", "李四" });
 dt.Rows.Add(new object[] { 1, "朱呆呆", "女", "24", "三年级", "李四" });
 ```
 
-https://www.cnblogs.com/my---world/p/12044302.html
+<https://www.cnblogs.com/my---world/p/12044302.html>

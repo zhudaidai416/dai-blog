@@ -4,7 +4,7 @@ date: 2024-08-17 23:36:08
 category:
   - [计算机与科学, Java, Java基础, Java基础加强]
 tags: Java
-cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/5.jpg
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/1-5.jpg
 ---
 
 # API
