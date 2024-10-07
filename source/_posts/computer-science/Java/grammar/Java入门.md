@@ -4,7 +4,7 @@ date: 2024-07-10 18:22:03
 category:
   - [计算机与科学, Java, Java基础]
 tags: Java
-cover: https://pic2.zhimg.com/v2-cf44c2fdebc32c350cd4fd1c432401bd_r.jpg
+cover: https://img0.baidu.com/it/u=2271031891,3622673671&fm=253&fmt=auto&app=138&f=JPEG?w=1025&h=707
 ---
 
 # 技术体系
