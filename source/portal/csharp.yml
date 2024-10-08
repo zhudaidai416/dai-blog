@@ -1,0 +1,20 @@
+- site: 微软官方文档
+  url: https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp
+  color: "#9d5b8b"
+
+- site: c语言中文网
+  url: https://c.biancheng.net/csharp
+  image: https://c.biancheng.net/templets/new/images/logo.png?v=1.7.08
+  color: "#9d5b8b"
+
+- site: 菜鸟教程
+  url: https://www.runoob.com/csharp/csharp-tutorial.html
+  color: "#9d5b8b"
+
+- site: 学习视频汇总
+  url: https://www.cnblogs.com/Can-daydayup/p/15046838.html#_label1
+  color: "#9d5b8b"
+
+- site: XDZY博客
+  url: https://www.cnblogs.com/xdzy/p/9457738.html
+  color: "#9d5b8b"

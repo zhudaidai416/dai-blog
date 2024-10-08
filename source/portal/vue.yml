@@ -6,7 +6,7 @@
 - site: Vue 3
   url: https://cn.vuejs.org
   image: https://cn.vuejs.org/logo.svg
-  color: "#9d5b8b"
+  color: "#c6d9a3"
 
 - site: Vue CLI
   url: https://cli.vuejs.org
