@@ -34,6 +34,7 @@ menu:
     default: / || user
     bangumis: /bangumis/ || paper-plane
   portal: /portal/ || magic
+  blog: https://myblog.zhudaidai.top/ || home
 
 # 页尾全站统计
 footer:
