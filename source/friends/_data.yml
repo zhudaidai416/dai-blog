@@ -3,27 +3,41 @@
   url: https://shoka.lostyu.me
   desc: 琉璃的医学 & 编程笔记
   image: https://cdn.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg
-  color: "#e9546b"
+  color: "#f16d7a"
 
 - site: 🎐清风.
   owner: gddFeng
   url: https://blog.gddfeng.com
-  color: "#9d5b8b"
+  image: https://blog.gddfeng.com/images/avatar.jpg
+  color: "#d9b8f1"
 
 - site: 囧o(╯□╰)o囧
   owner: 囧o(╯□╰)o囧
   url: https://blog.twinkling.top
   image: https://blog.twinkling.top/images/avatar.jpg
-  color: "#c6d9a3"
+  color: "#b7d28d"
 
 - site: FuFan
   owner: FuFan
-  url: https://fufan1025.github.io
+  url: https://fyfan.cn
+  # https://fufan1025.github.io
   image: https://cdn.jsdelivr.net/gh/fufan1025/fufan1025.github.io@master/assets/avatar.webp
-  color: "#499dd9"
+  color: "#b8f1ed"
 
 - site: 安知鱼
   owner: 安知鱼
   url: https://blog.anheyu.com
   image: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
-  color: "#9d5b8b"
+  color: "#f1b8e4"
+
+- site: 茂茂物语
+  owner: 茂茂物语
+  url: https://notes.fe-mm.com
+  image: https://notes.fe-mm.com/logo.png
+  color: "#b8f1cc"
+
+- site: 萌 Hz | 木白の时记
+  owner: Moe Hz
+  url: https://blog.moehz.com
+  image: https://blog.moehz.com/images/avatar.jpg
+  color: "#aa5b71"
