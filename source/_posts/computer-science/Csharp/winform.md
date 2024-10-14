@@ -88,6 +88,14 @@ public Form1() {
 }
 ```
 
+# 关闭窗口
+
+```csharp
+this.hide(); // 隐藏当前窗口，但会继续占用资源
+this.close(); // 直接关闭当前窗口，以后可以再调用
+this.dispose(); // 关闭当前窗口，以后不可以调用
+```
+
 # 窗口事件
 
 ## 自动添加
@@ -121,7 +129,7 @@ namespace WinFormTest
 Form2 form2 = new Form2();
 this.Hide(); // 关闭当前的窗口
 form2.ShowDialog(); // 打开新窗口
-this.Dispose();
+this.Dispose();。
 ```
 
 ## 手动添加
