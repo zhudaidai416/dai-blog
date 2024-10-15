@@ -7,6 +7,8 @@ tags: DevExpress
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/2-4.jpg
 ---
 
+# [DevExpress 中文文档](https://www.dxper.net/documents)
+
 # 安装
 
 [📑 教程1](https://www.cnblogs.com/purvis/p/15137637.html)
@@ -51,7 +53,7 @@ System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalizatio
 
 4、成功进入，输入 `dir /B *.dll>temp.bat`
 
-5、以文本方式打开汉化包中出现的 `temp.bat`进行编辑：在所有的 DevExpress 前加上 `gacutil -i`
+5、以文本方式打开汉化包中出现的 `temp.bat` 进行编辑：在所有的 DevExpress 前加上 `gacutil -i`
 
 6、在再次运行 `D:\DevExpress 20.2\Components\Bin\Framework\zh-CN>temp.bat`
 
@@ -82,8 +84,92 @@ System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalizatio
 
 派生于 Form，提供了 Form 的更换皮肤功能
 
-- LookAndFeel
+- LookAndFeel：整个项目采用统一风格
   - SkinName：皮肤设置，UserDefaultLookAndFeel 和 UserWindowsXPTheme 设置为 false 才可生效
+- TopMost：窗体置顶
+- WindowState：窗体最大化、最小化、常规
+- ShowInTaskbar：出现在任务栏，默认开启
+
+# SimpleButton
+
+- 外观渐变（单独样式）不生效：LookAndFeel ➡ Style：UItraFlat、UserDefaultLookAndFeel：false
+
+# TextEdit 单行文本框
+
+## 格式化
+
+MaskSetting（属性 ➡ Properties ➡ MaskSetting ➡ 设置格式）
+
+DisplayFormat
+
+- FormatType：Custom（自定义）
+- FormSrting：设置显示的格式，例如：`Price:{0:c2}`
+
+属性Text（string）不一定等于 EditValue（object）
+
+## 文本代替
+
+- PasswordChar：属性 ➡ Properties ➡ PasswordChar
+
+## 提示
+
+- NullText：设置提示文字
+- AllowNullInput：是否允许为空
+- ShowNullValuePrompt：
+
+## 设置文本大小写
+
+- CharacterCasing
+  - Lower：小写
+  - Upper：大写
+
+## 事件
+
+- EditValueChanged：值发生改变后
+- EditValueChanging：值将要发生改变
+
+# ButtonEdit 文本框（内置按钮）
+
+- AutoHeight：自动高度
+
+## 按钮
+
+- ImageOptions：选择 icon
+- King：Glyph（自定义图标）才会显示 icon
+
+## 事件
+
+- ButtonClick：内置按钮事件
+- EditValueChange：判断是否输入、有值
+
++++sucess 演示：不同按钮执行不同语句
+
+```csharp
+private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+{
+  EditorButton btn = e.Button;
+  if (btn.Kind == ButtonPredefines.Ellipsis)
+  {
+    OpenFileDialog file = new OpenFileDialog(); // 打开文件夹
+    if (file.ShowDialog() == DialogResult.OK)
+    {
+      buttonEdit1.EditValue = file.FileName; // 显示文件名
+    }
+  }
+
+  else if (btn.Kind == ButtonPredefines.Glyph && btn.Caption == "Search")
+  {
+    MessageBox.Show("你点击了搜索按钮");
+  }
+
+  else if (btn.Kind == ButtonPredefines.Glyph && btn.Caption == "Add")
+  {
+    MessageBox.Show("你点击了添加按钮");
+  }
+}
+```
+
++++
 
 # GridControl 表格
 
