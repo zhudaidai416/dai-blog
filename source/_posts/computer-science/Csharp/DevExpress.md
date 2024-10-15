@@ -171,6 +171,11 @@ private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Contr
 
 +++
 
+# CheckEdit 单选、复选框
+
+- AllowGrayed：是否允许有第三种状态（不确定状态） ➡ CheckState 出现 Indeterminate
+- AutoHeight：是否自动高度
+
 # GridControl 表格
 
 1、去除 GridView 头上的 `Drag a column header here to group by that column`
