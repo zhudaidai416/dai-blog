@@ -142,7 +142,7 @@ DisplayFormat
 - ButtonClick：内置按钮事件
 - EditValueChange：判断是否输入、有值
 
-+++sucess 演示：不同按钮执行不同语句
++++success 演示：不同按钮执行不同语句
 
 ```csharp
 private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -173,14 +173,33 @@ private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Contr
 
 # CheckEdit 单选、复选框
 
-- AllowGrayed：是否允许有第三种状态（不确定状态） ➡ CheckState 出现 Indeterminate
+- Properties ➡ AllowGrayed：是否允许有第三种状态（不确定状态） ➡ CheckState 出现 Indeterminate
+
 - AutoHeight：是否自动高度
+
+- Properties ➡ CheckBoxOptions ➡ Style：选择样式
+
+- Properties ➡ RadioGroupIndex：设置相同的值，可变成单选
+
+- Properties ➡ GlyphAlignment：选择框位置（居左、居中、居右）
+
+- 设置选中的三种状态值 `checkEdit1.EditValue 来获取`
+
+  - ValueChecked：设置类型才可填入值
+
+  - ValueGrayed
+
+  - ValueUnchecked
+
+初始化时，EditValue 为 false/true，改变勾选状态后，EditValue 的值就是我们设置的值了
 
 # GridControl 表格
 
 1、去除 GridView 头上的 `Drag a column header here to group by that column`
 
 点击 Run Designer ➡ 找到 Views 中的 OptionsView ➡ 将 ShowGroupPanel 设置为 false
+
+BarDockControl
 
 # BarStaticItem
 
