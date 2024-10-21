@@ -205,6 +205,11 @@ private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Contr
 
 # SpinEdit
 
+显示小数点位数
+
+- DisPlayFormat
+- EditFormat
+
 # MemoEdit
 
 # XtraScrollableControl
