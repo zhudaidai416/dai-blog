@@ -7,6 +7,8 @@ tags: DevExpress
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/2-3.jpg
 ---
 
+# [.NET Framework 4.7.1 -  API文档](https://learn.microsoft.com/zh-cn/dotnet/api/?view=netframework-4.7.1)
+
 # 介绍
 
 windows 桌面端应用开发框架
@@ -218,7 +220,7 @@ namespace WindowsFormsApp_learning
 
 # 窗体生命周期
 
-- Load：窗体加载时触发
+- Load：窗体加载时触发，主要用于加载初始数据
 - Shown：窗体显示时触发
 - Activated：窗体获取焦点时触发
 - Deactive：窗体失去焦点时触发
@@ -244,3 +246,65 @@ dt.Rows.Add(new object[] { 1, "朱呆呆", "女", "24", "三年级", "李四" })
 ```
 
 <https://www.cnblogs.com/my---world/p/12044302.html>
+
+# MessageBox 弹出提示框
+
+```csharp
+MessageBox.Show(<字符串> Text, <字符串> Title, <整型> nType, MessageBoxIcon);
+
+- Text：提示框的内容
+- Title：提示框的标题
+- nType：消息框的类型
+- MessageBoxIcon：提示框的图标
+```
+
+四种格式：
+
+```csharp
+MessageBox.Show("内容");
+MessageBox.Show("内容", "标题");
+MessageBox.Show("内容", "标题", MessageBoxButtons.OKCancel);
+MessageBox.Show("内容", "标题", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+```
+
+![MessageBox](https://daiblog.oss-cn-chengdu.aliyuncs.com/csharp/MessageBox.png)
+
+# [MessageBoxButtons 弹框按钮](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.messageboxbuttons?view=netframework-4.7.1)
+
+| 字段名           | 枚举值 | 描述                                 |
+| ---------------- | ------ | ------------------------------------ |
+| OK               | 0      | 消息框包含“确定”按钮                 |
+| OKCancel         | 1      | 消息框包含“确定”和“取消”按钮         |
+| AbortRetryIgnore | 2      | 消息框包含“中止”、“重试”和“忽略”按钮 |
+| YesNoCancel      | 3      | 消息框包含“是”、“否”和“取消”按钮     |
+| YesNo            | 4      | 消息框包含“是”和“否”按钮             |
+| RetryCancel      | 5      | 消息框包含“重试”和“取消”按钮         |
+
+![MessageBoxButtons](https://daiblog.oss-cn-chengdu.aliyuncs.com/csharp/MessageBoxButtons.png)
+
+# [MessageBoxIcon 弹框图标](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.messageboxicon?view=netframework-4.7.1)
+
+|   字段名    | 枚举值 |                             描述                             |
+| :---------: | :----: | :----------------------------------------------------------: |
+|    None     |   0    |                       消息框未包含符号                       |
+|    Hand     |   16   | 消息框包含一个符号，该符号包含一个红色背景圆圈，圆圈中为白色 X 符号 |
+|    Stop     |   16   | 消息框包含一个符号，该符号包含一个红色背景圆圈，圆圈中为白色 X 符号 |
+|    Error    |   16   | 消息框包含一个符号，该符号包含一个红色背景圆圈，圆圈中为白色 X 符号 |
+|  Question   |   32   | 消息框包含一个符号，该符号包含一个圆圈，圆圈中为问号。 不再建议使用问号消息图标，因为这种图标无法清楚地表示特定类型的消息，并且作为问题的消息表述可应用于任何消息类型。 此外，用户可能会将问号符号与帮助信息符合混淆。 因此，请不要在消息框中使用问号符号。 系统继续支持它包含的内容，只为满足反向兼容性 |
+| Exclamation |   48   | 消息框包含一个符号，该符号包含一个黄色背景三角形，三角形中为感叹号 |
+|   Warning   |   48   | 消息框包含一个符号，该符号包含一个黄色背景三角形，三角形中为感叹号 |
+|  Asterisk   |   64   |       消息框包含一个符号，该符号在圆圈中包含小写字母 i       |
+| Information |   64   |       消息框包含一个符号，该符号在圆圈中包含小写字母 i       |
+
+# DialogResult 对话框的返回值
+
+| 字段名 | 枚举值 | 描述                                                      |
+| ------ | ------ | --------------------------------------------------------- |
+| None   | 0      | 从对话框返回了 `Nothing`。 这表明有模式对话框继续运行     |
+| OK     | 1      | 对话框的返回值是 `OK`（通常从标签为“确定”的按钮发送）     |
+| Cancel | 2      | 对话框的返回值是 `Cancel`（通常从标签为“取消”的按钮发送） |
+| Abort  | 3      | 对话框的返回值是 `Abort`（通常从标签为“中止”的按钮发送）  |
+| Retry  | 4      | 对话框的返回值是 `Retry`（通常从标签为“重试”的按钮发送）  |
+| Ignore | 5      | 对话框的返回值是 `Ignore`（通常从标签为“忽略”的按钮发送） |
+| Yes    | 6      | 对话框的返回值是 `Yes`（通常从标签为“是”的按钮发送）      |
+| No     | 7      | 对话框的返回值是 `No`（通常从标签为“否”的按钮发送）       |
