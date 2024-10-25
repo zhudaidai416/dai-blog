@@ -31,8 +31,9 @@ App.config # 当前项目的配置文件
 Form1.cs # 当前窗体的事件逻辑源码
  - Form1.Designer.cs # 当前窗体的控件布局源码
  - Form1.resx # 当前窗体的资源文件（图片、图标、资源等）
+ 
  - 注意：
-  a.Form1.cs和Form1.Designer.cs都定义了Form1类，该类使用了Partial关键词声明，其定义的类可以在多个地方被定义，最后编译的时候会被当作一个类来处理。因此两个文件各司其职，最后合并为一个类编译。
+  a.Form1.cs和Form1.Designer.cs都定义了Form1类，该类使用了Partial关键词声明，其定义的类可以在多个地方被定义，最后编译的时候会被当作一个类来处理。因此两个文件各司其职，最后合并为一个类编译
   b.要手动实现自定义窗体，可以添加自己的类，然后继承Form类即可
 Program.cs # 当前项目程序的主入口 Main，启动项目，运行初始窗口
 ```
@@ -46,7 +47,7 @@ namespace WinFormTest
   static class Program
   {
     /// <summary>
-    /// 应用程序的主入口点。
+    /// 应用程序的主入口点
     /// </summary>
     [STAThread] // Attributes语法，修饰Main方法。示应用程序的默认线程模型是单线程单元(STA)
     static void Main()
@@ -227,7 +228,18 @@ namespace WindowsFormsApp_learning
 - FormClosing：窗体关闭过程中触发
 - FormClosed：窗体关闭完成触发
 
-# 表格
+**窗体加载顺序：**
+
+- 先调用构造函数，初始化变量和控件
+- 触发 Load 事件：进行初始化操作，如加载数据
+- Shown：窗体加载完成并显示之后，会触发 `Shown` 事件。窗体已经在屏幕上可见，可以用来执行一些后续操作，比如启动计时器等
+- Paint 事件：如果窗体需要绘制，`Paint` 事件会在需要重绘时触发。
+- Activated 事件：当窗体变为活动状态时，会触发 `Activated` 事件。这可以用来处理一些与用户交互相关的操作
+- 其他控件的 Load 事件：在窗体加载过程中，内部控件的 `Load` 事件也会被触发，通常是从上到下的顺序
+
+# 基本控件
+
+## 表格
 
 ```csharp
 DataTable dt = new DataTable("学生表");
@@ -247,7 +259,7 @@ dt.Rows.Add(new object[] { 1, "朱呆呆", "女", "24", "三年级", "李四" })
 
 <https://www.cnblogs.com/my---world/p/12044302.html>
 
-# MessageBox 弹出提示框
+## MessageBox 弹出提示框
 
 ```csharp
 MessageBox.Show(<字符串> Text, <字符串> Title, <整型> nType, MessageBoxIcon);
@@ -269,7 +281,7 @@ MessageBox.Show("内容", "标题", MessageBoxButtons.OKCancel, MessageBoxIcon.E
 
 ![MessageBox](https://daiblog.oss-cn-chengdu.aliyuncs.com/csharp/MessageBox.png)
 
-# [MessageBoxButtons 弹框按钮](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.messageboxbuttons?view=netframework-4.7.1)
+## [MessageBoxButtons 弹框按钮](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.messageboxbuttons?view=netframework-4.7.1)
 
 | 字段名           | 枚举值 | 描述                                 |
 | ---------------- | ------ | ------------------------------------ |
@@ -282,7 +294,7 @@ MessageBox.Show("内容", "标题", MessageBoxButtons.OKCancel, MessageBoxIcon.E
 
 ![MessageBoxButtons](https://daiblog.oss-cn-chengdu.aliyuncs.com/csharp/MessageBoxButtons.png)
 
-# [MessageBoxIcon 弹框图标](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.messageboxicon?view=netframework-4.7.1)
+## [MessageBoxIcon 弹框图标](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.messageboxicon?view=netframework-4.7.1)
 
 |   字段名    | 枚举值 |                             描述                             |
 | :---------: | :----: | :----------------------------------------------------------: |
@@ -296,7 +308,7 @@ MessageBox.Show("内容", "标题", MessageBoxButtons.OKCancel, MessageBoxIcon.E
 |  Asterisk   |   64   |       消息框包含一个符号，该符号在圆圈中包含小写字母 i       |
 | Information |   64   |       消息框包含一个符号，该符号在圆圈中包含小写字母 i       |
 
-# DialogResult 对话框的返回值
+## DialogResult 对话框的返回值
 
 | 字段名 | 枚举值 | 描述                                                      |
 | ------ | ------ | --------------------------------------------------------- |
