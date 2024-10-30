@@ -74,6 +74,7 @@ category_map:
   数据库: database
   杂七杂八: other
   C#: Csharp
+  Vue: Vue
 
 tag_map:
 

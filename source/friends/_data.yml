@@ -30,6 +30,12 @@
   image: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
   color: "#f1b8e4"
 
+- site: MIOOR
+  owner: MIOOR
+  url: https://mioor.top
+  image: https://mioor.top/assets/bloggerAvatar.jpg
+  color: "#f1b8e4"
+
 - site: 茂茂物语
   owner: 茂茂物语
   url: https://notes.fe-mm.com
