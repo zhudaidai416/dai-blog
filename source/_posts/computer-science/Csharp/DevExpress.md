@@ -199,6 +199,10 @@ private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Contr
 
 点击 Run Designer ➡ 找到 Views 中的 OptionsView ➡ 将 ShowGroupPanel 设置为 false
 
+# TreeList 树型结构
+
+
+
 # BarDockControl
 
 # DateEdit
