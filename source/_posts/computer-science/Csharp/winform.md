@@ -35,6 +35,7 @@ Form1.cs # 当前窗体的事件逻辑源码
  - 注意：
   a.Form1.cs和Form1.Designer.cs都定义了Form1类，该类使用了Partial关键词声明，其定义的类可以在多个地方被定义，最后编译的时候会被当作一个类来处理。因此两个文件各司其职，最后合并为一个类编译
   b.要手动实现自定义窗体，可以添加自己的类，然后继承Form类即可
+  
 Program.cs # 当前项目程序的主入口 Main，启动项目，运行初始窗口
 ```
 
@@ -67,7 +68,7 @@ namespace WinFormTest
 ```csharp
 private System.Windows.Forms.Button btn_design; // 声明控件
 // 默认的控件初始化方法
-InitializeComponent():{
+InitializeComponent(): {
   this.btn_design = new System.Windows.Forms.Button(); // 定义控件
   this.btn_design.Text = "自定义控件"; // 设置Text属性
   this.btn_design.Location = new Point(40,40); // 设置布局位置Point(x,y)
@@ -128,11 +129,11 @@ namespace WinFormTest
 
 +++
 
-```c#
+```csharp
 Form2 form2 = new Form2();
 this.Hide(); // 关闭当前的窗口
 form2.ShowDialog(); // 打开新窗口
-this.Dispose();。
+this.Dispose();
 ```
 
 ## 手动添加

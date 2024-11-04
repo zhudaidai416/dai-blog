@@ -47,15 +47,15 @@ System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalizatio
 
 1、把汉化包放至安装目录中：`D:\DevExpress 20.2\Components\Bin\Framework`
 
-2、以管理员方式打开 `Developer Command Prompt for VS 2019`（开始菜单查找）
+2、以管理员方式打开 `Developer Command Prompt for VS 2019`（在开始菜单查找）
 
 3、输入 `cd D:\DevExpress 20.2\Components\Bin\Framework\zh-CN`
 
-4、成功进入，输入 `dir /B *.dll>temp.bat`
+4、成功进入，再输入命令 `dir /B *.dll>temp.bat`，将会生成 `temp.bat` 文件
 
 5、以文本方式打开汉化包中出现的 `temp.bat` 进行编辑：在所有的 DevExpress 前加上 `gacutil -i`
 
-6、在再次运行 `D:\DevExpress 20.2\Components\Bin\Framework\zh-CN>temp.bat`
+6、再次运行 `D:\DevExpress 20.2\Components\Bin\Framework\zh-CN>temp.bat`
 
 # LabelControl 文本
 
@@ -199,9 +199,29 @@ private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Contr
 
 点击 Run Designer ➡ 找到 Views 中的 OptionsView ➡ 将 ShowGroupPanel 设置为 false
 
-# TreeList 树型结构
+# TreeList 树形结构
 
+## 单击节点以选中或取消选中
 
+确保你的节点支持 CheckState 属性。如果没有设置 CheckBox，可能需要先启用
+
+```csharp
+private void treeList2_NodeClick(object sender, DevExpress.XtraTreeList.NodeClickEventArgs e)
+{
+    // 写法1：检查当前节点的 CheckState
+    if (e.Node.CheckState == CheckState.Checked)
+    {
+        e.Node.CheckState = CheckState.Unchecked; // 取消选中
+    }
+    else
+    {
+        e.Node.CheckState = CheckState.Checked; // 选中
+    }
+    
+    // 写法2
+    e.Node.CheckState = e.Node.CheckState == CheckState.Checked ? CheckState.Unchecked : CheckState.Checked;
+}
+```
 
 # BarDockControl
 
