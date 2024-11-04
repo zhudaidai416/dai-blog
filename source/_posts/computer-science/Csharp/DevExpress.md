@@ -4,16 +4,16 @@ date: 2024-09-29 09:19:57
 category:
   - [计算机与科学, C#]
 tags: DevExpress
-cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/2-4.jpg
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/3-5.jpg
 ---
 
 # [DevExpress 中文文档](https://www.dxper.net/documents)
 
 # 安装
 
-[📑 教程1](https://www.cnblogs.com/purvis/p/15137637.html)
+[📑 教程 1](https://www.cnblogs.com/purvis/p/15137637.html)
 
-[📑 教程2](https://blog.csdn.net/qq_41812739/article/details/116596129)
+[📑 教程 2](https://blog.csdn.net/qq_41812739/article/details/116596129)
 
 # vs2019 添加 DevExpress
 
@@ -105,7 +105,7 @@ DisplayFormat
 - FormatType：Custom（自定义）
 - FormSrting：设置显示的格式，例如：`Price:{0:c2}`
 
-属性Text（string）不一定等于 EditValue（object）
+属性 Text（string）不一定等于 EditValue（object）
 
 ## 文本代替
 
@@ -217,7 +217,7 @@ private void treeList2_NodeClick(object sender, DevExpress.XtraTreeList.NodeClic
     {
         e.Node.CheckState = CheckState.Checked; // 选中
     }
-    
+
     // 写法2
     e.Node.CheckState = e.Node.CheckState == CheckState.Checked ? CheckState.Unchecked : CheckState.Checked;
 }
@@ -237,8 +237,6 @@ private void treeList2_NodeClick(object sender, DevExpress.XtraTreeList.NodeClic
 # MemoEdit
 
 # XtraScrollableControl
-
-
 
 # BarStaticItem
 
