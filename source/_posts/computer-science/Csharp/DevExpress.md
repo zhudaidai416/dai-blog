@@ -199,6 +199,31 @@ private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Contr
 
 点击 Run Designer ➡ 找到 Views 中的 OptionsView ➡ 将 ShowGroupPanel 设置为 false
 
+# GridView
+
+## 选中取消
+
+```csharp
+// 方法1：取消选中gridView中的所有行
+gridView.ClearSelection();
+
+// 方法2：遍历当前选中的行并逐一取消选择
+int[] selectedRows = gridView.GetSelectedRows(); // 获取当前选中行的索引
+foreach (int rowHandle in selectedRows) // 遍历选中的行并取消选中
+{
+    gridView.UnselectRow(rowHandle);
+}
+```
+
+## 获取指定行的值
+
+```csharp
+// 获取指定行的值
+gridView.GetRowCellValue(idx, "USER_NAME").ToString().Trim(); // 获取第idx行USER_NAME列的值
+// 设置指定行的值
+gridView.SetRowCellValue(idx, "USER_NAME", "要赋的值");
+```
+
 # TreeList 树形结构
 
 ## 单击节点以选中或取消选中
