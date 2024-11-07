@@ -4,7 +4,7 @@ date: 2024-09-29 09:19:57
 category:
   - [计算机与科学, C#]
 tags: DevExpress
-cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/3-5.jpg
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/3-3.jpg
 ---
 
 # [DevExpress 中文文档](https://www.dxper.net/documents)

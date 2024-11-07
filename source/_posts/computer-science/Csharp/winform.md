@@ -3,8 +3,8 @@ title: WinForm
 date: 2024-09-26 10:24:41
 category:
   - [计算机与科学, C#]
-tags: DevExpress
-cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/3-4.jpg
+tags: WinForm
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/3-2.jpg
 ---
 
 # [.NET Framework 4.7.1 - API 文档](https://learn.microsoft.com/zh-cn/dotnet/api/?view=netframework-4.7.1)
