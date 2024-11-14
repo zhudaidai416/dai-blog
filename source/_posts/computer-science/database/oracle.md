@@ -377,7 +377,7 @@ select deptno,trunc(avg(sal)) 平均工资 from emp group by deptno;
 
 **区别**
 
-- having 服务对象是 `group by`，where 服务对象是`字段`
+- having 服务对象是 `group by`，where 服务对象是 `字段`
 - where 不能用分组函数，having 通过条件过滤分组函数
 - having 是在分组完成后执行，where 是在分组前执行，这也是为什么 where 不能服务 group by 的原因
 
