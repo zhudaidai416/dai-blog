@@ -34,7 +34,7 @@
   owner: MIOOR
   url: https://mioor.top
   image: https://mioor.top/assets/bloggerAvatar.jpg
-  color: "#f1b8e4"
+  color: "#f28860"
 
 - site: 茂茂物语
   owner: 茂茂物语
@@ -47,3 +47,9 @@
   url: https://blog.moehz.com
   image: https://blog.moehz.com/images/avatar.jpg
   color: "#aa5b71"
+
+- site: 哒哒的花园
+  owner: 哒哒
+  url: https://www.dadagarden.fun
+  image: https://www.dadagarden.fun/logo1.png
+  color: "#f1f1b8"

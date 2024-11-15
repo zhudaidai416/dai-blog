@@ -578,3 +578,26 @@ select * from (
 ```
 
 # PLSQL
+
+# 处理空值函数
+
+```sql
+-- 如果expr1为空，则返回expr2
+NVL(expr1, expr2)
+
+-- 如果expr1为空，则返回expr3，否则返回expr2
+NVL2(expr1, expr2, expr3)
+
+-- 如果expr1=expr2,返回空，否则返回expr1，要求两个表达式数据类型一致
+NULLIF(expr1, expr2)
+
+-- 返回第一个非空参数，若都为空，则返回NULL
+COALESCE(expr1, expr2, expr3, ...)
+
+-- 返回第一个匹配的搜索值，并返回对应的结果
+DECODE
+
+-- 返回第一个匹配的搜索值，并返回对应的结果
+CASE
+```
+

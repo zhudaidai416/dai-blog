@@ -27,7 +27,7 @@ cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/4-2.jpg
 在 Vue3 中
 
 - 编程语言：JavaScript、TypeScript
-- 代码风格：组合式API、选项式API
+- 代码风格：组合式 API、选项式 API
 - 简写形式：setup 语法糖
 
 # 介绍
@@ -44,7 +44,7 @@ cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/4-2.jpg
 # 查看@vue/cli版本，确保@vue/cli版本在4.5.0以上
 vue --version
 
-# 安装或者升级你的@vue/cli 
+# 安装或者升级你的@vue/cli
 npm install -g @vue/cli
 
 # 执行创建命令
@@ -124,4 +124,3 @@ Options 类型的 API，数据、方法、计算属性等，是分散在：`data
 <img src="https://daiblog.oss-cn-chengdu.aliyuncs.com/vue/1696662249851-db6403a1-acb5-481a-88e0-e1e34d2ef53a.gif" alt="3.gif" style="height:300px;border-radius:10px" />
 
 <img src="https://daiblog.oss-cn-chengdu.aliyuncs.com/vue/1696662256560-7239b9f9-a770-43c1-9386-6cc12ef1e9c0.gif" alt="4.gif" style="height:300px;border-radius:10px" />
-
