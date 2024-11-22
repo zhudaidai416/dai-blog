@@ -195,7 +195,7 @@ export default {
     }
     // 返回一个对象，对象中的内容，模板中可以直接使用
     return { name, changeName };
-  },
+  }
 };
 </script>
 ```
@@ -232,7 +232,7 @@ export default {
 
 <script lang="ts">
 export default {
-  name: "Person",
+  name: "Person"
 };
 </script>
 
@@ -258,7 +258,7 @@ import { defineConfig } from "vite";
 import VueSetupExtend from "vite-plugin-vue-setup-extend";
 
 export default defineConfig({
-  plugins: [VueSetupExtend()],
+  plugins: [VueSetupExtend()]
 });
 ```
 
@@ -322,7 +322,7 @@ import { reactive } from "vue";
 let games = reactive([
   { id: 1, name: "开心消消乐" },
   { id: 2, name: "王者荣耀" },
-  { id: 3, name: "蛋仔派对" },
+  { id: 3, name: "蛋仔派对" }
 ]);
 function changeFirstGame() {
   games[0].name = "英雄联盟";
@@ -351,7 +351,7 @@ import { ref } from "vue";
 let games = ref([
   { id: 1, name: "开心消消乐" },
   { id: 2, name: "王者荣耀" },
-  { id: 3, name: "蛋仔派对" },
+  { id: 3, name: "蛋仔派对" }
 ]);
 function changeFirstGame() {
   games.value[0].name = "英雄联盟";
@@ -388,7 +388,7 @@ function changeFirstGame() {
   import { ref, reactive } from "vue";
   let car = reactive({
     name: "奔驰",
-    price: 100000,
+    price: 100000
   });
   function changePrice() {
     car.price += 10000;
@@ -488,7 +488,7 @@ let fullName = computed({
   set(val) {
     firstName.value = val.split("-")[0];
     lastName.value = val.split("-")[1];
-  },
+  }
 });
 function changeFullName() {
   fullName.value = "li-si";
@@ -571,7 +571,7 @@ import { ref, watch } from "vue";
 
 let person = ref({
   name: "张三",
-  age: 18,
+  age: 18
 });
 function changeName() {
   person.value.name += "~";
@@ -632,14 +632,14 @@ import { reactive, watch } from "vue";
 
 let person = reactive({
   name: "张三",
-  age: 18,
+  age: 18
 });
 let obj = reactive({
   a: {
     b: {
-      c: 666,
-    },
-  },
+      c: 666
+    }
+  }
 });
 function changeName() {
   person.name += "~";
@@ -700,8 +700,8 @@ let person = reactive({
   age: 18,
   car: {
     c1: "奔驰",
-    c2: "宝马",
-  },
+    c2: "宝马"
+  }
 });
 function changeName() {
   person.name += "~";
@@ -768,8 +768,8 @@ let person = reactive({
   age: 18,
   car: {
     c1: "奔驰",
-    c2: "宝马",
-  },
+    c2: "宝马"
+  }
 });
 function changeName() {
   person.name += "~";
@@ -837,7 +837,7 @@ function changeSum() {
 }
 
 // watch：需要明确指出要监视的数据
-watch([temp, height], (value) => {
+watch([temp, height], value => {
   const [newTemp, newHeight] = value; // 从value中获取最新的temp值、height值
   if (newTemp >= 50 || newHeight >= 20) {
     console.log("联系服务器");
@@ -938,10 +938,12 @@ defineExpose({ name, age });
 
 # props
 
++++success 示例
+
 types/index.ts
 
-```js
-// 定义接口，限制每个Person对象的格式
+```ts
+// 定义接口，限制Person对象的格式
 export interface PersonInter {
   id: string;
   name: string;
@@ -952,7 +954,7 @@ export interface PersonInter {
 export type Persons = Array<PersonInter>;
 ```
 
-App.vue
+App.vue（父组件）
 
 ```vue
 <template>
@@ -967,41 +969,43 @@ import { type Persons } from "./types";
 let persons = reactive<Persons>([
   { id: "e98219e12", name: "张三", age: 18 },
   { id: "e98219e13", name: "李四", age: 19 },
-  { id: "e98219e14", name: "王五", age: 20 },
+  { id: "e98219e14", name: "王五", age: 20 }
 ]);
 </script>
 ```
 
-Person.vue
+Person.vue（子组件）
 
-```Vue
+```vue
 <template>
-<div class="person">
-<ul>
-  <li v-for="item in list" :key="item.id">
-     {{item.name}}--{{item.age}}
-   </li>
- </ul>
-</div>
+  <div class="person">
+    <ul>
+      <li v-for="item in list" :key="item.id">
+        {{ item.name }}--{{ item.age }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts" setup name="Person">
-import {defineProps} from 'vue'
-import {type PersonInter} from '@/types'
+import { defineProps } from "vue";
+import { type PersonInter } from "@/types";
 
 // 写法1：仅接收
 // const props = defineProps(['list'])
 
-// 写法2：接收+限制类型
+// 写法2：接收 + 限制类型
 // defineProps<{list:Persons}>()
 
-// 写法3：接收+限制类型+指定默认值+限制必要性
-let props = withDefaults(defineProps<{list?:Persons}>(),{
-  list:()=>[{id:'asdasg01',name:'小猪佩奇',age:18}]
-})
-console.log(props)
+// 写法3：接收 + 限制类型 + 指定默认值 + 限制必要性
+let props = withDefaults(defineProps<{ list?: Persons }>(), {
+  list: () => [{ id: "asdasg01", name: "呆呆", age: 18 }]
+});
+console.log(props);
 </script>
 ```
+
++++
 
 # 生命周期
 
@@ -1047,12 +1051,10 @@ import {
   onBeforeUpdate,
   onUpdated,
   onBeforeUnmount,
-  onUnmounted,
+  onUnmounted
 } from "vue";
 
-// 数据
 let sum = ref(0);
-// 方法
 function changeSum() {
   sum.value += 1;
 }
@@ -1086,3 +1088,96 @@ onUnmounted(() => {
 - 什么是 hook？本质是一个函数，把 setup 函数中使用的 `Composition API` 进行了封装，类似于 vue2.x 中的`mixin`
 
 - 自定义 hook 的优势：复用代码，让 setup 中的逻辑更清楚易懂
+
++++success 示例
+
+useSum.ts
+
+```ts
+import { ref, onMounted } from "vue";
+
+export default function () {
+  let sum = ref(0);
+  const increment = () => {
+    sum.value += 1;
+  };
+  const decrement = () => {
+    sum.value -= 1;
+  };
+  onMounted(() => {
+    increment();
+  });
+
+  // 向外部暴露数据
+  return { sum, increment, decrement };
+}
+```
+
+useDog.ts
+
+```ts
+import { reactive, onMounted } from "vue";
+import axios, { AxiosError } from "axios";
+
+export default function () {
+  let dogList = reactive<string[]>([]);
+  async function getDog() {
+    try {
+      // 发请求
+      let { data } = await axios.get(
+        "https://dog.ceo/api/breed/pembroke/images/random"
+      );
+      // 维护数据
+      dogList.push(data.message);
+    } catch (error) {
+      // 处理错误
+      const err = <AxiosError>error;
+      console.log(err.message);
+    }
+  }
+
+  // 挂载钩子
+  onMounted(() => {
+    getDog();
+  });
+
+  // 向外部暴露数据
+  return { dogList, getDog };
+}
+```
+
+组件具体使用
+
+```vue
+<template>
+  <h2>当前求和为：{{ sum }}</h2>
+  <button @click="increment">点我+1</button>
+  <button @click="decrement">点我-1</button>
+  <hr />
+  <img
+    v-for="(u, index) in dogList.urlList"
+    :key="index"
+    :src="(u as string)"
+  />
+  <span v-show="dogList.isLoading">加载中...</span><br />
+  <button @click="getDog">再来一只狗</button>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "App"
+});
+</script>
+
+<script setup lang="ts">
+import useSum from "./hooks/useSum";
+import useDog from "./hooks/useDog";
+
+let { sum, increment, decrement } = useSum();
+let { dogList, getDog } = useDog();
+</script>
+```
+
++++

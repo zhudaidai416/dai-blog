@@ -1,5 +1,5 @@
 ---
-title: winrar破解
+title: winrar 破解
 date: 2024-11-18 11:32:53
 categories:
   - [杂七杂八]
@@ -9,7 +9,7 @@ cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/3-4.jpg
 
 :spiral_notepad: 转载的[文章](https://blog.csdn.net/qq_38996170/article/details/89258536)出处
 
-1、打开 WinRAR 的安装目录
+1、打开 [WinRAR](https://www.winrar.com.cn/) 的安装目录
 
 2、在这个目录下，创建一个 `rarreg.txt` 文件
 
