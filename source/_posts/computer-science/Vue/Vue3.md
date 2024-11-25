@@ -1,5 +1,5 @@
 ---
-title: Vue3语法学习
+title: Vue3 语法学习
 date: 2024-11-14 17:04:45
 category:
   - [计算机与科学, Vue]
@@ -177,10 +177,8 @@ Vue3 中一个新的配置项，值是一个函数，它是 `Composition API` **
 
 ```vue
 <template>
-  <div>
-    <h2>姓名：{{ name }}</h2>
-    <button @click="changeName">修改名字</button>
-  </div>
+  <h2>姓名：{{ name }}</h2>
+  <button @click="changeName">修改名字</button>
 </template>
 
 <script lang="ts">
@@ -224,10 +222,8 @@ export default {
 
 ```vue
 <template>
-  <div>
-    <h2>姓名：{{ name }}</h2>
-    <button @click="changeName">修改名字</button>
-  </div>
+  <h2>姓名：{{ name }}</h2>
+  <button @click="changeName">修改名字</button>
 </template>
 
 <script lang="ts">
@@ -281,10 +277,8 @@ export default defineConfig({
 
 ```vue
 <template>
-  <div>
-    <h2>姓名：{{ name }}</h2>
-    <button @click="changeName">修改名字</button>
-  </div>
+  <h2>姓名：{{ name }}</h2>
+  <button @click="changeName">修改名字</button>
 </template>
 
 <script setup lang="ts" name="Person">
@@ -308,13 +302,11 @@ function changeName() {
 
 ```vue
 <template>
-  <div>
-    <h2>游戏列表：</h2>
-    <ul>
-      <li v-for="g in games" :key="g.id">{{ g.name }}</li>
-    </ul>
-    <button @click="changeFirstGame">修改游戏</button>
-  </div>
+  <h2>游戏列表：</h2>
+  <ul>
+    <li v-for="g in games" :key="g.id">{{ g.name }}</li>
+  </ul>
+  <button @click="changeFirstGame">修改游戏</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -337,13 +329,11 @@ function changeFirstGame() {
 
 ```vue
 <template>
-  <div>
-    <h2>游戏列表：</h2>
-    <ul>
-      <li v-for="g in games" :key="g.id">{{ g.name }}</li>
-    </ul>
-    <button @click="changeFirstGame">修改游戏</button>
-  </div>
+  <h2>游戏列表：</h2>
+  <ul>
+    <li v-for="g in games" :key="g.id">{{ g.name }}</li>
+  </ul>
+  <button @click="changeFirstGame">修改游戏</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -378,12 +368,10 @@ function changeFirstGame() {
 
   ```vue
   <template>
-    <div>
-      <h2>一辆{{ car.name }},价值：{{ car.price }}</h2>
-      <button @click="changeCar">修改车信息</button>
-    </div>
+    <h2>一辆{{ car.name }},价值：{{ car.price }}</h2>
+    <button @click="changeCar">修改车信息</button>
   </template>
-  
+
   <script lang="ts" setup name="Person">
   import { ref, reactive } from "vue";
   let car = reactive({
@@ -418,14 +406,12 @@ function changeFirstGame() {
 
 ```vue
 <template>
-  <div>
-    <h2>姓名：{{ person.name }}</h2>
-    <h2>年龄：{{ person.age }}</h2>
-    <h2>性别：{{ person.sex }}</h2>
-    <button @click="changeName">修改名字</button>
-    <button @click="changeAge">修改年龄</button>
-    <button @click="changeSex">修改性别</button>
-  </div>
+  <h2>姓名：{{ person.name }}</h2>
+  <h2>年龄：{{ person.age }}</h2>
+  <h2>性别：{{ person.sex }}</h2>
+  <button @click="changeName">修改名字</button>
+  <button @click="changeAge">修改年龄</button>
+  <button @click="changeSex">修改性别</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -515,11 +501,9 @@ function changeFullName() {
 
 ```vue
 <template>
-  <div>
-    <h1>情况一：监视【ref】定义的【基本类型】数据</h1>
-    <h2>当前求和为：{{ sum }}</h2>
-    <button @click="changeSum">点我sum+1</button>
-  </div>
+  <h1>情况一：监视【ref】定义的【基本类型】数据</h1>
+  <h2>当前求和为：{{ sum }}</h2>
+  <button @click="changeSum">点我sum+1</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -556,14 +540,12 @@ const stopWatch = watch(sum, (newValue, oldValue) => {
 
 ```vue
 <template>
-  <div>
-    <h1>情况二：监视【ref】定义的【对象类型】数据</h1>
-    <h2>姓名：{{ person.name }}</h2>
-    <h2>年龄：{{ person.age }}</h2>
-    <button @click="changeName">修改名字</button>
-    <button @click="changeAge">修改年龄</button>
-    <button @click="changePerson">修改整个人</button>
-  </div>
+  <h1>情况二：监视【ref】定义的【对象类型】数据</h1>
+  <h2>姓名：{{ person.name }}</h2>
+  <h2>年龄：{{ person.age }}</h2>
+  <button @click="changeName">修改名字</button>
+  <button @click="changeAge">修改年龄</button>
+  <button @click="changePerson">修改整个人</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -614,17 +596,15 @@ watch(
 
 ```vue
 <template>
-  <div>
-    <h1>情况三：监视【reactive】定义的【对象类型】数据</h1>
-    <h2>姓名：{{ person.name }}</h2>
-    <h2>年龄：{{ person.age }}</h2>
-    <button @click="changeName">修改名字</button>
-    <button @click="changeAge">修改年龄</button>
-    <button @click="changePerson">修改整个人</button>
-    <hr />
-    <h2>测试：{{ obj.a.b.c }}</h2>
-    <button @click="test">修改obj.a.b.c</button>
-  </div>
+  <h1>情况三：监视【reactive】定义的【对象类型】数据</h1>
+  <h2>姓名：{{ person.name }}</h2>
+  <h2>年龄：{{ person.age }}</h2>
+  <button @click="changeName">修改名字</button>
+  <button @click="changeAge">修改年龄</button>
+  <button @click="changePerson">修改整个人</button>
+  <hr />
+  <h2>测试：{{ obj.a.b.c }}</h2>
+  <button @click="test">修改obj.a.b.c</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -679,17 +659,15 @@ watch(obj, (newValue, oldValue) => {
 
 ```vue
 <template>
-  <div>
-    <h1>情况四：监视【ref】或【reactive】定义的【对象类型】数据中的某个属性</h1>
-    <h2>姓名：{{ person.name }}</h2>
-    <h2>年龄：{{ person.age }}</h2>
-    <h2>汽车：{{ person.car.c1 }}、{{ person.car.c2 }}</h2>
-    <button @click="changeName">修改名字</button>
-    <button @click="changeAge">修改年龄</button>
-    <button @click="changeC1">修改第一台车</button>
-    <button @click="changeC2">修改第二台车</button>
-    <button @click="changeCar">修改整个车</button>
-  </div>
+  <h1>情况四：监视【ref】或【reactive】定义的【对象类型】数据中的某个属性</h1>
+  <h2>姓名：{{ person.name }}</h2>
+  <h2>年龄：{{ person.age }}</h2>
+  <h2>汽车：{{ person.car.c1 }}、{{ person.car.c2 }}</h2>
+  <button @click="changeName">修改名字</button>
+  <button @click="changeAge">修改年龄</button>
+  <button @click="changeC1">修改第一台车</button>
+  <button @click="changeC2">修改第二台车</button>
+  <button @click="changeCar">修改整个车</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -747,17 +725,15 @@ watch(
 
 ```vue
 <template>
-  <div>
-    <h1>情况五：监视上述的多个数据</h1>
-    <h2>姓名：{{ person.name }}</h2>
-    <h2>年龄：{{ person.age }}</h2>
-    <h2>汽车：{{ person.car.c1 }}、{{ person.car.c2 }}</h2>
-    <button @click="changeName">修改名字</button>
-    <button @click="changeAge">修改年龄</button>
-    <button @click="changeC1">修改第一台车</button>
-    <button @click="changeC2">修改第二台车</button>
-    <button @click="changeCar">修改整个车</button>
-  </div>
+  <h1>情况五：监视上述的多个数据</h1>
+  <h2>姓名：{{ person.name }}</h2>
+  <h2>年龄：{{ person.age }}</h2>
+  <h2>汽车：{{ person.car.c1 }}、{{ person.car.c2 }}</h2>
+  <button @click="changeName">修改名字</button>
+  <button @click="changeAge">修改年龄</button>
+  <button @click="changeC1">修改第一台车</button>
+  <button @click="changeC2">修改第二台车</button>
+  <button @click="changeCar">修改整个车</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -815,13 +791,11 @@ watch(
 
 ```vue
 <template>
-  <div>
-    <h1>需求：水温达到50℃，或水位达到20cm，则联系服务器</h1>
-    <h2 id="demo">水温：{{ temp }}</h2>
-    <h2>水位：{{ height }}</h2>
-    <button @click="changePrice">水温+1</button>
-    <button @click="changeSum">水位+10</button>
-  </div>
+  <h1>需求：水温达到50℃，或水位达到20cm，则联系服务器</h1>
+  <h2 id="demo">水温：{{ temp }}</h2>
+  <h2>水位：{{ height }}</h2>
+  <button @click="changePrice">水温+1</button>
+  <button @click="changeSum">水位+10</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -873,12 +847,10 @@ const stopWatch = watchEffect(() => {
 
 ```vue
 <template>
-  <div>
-    <h1 ref="title1">尚硅谷</h1>
-    <h2 ref="title2">前端</h2>
-    <h3 ref="title3">Vue</h3>
-    <button @click="showLog">点我打印元素</button>
-  </div>
+  <h1 ref="title1">尚硅谷</h1>
+  <h2 ref="title2">前端</h2>
+  <h3 ref="title3">Vue</h3>
+  <button @click="showLog">点我打印元素</button>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -978,13 +950,9 @@ Person.vue（子组件）
 
 ```vue
 <template>
-  <div class="person">
-    <ul>
-      <li v-for="item in list" :key="item.id">
-        {{ item.name }}--{{ item.age }}
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li v-for="item in list" :key="item.id">{{ item.name }}--{{ item.age }}</li>
+  </ul>
 </template>
 
 <script lang="ts" setup name="Person">
@@ -1037,10 +1005,8 @@ Vue 组件实例在创建时要经历一系列的初始化步骤，在此过程�
 
 ```vue
 <template>
-  <div class="person">
-    <h2>当前求和为：{{ sum }}</h2>
-    <button @click="changeSum">点我sum+1</button>
-  </div>
+  <h2>当前求和为：{{ sum }}</h2>
+  <button @click="changeSum">点我sum+1</button>
 </template>
 
 <script lang="ts" setup name="Person">
