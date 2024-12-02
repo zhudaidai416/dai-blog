@@ -175,26 +175,26 @@ Vue3 中一个新的配置项，值是一个函数，它是 `Composition API` **
 - setup 访问 this 是 `undefined`
 - setup 函数会在 `beforeCreate` 之前调用，它是“领先”所有钩子执行的
 
-```vue
+```html
 <template>
   <h2>姓名：{{ name }}</h2>
   <button @click="changeName">修改名字</button>
 </template>
 
 <script lang="ts">
-export default {
-  name: "Person",
-  setup() {
-    // 原来写在data中（注意：此时的name不是响应式数据）
-    let name = "张三";
-    function changeName() {
-      name = "李四";
-      console.log(name);
+  export default {
+    name: "Person",
+    setup() {
+      // 原来写在data中（注意：此时的name不是响应式数据）
+      let name = "张三";
+      function changeName() {
+        name = "李四";
+        console.log(name);
+      }
+      // 返回一个对象，对象中的内容，模板中可以直接使用
+      return { name, changeName };
     }
-    // 返回一个对象，对象中的内容，模板中可以直接使用
-    return { name, changeName };
-  }
-};
+  };
 </script>
 ```
 
@@ -220,23 +220,23 @@ export default {
 
 可以把 setup 独立出去
 
-```vue
+```html
 <template>
   <h2>姓名：{{ name }}</h2>
   <button @click="changeName">修改名字</button>
 </template>
 
 <script lang="ts">
-export default {
-  name: "Person"
-};
+  export default {
+    name: "Person"
+  };
 </script>
 
 <script setup lang="ts">
-let name = "张三";
-function changName() {
-  name = "李四"; // 注意：此时这么修改name页面是不变化的
-}
+  let name = "张三";
+  function changName() {
+    name = "李四"; // 注意：此时这么修改name页面是不变化的
+  }
 </script>
 ```
 
@@ -260,7 +260,7 @@ export default defineConfig({
 
 此时代码可简化为：
 
-```vue
+```html
 <script setup lang="ts" name="Person"></script>
 ```
 
@@ -275,21 +275,21 @@ export default defineConfig({
   - JS 中操作数据需要：`xxx.value`，但模板中不需要 `.value`，直接使用即可
   - 对于 `let name = ref('张三')` 来说，`name` 不是响应式的，`name.value` 是响应式的
 
-```vue
+```html
 <template>
   <h2>姓名：{{ name }}</h2>
   <button @click="changeName">修改名字</button>
 </template>
 
 <script setup lang="ts" name="Person">
-import { ref } from "vue";
-// name是一个RefImpl的实例对象，简称ref对象，它们的value属性是响应式的
-let name = ref("张三");
-function changeName() {
-  // JS中操作ref对象时候需要.value
-  name.value = "李四";
-  console.log(name.value);
-}
+  import { ref } from "vue";
+  // name是一个RefImpl的实例对象，简称ref对象，它们的value属性是响应式的
+  let name = ref("张三");
+  function changeName() {
+    // JS中操作ref对象时候需要.value
+    name.value = "李四";
+    console.log(name.value);
+  }
 </script>
 ```
 
@@ -300,7 +300,7 @@ function changeName() {
 - **返回值**：一个 `Proxy` 的实例对象，简称：响应式对象
 - **注意点**：reactive 定义的响应式数据是“深层次”的
 
-```vue
+```html
 <template>
   <h2>游戏列表：</h2>
   <ul>
@@ -310,15 +310,15 @@ function changeName() {
 </template>
 
 <script lang="ts" setup name="Person">
-import { reactive } from "vue";
-let games = reactive([
-  { id: 1, name: "开心消消乐" },
-  { id: 2, name: "王者荣耀" },
-  { id: 3, name: "蛋仔派对" }
-]);
-function changeFirstGame() {
-  games[0].name = "英雄联盟";
-}
+  import { reactive } from "vue";
+  let games = reactive([
+    { id: 1, name: "开心消消乐" },
+    { id: 2, name: "王者荣耀" },
+    { id: 3, name: "蛋仔派对" }
+  ]);
+  function changeFirstGame() {
+    games[0].name = "英雄联盟";
+  }
 </script>
 ```
 
@@ -327,7 +327,7 @@ function changeFirstGame() {
 - 其实 ref 接收的数据可以是：**基本类型**、**对象类型**
 - 若 ref 接收的是对象类型，内部其实也是调用了 reactive 函数
 
-```vue
+```html
 <template>
   <h2>游戏列表：</h2>
   <ul>
@@ -337,15 +337,15 @@ function changeFirstGame() {
 </template>
 
 <script lang="ts" setup name="Person">
-import { ref } from "vue";
-let games = ref([
-  { id: 1, name: "开心消消乐" },
-  { id: 2, name: "王者荣耀" },
-  { id: 3, name: "蛋仔派对" }
-]);
-function changeFirstGame() {
-  games.value[0].name = "英雄联盟";
-}
+  import { ref } from "vue";
+  let games = ref([
+    { id: 1, name: "开心消消乐" },
+    { id: 2, name: "王者荣耀" },
+    { id: 3, name: "蛋仔派对" }
+  ]);
+  function changeFirstGame() {
+    games.value[0].name = "英雄联盟";
+  }
 </script>
 ```
 
@@ -366,26 +366,26 @@ function changeFirstGame() {
 
   +++success 示例
 
-  ```vue
+  ```html
   <template>
     <h2>一辆{{ car.name }},价值：{{ car.price }}</h2>
     <button @click="changeCar">修改车信息</button>
   </template>
 
   <script lang="ts" setup name="Person">
-  import { ref, reactive } from "vue";
-  let car = reactive({
-    name: "奔驰",
-    price: 100000
-  });
-  function changePrice() {
-    car.price += 10000;
-  }
-  function changeCar() {
-    car = { name: "宝马", price: 200000 }; // 页面不更新
-    car = Object.assign(car, { name: "宝马", price: 200000 });
-    // car.value = { name: "宝马", price: 200000 } // 若此时car用ref来定义
-  }
+    import { ref, reactive } from "vue";
+    let car = reactive({
+      name: "奔驰",
+      price: 100000
+    });
+    function changePrice() {
+      car.price += 10000;
+    }
+    function changeCar() {
+      car = { name: "宝马", price: 200000 }; // 页面不更新
+      car = Object.assign(car, { name: "宝马", price: 200000 });
+      // car.value = { name: "宝马", price: 200000 } // 若此时car用ref来定义
+    }
   </script>
   ```
 
@@ -404,7 +404,7 @@ function changeFirstGame() {
 
 +++success 示例
 
-```vue
+```html
 <template>
   <h2>姓名：{{ person.name }}</h2>
   <h2>年龄：{{ person.age }}</h2>
@@ -415,23 +415,23 @@ function changeFirstGame() {
 </template>
 
 <script lang="ts" setup name="Person">
-import { ref, reactive, toRefs, toRef } from 'vue'
+  import { ref, reactive, toRefs, toRef } from 'vue'
 
-let person = reactive({ name: '张三', age: 18, sex: '男's })
-// 通过toRefs将person对象中的n个属性批量取出，且依然保持响应式的能力
-let { name, sex } =  toRefs(person)
-// 通过toRef将person对象中的sex属性取出，且依然保持响应式的能力
-let age = toRef(person,'age')
+  let person = reactive({ name: '张三', age: 18, sex: '男's })
+  // 通过toRefs将person对象中的n个属性批量取出，且依然保持响应式的能力
+  let { name, sex } =  toRefs(person)
+  // 通过toRef将person对象中的sex属性取出，且依然保持响应式的能力
+  let age = toRef(person,'age')
 
-function changeName() {
-  name.value += '~'
-}
-function changeAge() {
-  age.value += 1
-}
-function changeSex() {
-  sex.value = '女'
-}
+  function changeName() {
+    name.value += '~'
+  }
+  function changeAge() {
+    age.value += 1
+  }
+  function changeSex() {
+    sex.value = '女'
+  }
 </script>
 ```
 
@@ -443,7 +443,7 @@ function changeSex() {
 
 +++sucess 示例
 
-```vue
+```html
 <template>
   <div>
     姓：<input type="text" v-model="firstName" /> <br />
@@ -454,31 +454,31 @@ function changeSex() {
 </template>
 
 <script setup lang="ts" name="App">
-import { ref, computed } from "vue";
+  import { ref, computed } from "vue";
 
-let firstName = ref("zhang");
-let lastName = ref("san");
+  let firstName = ref("zhang");
+  let lastName = ref("san");
 
-// 只读取，不修改
-// let fullName = computed(() => {
-//   return firstName.value + "-" + lastName.value;
-// });
+  // 只读取，不修改
+  // let fullName = computed(() => {
+  //   return firstName.value + "-" + lastName.value;
+  // });
 
-// 可读可写
-let fullName = computed({
-  // 读取
-  get() {
-    return firstName.value + "-" + lastName.value;
-  },
-  // 修改
-  set(val) {
-    firstName.value = val.split("-")[0];
-    lastName.value = val.split("-")[1];
+  // 可读可写
+  let fullName = computed({
+    // 读取
+    get() {
+      return firstName.value + "-" + lastName.value;
+    },
+    // 修改
+    set(val) {
+      firstName.value = val.split("-")[0];
+      lastName.value = val.split("-")[1];
+    }
+  });
+  function changeFullName() {
+    fullName.value = "li-si";
   }
-});
-function changeFullName() {
-  fullName.value = "li-si";
-}
 </script>
 ```
 
@@ -499,7 +499,7 @@ function changeFullName() {
 
 +++success 示例
 
-```vue
+```html
 <template>
   <h1>情况一：监视【ref】定义的【基本类型】数据</h1>
   <h2>当前求和为：{{ sum }}</h2>
@@ -507,18 +507,18 @@ function changeFullName() {
 </template>
 
 <script lang="ts" setup name="Person">
-import { ref, watch } from "vue";
+  import { ref, watch } from "vue";
 
-let sum = ref(0);
-function changeSum() {
-  sum.value += 1;
-}
-const stopWatch = watch(sum, (newValue, oldValue) => {
-  console.log("sum变化了", newValue, oldValue);
-  if (newValue >= 10) {
-    stopWatch();
+  let sum = ref(0);
+  function changeSum() {
+    sum.value += 1;
   }
-});
+  const stopWatch = watch(sum, (newValue, oldValue) => {
+    console.log("sum变化了", newValue, oldValue);
+    if (newValue >= 10) {
+      stopWatch();
+    }
+  });
 </script>
 ```
 
@@ -538,7 +538,7 @@ const stopWatch = watch(sum, (newValue, oldValue) => {
 
 +++success 示例
 
-```vue
+```html
 <template>
   <h1>情况二：监视【ref】定义的【对象类型】数据</h1>
   <h2>姓名：{{ person.name }}</h2>
@@ -549,22 +549,22 @@ const stopWatch = watch(sum, (newValue, oldValue) => {
 </template>
 
 <script lang="ts" setup name="Person">
-import { ref, watch } from "vue";
+  import { ref, watch } from "vue";
 
-let person = ref({
-  name: "张三",
-  age: 18
-});
-function changeName() {
-  person.value.name += "~";
-}
-function changeAge() {
-  person.value.age += 1;
-}
-function changePerson() {
-  person.value = { name: "李四", age: 90 };
-}
-/* 
+  let person = ref({
+    name: "张三",
+    age: 18
+  });
+  function changeName() {
+    person.value.name += "~";
+  }
+  function changeAge() {
+    person.value.age += 1;
+  }
+  function changePerson() {
+    person.value = { name: "李四", age: 90 };
+  }
+  /* 
     情况1：监视的是对象的地址值，若想监视对象内部属性的变化，需要手动开启深度监视
     第一个参数：被监视的数据
     第二个参数：监视的回调
@@ -575,14 +575,14 @@ function changePerson() {
     })
   */
 
-// 情况2：深度监视
-watch(
-  person,
-  (newValue, oldValue) => {
-    console.log("person变化了", newValue, oldValue);
-  },
-  { deep: true }
-);
+  // 情况2：深度监视
+  watch(
+    person,
+    (newValue, oldValue) => {
+      console.log("person变化了", newValue, oldValue);
+    },
+    { deep: true }
+  );
 </script>
 ```
 
@@ -594,7 +594,7 @@ watch(
 
 +++success 示例
 
-```vue
+```html
 <template>
   <h1>情况三：监视【reactive】定义的【对象类型】数据</h1>
   <h2>姓名：{{ person.name }}</h2>
@@ -608,39 +608,39 @@ watch(
 </template>
 
 <script lang="ts" setup name="Person">
-import { reactive, watch } from "vue";
+  import { reactive, watch } from "vue";
 
-let person = reactive({
-  name: "张三",
-  age: 18
-});
-let obj = reactive({
-  a: {
-    b: {
-      c: 666
+  let person = reactive({
+    name: "张三",
+    age: 18
+  });
+  let obj = reactive({
+    a: {
+      b: {
+        c: 666
+      }
     }
+  });
+  function changeName() {
+    person.name += "~";
   }
-});
-function changeName() {
-  person.name += "~";
-}
-function changeAge() {
-  person.age += 1;
-}
-function changePerson() {
-  Object.assign(person, { name: "李四", age: 80 });
-}
-function test() {
-  obj.a.b.c = 888;
-}
+  function changeAge() {
+    person.age += 1;
+  }
+  function changePerson() {
+    Object.assign(person, { name: "李四", age: 80 });
+  }
+  function test() {
+    obj.a.b.c = 888;
+  }
 
-// 默认是开启深度监视的
-watch(person, (newValue, oldValue) => {
-  console.log("person变化了", newValue, oldValue);
-});
-watch(obj, (newValue, oldValue) => {
-  console.log("Obj变化了", newValue, oldValue);
-});
+  // 默认是开启深度监视的
+  watch(person, (newValue, oldValue) => {
+    console.log("person变化了", newValue, oldValue);
+  });
+  watch(obj, (newValue, oldValue) => {
+    console.log("Obj变化了", newValue, oldValue);
+  });
 </script>
 ```
 
@@ -657,7 +657,7 @@ watch(obj, (newValue, oldValue) => {
 
 +++success 示例
 
-```vue
+```html
 <template>
   <h1>情况四：监视【ref】或【reactive】定义的【对象类型】数据中的某个属性</h1>
   <h2>姓名：{{ person.name }}</h2>
@@ -671,47 +671,47 @@ watch(obj, (newValue, oldValue) => {
 </template>
 
 <script lang="ts" setup name="Person">
-import { reactive, watch } from "vue";
+  import { reactive, watch } from "vue";
 
-let person = reactive({
-  name: "张三",
-  age: 18,
-  car: {
-    c1: "奔驰",
-    c2: "宝马"
+  let person = reactive({
+    name: "张三",
+    age: 18,
+    car: {
+      c1: "奔驰",
+      c2: "宝马"
+    }
+  });
+  function changeName() {
+    person.name += "~";
   }
-});
-function changeName() {
-  person.name += "~";
-}
-function changeAge() {
-  person.age += 1;
-}
-function changeC1() {
-  person.car.c1 = "奥迪";
-}
-function changeC2() {
-  person.car.c2 = "大众";
-}
-function changeCar() {
-  person.car = { c1: "雅迪", c2: "爱玛" };
-}
+  function changeAge() {
+    person.age += 1;
+  }
+  function changeC1() {
+    person.car.c1 = "奥迪";
+  }
+  function changeC2() {
+    person.car.c2 = "大众";
+  }
+  function changeCar() {
+    person.car = { c1: "雅迪", c2: "爱玛" };
+  }
 
-// 监视响应式对象中的某个属性，且该属性是基本类型的，要写成函数式
-/* 
+  // 监视响应式对象中的某个属性，且该属性是基本类型的，要写成函数式
+  /* 
   watch(()=> person.name,(newValue,oldValue) => {
     console.log('person.name变化了',newValue,oldValue)
   }) 
 */
 
-// 监视响应式对象中的某个属性，且该属性是对象类型的，可以直接写，也能写函数，更推荐写函数
-watch(
-  () => person.car,
-  (newValue, oldValue) => {
-    console.log("person.car变化了", newValue, oldValue);
-  },
-  { deep: true }
-);
+  // 监视响应式对象中的某个属性，且该属性是对象类型的，可以直接写，也能写函数，更推荐写函数
+  watch(
+    () => person.car,
+    (newValue, oldValue) => {
+      console.log("person.car变化了", newValue, oldValue);
+    },
+    { deep: true }
+  );
 </script>
 ```
 
@@ -723,7 +723,7 @@ watch(
 
 +++success 示例
 
-```vue
+```html
 <template>
   <h1>情况五：监视上述的多个数据</h1>
   <h2>姓名：{{ person.name }}</h2>
@@ -737,39 +737,39 @@ watch(
 </template>
 
 <script lang="ts" setup name="Person">
-import { reactive, watch } from "vue";
+  import { reactive, watch } from "vue";
 
-let person = reactive({
-  name: "张三",
-  age: 18,
-  car: {
-    c1: "奔驰",
-    c2: "宝马"
+  let person = reactive({
+    name: "张三",
+    age: 18,
+    car: {
+      c1: "奔驰",
+      c2: "宝马"
+    }
+  });
+  function changeName() {
+    person.name += "~";
   }
-});
-function changeName() {
-  person.name += "~";
-}
-function changeAge() {
-  person.age += 1;
-}
-function changeC1() {
-  person.car.c1 = "奥迪";
-}
-function changeC2() {
-  person.car.c2 = "大众";
-}
-function changeCar() {
-  person.car = { c1: "雅迪", c2: "爱玛" };
-}
+  function changeAge() {
+    person.age += 1;
+  }
+  function changeC1() {
+    person.car.c1 = "奥迪";
+  }
+  function changeC2() {
+    person.car.c2 = "大众";
+  }
+  function changeCar() {
+    person.car = { c1: "雅迪", c2: "爱玛" };
+  }
 
-watch(
-  [() => person.name, person.car],
-  (newValue, oldValue) => {
-    console.log("person.car变化了", newValue, oldValue);
-  },
-  { deep: true }
-);
+  watch(
+    [() => person.name, person.car],
+    (newValue, oldValue) => {
+      console.log("person.car变化了", newValue, oldValue);
+    },
+    { deep: true }
+  );
 </script>
 ```
 
@@ -789,7 +789,7 @@ watch(
 
 +++success 示例
 
-```vue
+```html
 <template>
   <h1>需求：水温达到50℃，或水位达到20cm，则联系服务器</h1>
   <h2 id="demo">水温：{{ temp }}</h2>
@@ -799,37 +799,37 @@ watch(
 </template>
 
 <script lang="ts" setup name="Person">
-import { ref, watch, watchEffect } from "vue";
+  import { ref, watch, watchEffect } from "vue";
 
-let temp = ref(0);
-let height = ref(0);
-function changePrice() {
-  temp.value += 10;
-}
-function changeSum() {
-  height.value += 1;
-}
+  let temp = ref(0);
+  let height = ref(0);
+  function changePrice() {
+    temp.value += 10;
+  }
+  function changeSum() {
+    height.value += 1;
+  }
 
-// watch：需要明确指出要监视的数据
-watch([temp, height], value => {
-  const [newTemp, newHeight] = value; // 从value中获取最新的temp值、height值
-  if (newTemp >= 50 || newHeight >= 20) {
-    console.log("联系服务器");
-  }
-});
+  // watch：需要明确指出要监视的数据
+  watch([temp, height], value => {
+    const [newTemp, newHeight] = value; // 从value中获取最新的temp值、height值
+    if (newTemp >= 50 || newHeight >= 20) {
+      console.log("联系服务器");
+    }
+  });
 
-// watchEffect：不用
-const stopWatch = watchEffect(() => {
-  if (temp.value >= 50 || height.value >= 20) {
-    console.log(document.getElementById("demo")?.innerText);
-    console.log("联系服务器");
-  }
-  // 水温达到100，或水位达到50，取消监视
-  if (temp.value === 100 || height.value === 50) {
-    console.log("清理了");
-    stopWatch();
-  }
-});
+  // watchEffect：不用
+  const stopWatch = watchEffect(() => {
+    if (temp.value >= 50 || height.value >= 20) {
+      console.log(document.getElementById("demo")?.innerText);
+      console.log("联系服务器");
+    }
+    // 水温达到100，或水位达到50，取消监视
+    if (temp.value === 100 || height.value === 50) {
+      console.log("清理了");
+      stopWatch();
+    }
+  });
 </script>
 ```
 
@@ -845,7 +845,7 @@ const stopWatch = watchEffect(() => {
 
 +++success 示例：普通 DOM 标签
 
-```vue
+```html
 <template>
   <h1 ref="title1">尚硅谷</h1>
   <h2 ref="title2">前端</h2>
@@ -854,23 +854,23 @@ const stopWatch = watchEffect(() => {
 </template>
 
 <script lang="ts" setup name="Person">
-import { ref } from "vue";
+  import { ref } from "vue";
 
-let title1 = ref();
-let title2 = ref();
-let title3 = ref();
-function showLog() {
-  // 通过id获取元素
-  const t1 = document.getElementById("title1");
-  console.log((t1 as HTMLElement).innerText);
-  console.log((<HTMLElement>t1).innerText);
-  console.log(t1?.innerText);
+  let title1 = ref();
+  let title2 = ref();
+  let title3 = ref();
+  function showLog() {
+    // 通过id获取元素
+    const t1 = document.getElementById("title1");
+    console.log((t1 as HTMLElement).innerText);
+    console.log((<HTMLElement>t1).innerText);
+    console.log(t1?.innerText);
 
-  // 通过ref获取元素
-  console.log(title1.value);
-  console.log(title2.value);
-  console.log(title3.value);
-}
+    // 通过ref获取元素
+    console.log(title1.value);
+    console.log(title2.value);
+    console.log(title3.value);
+  }
 </script>
 ```
 
@@ -878,7 +878,7 @@ function showLog() {
 
 +++success 示例：组件标签
 
-```vue
+```html
 <!-- 父组件App.vue -->
 <template>
   <Person ref="ren" />
@@ -886,23 +886,23 @@ function showLog() {
 </template>
 
 <script lang="ts" setup name="App">
-import Person from "./components/Person.vue";
-import { ref } from "vue";
+  import Person from "./components/Person.vue";
+  import { ref } from "vue";
 
-let ren = ref();
-function test() {
-  console.log(ren.value.name);
-  console.log(ren.value.age);
-}
+  let ren = ref();
+  function test() {
+    console.log(ren.value.name);
+    console.log(ren.value.age);
+  }
 </script>
 
 <!-- 子组件Person.vue中要使用defineExpose暴露内容 -->
 <script lang="ts" setup name="Person">
-import { ref, defineExpose } from "vue";
-let name = ref("张三");
-let age = ref(18);
-// 使用defineExpose将组件中的数据交给外部
-defineExpose({ name, age });
+  import { ref, defineExpose } from "vue";
+  let name = ref("张三");
+  let age = ref(18);
+  // 使用defineExpose将组件中的数据交给外部
+  defineExpose({ name, age });
 </script>
 ```
 
@@ -928,27 +928,27 @@ export type Persons = Array<PersonInter>;
 
 App.vue（父组件）
 
-```vue
+```html
 <template>
   <Person :list="persons" />
 </template>
 
 <script lang="ts" setup name="App">
-import Person from "./components/Person.vue";
-import { reactive } from "vue";
-import { type Persons } from "./types";
+  import Person from "./components/Person.vue";
+  import { reactive } from "vue";
+  import { type Persons } from "./types";
 
-let persons = reactive<Persons>([
-  { id: "e98219e12", name: "张三", age: 18 },
-  { id: "e98219e13", name: "李四", age: 19 },
-  { id: "e98219e14", name: "王五", age: 20 }
-]);
+  let persons = reactive<Persons>([
+    { id: "e98219e12", name: "张三", age: 18 },
+    { id: "e98219e13", name: "李四", age: 19 },
+    { id: "e98219e14", name: "王五", age: 20 }
+  ]);
 </script>
 ```
 
 Person.vue（子组件）
 
-```vue
+```html
 <template>
   <ul>
     <li v-for="item in list" :key="item.id">{{ item.name }}--{{ item.age }}</li>
@@ -956,20 +956,20 @@ Person.vue（子组件）
 </template>
 
 <script lang="ts" setup name="Person">
-import { defineProps } from "vue";
-import { type PersonInter } from "@/types";
+  import { defineProps } from "vue";
+  import { type PersonInter } from "@/types";
 
-// 写法1：仅接收
-// const props = defineProps(['list'])
+  // 写法1：仅接收
+  // const props = defineProps(['list'])
 
-// 写法2：接收 + 限制类型
-// defineProps<{list:Persons}>()
+  // 写法2：接收 + 限制类型
+  // defineProps<{list:Persons}>()
 
-// 写法3：接收 + 限制类型 + 指定默认值 + 限制必要性
-let props = withDefaults(defineProps<{ list?: Persons }>(), {
-  list: () => [{ id: "asdasg01", name: "呆呆", age: 18 }]
-});
-console.log(props);
+  // 写法3：接收 + 限制类型 + 指定默认值 + 限制必要性
+  let props = withDefaults(defineProps<{ list?: Persons }>(), {
+    list: () => [{ id: "asdasg01", name: "呆呆", age: 18 }]
+  });
+  console.log(props);
 </script>
 ```
 
@@ -1003,46 +1003,46 @@ Vue 组件实例在创建时要经历一系列的初始化步骤，在此过程�
 
 +++success 示例：生命周期
 
-```vue
+```html
 <template>
   <h2>当前求和为：{{ sum }}</h2>
   <button @click="changeSum">点我sum+1</button>
 </template>
 
 <script lang="ts" setup name="Person">
-import {
-  ref,
-  onBeforeMount,
-  onMounted,
-  onBeforeUpdate,
-  onUpdated,
-  onBeforeUnmount,
-  onUnmounted
-} from "vue";
+  import {
+    ref,
+    onBeforeMount,
+    onMounted,
+    onBeforeUpdate,
+    onUpdated,
+    onBeforeUnmount,
+    onUnmounted
+  } from "vue";
 
-let sum = ref(0);
-function changeSum() {
-  sum.value += 1;
-}
-console.log("setup");
-onBeforeMount(() => {
-  console.log("挂载之前");
-});
-onMounted(() => {
-  console.log("挂载完毕");
-});
-onBeforeUpdate(() => {
-  console.log("更新之前");
-});
-onUpdated(() => {
-  console.log("更新完毕");
-});
-onBeforeUnmount(() => {
-  console.log("卸载之前");
-});
-onUnmounted(() => {
-  console.log("卸载完毕");
-});
+  let sum = ref(0);
+  function changeSum() {
+    sum.value += 1;
+  }
+  console.log("setup");
+  onBeforeMount(() => {
+    console.log("挂载之前");
+  });
+  onMounted(() => {
+    console.log("挂载完毕");
+  });
+  onBeforeUpdate(() => {
+    console.log("更新之前");
+  });
+  onUpdated(() => {
+    console.log("更新完毕");
+  });
+  onBeforeUnmount(() => {
+    console.log("卸载之前");
+  });
+  onUnmounted(() => {
+    console.log("卸载完毕");
+  });
 </script>
 ```
 
@@ -1111,7 +1111,7 @@ export default function () {
 
 组件具体使用
 
-```vue
+```html
 <template>
   <h2>当前求和为：{{ sum }}</h2>
   <button @click="increment">点我+1</button>
@@ -1127,19 +1127,19 @@ export default function () {
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+  import { defineComponent } from "vue";
 
-export default defineComponent({
-  name: "App"
-});
+  export default defineComponent({
+    name: "App"
+  });
 </script>
 
 <script setup lang="ts">
-import useSum from "@/hooks/useSum";
-import useDog from "@/hooks/useDog";
+  import useSum from "@/hooks/useSum";
+  import useDog from "@/hooks/useDog";
 
-let { sum, increment, decrement } = useSum();
-let { dogList, getDog } = useDog();
+  let { sum, increment, decrement } = useSum();
+  let { dogList, getDog } = useDog();
 </script>
 ```
 

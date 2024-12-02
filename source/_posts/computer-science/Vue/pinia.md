@@ -17,9 +17,9 @@ cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/4-4.jpg
 - Vue3：pinia
 - React：redux
 
-# 准备一个效果
+# 测试效果
 
-<img src="C:/Users/zendow_xw/Desktop/尚硅谷vue3/images/pinia_example.gif" alt="pinia_example" style="zoom:30%;border:3px solid" />
+![img](C:/Users/zendow_xw/Desktop/尚硅谷vue3/images/pinia_example.gif)
 
 # 搭建 pinia 环境
 
@@ -47,11 +47,9 @@ app.mount("#app");
 
 此时开发者工具中已经有了 `pinia` 选项
 
-<img src="https://cdn.nlark.com/yuque/0/2023/png/35780599/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png" style="zoom:80%;border:1px solid black;border-radius:10px" />
+![img](https://cdn.nlark.com/yuque/0/2023/png/35780599/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png)
 
 # 存储+读取数据
-
-
 
 - `Store`是一个保存：**状态**、**业务逻辑** 的实体，每个组件都可以**读取**、**写入**它。
 - 它有三个概念：`state`、`getter`、`action`，相当于组件中的： `data`、 `computed` 和 `methods`
@@ -93,9 +91,9 @@ export const useTalkStore = defineStore("talk", {
   state() {
     return {
       talkList: [
-        { id: "yuysada01", content: "你今天有点怪，哪里怪？怪好看的！" },
-        { id: "yuysada02", content: "草莓、蓝莓、蔓越莓，你想我了没？" },
-        { id: "yuysada03", content: "心里给你留了一块地，我的死心塌地" }
+        { id: "1", content: "你今天有点怪，哪里怪？怪好看的！" },
+        { id: "2", content: "草莓、蓝莓、蔓越莓，你想我了没？" },
+        { id: "3", content: "心里给你留了一块地，我的死心塌地" }
       ]
     };
   },
@@ -106,34 +104,41 @@ export const useTalkStore = defineStore("talk", {
 
 组件中使用
 
-```vue
+```html
 <template>
   <h2>当前求和为：{{ sumStore.sum }}</h2>
+  <select v-model.number="n">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+  <button @click="add">加</button>
+  <button @click="minus">减</button>
 </template>
 
 <script setup lang="ts" name="Count">
-// 引入对应的useXxxxxStore
-import { useSumStore } from "@/store/sum";
+  // 引入对应的useXxxxxStore
+  import { useSumStore } from "@/store/sum";
 
-// 调用useXxxxxStore得到对应的store
-const sumStore = useSumStore();
+  // 调用useXxxxxStore得到对应的store
+  const sumStore = useSumStore();
 </script>
 ```
 
-```vue
+```html
 <template>
   <ul>
-    <li v-for="talk in talkStore.talkList" :key="talk.id">
-      {{ talk.content }}
+    <li v-for="item in talkStore.talkList" :key="item.id">
+      {{ item.content }}
     </li>
   </ul>
 </template>
 
 <script setup lang="ts" name="Count">
-import axios from "axios";
-import { useTalkStore } from "@/store/talk";
+  import axios from "axios";
+  import { useTalkStore } from "@/store/talk";
 
-const talkStore = useTalkStore();
+  const talkStore = useTalkStore();
 </script>
 ```
 
@@ -152,7 +157,7 @@ countStore.sum = 666;
 ```ts
 countStore.$patch({
   sum: 999,
-  school: "atguigu"
+  school: "xxx大学"
 });
 ```
 
@@ -162,23 +167,22 @@ countStore.$patch({
 import { defineStore } from "pinia";
 
 export const useCountStore = defineStore("count", {
-  /*************/
+  ...
   actions: {
-    //加
+    // 加
     increment(value: number) {
       if (this.sum < 10) {
-        //操作countStore中的sum
+        // 操作countStore中的sum
         this.sum += value;
       }
     },
-    //减
+    // 减
     decrement(value: number) {
       if (this.sum > 1) {
         this.sum -= value;
       }
     }
   }
-  /*************/
 });
 ```
 
@@ -189,30 +193,31 @@ export const useCountStore = defineStore("count", {
 const countStore = useCountStore();
 
 // 调用对应action
-countStore.incrementOdd(n.value);
+countStore.increment(n.value);
 ```
 
 # storeToRefs
 
-- 借助 `storeToRefs` 将 `store` 中的数据转为 `ref` 对象，方便在模板中使用
-- 注意：pinia 提供的 `storeToRefs` 只会将数据做转换，而 Vue 的 `toRefs` 会转换 `store` 中数据
+借助 `storeToRefs` 将 `store` 中的数据转为 `ref` 对象，方便在模板中使用
 
-```vue
+> :warning: 注：pinia 提供的 `storeToRefs` 只会将数据做转换，而 Vue 的 `toRefs` 会转换 `store` 中数据
+
+```html
 <template>
-  <div class="count">
-    <h2>当前求和为：{{ sum }}</h2>
-  </div>
+  <h2>当前求和为：{{ sum }}</h2>
 </template>
 
 <script setup lang="ts" name="Count">
-import { useCountStore } from "@/store/count";
-// 引入storeToRefs
-import { storeToRefs } from "pinia";
+  import { useCountStore } from "@/store/count";
+  import { storeToRefs } from "pinia";
 
-// 得到countStore
-const countStore = useCountStore();
-// 使用storeToRefs转换countStore，随后解构
-const { sum } = storeToRefs(countStore);
+  const countStore = useCountStore();
+
+  // let { sum, school, address } = toRefs(countStore); // toRefs会将方法一起包裹
+
+  // 使用storeToRefs转换countStore，随后解构
+  // storeToRefs只会关注store中的数据，不会对方法进行ref包裹
+  const { sum } = storeToRefs(countStore);
 </script>
 ```
 
@@ -229,14 +234,12 @@ import { defineStore } from "pinia";
 // 定义并暴露一个store
 export const useCountStore = defineStore("count", {
   // 动作
-  actions: {
-    /************/
-  },
+  actions: {},
   // 状态
   state() {
     return {
       sum: 1,
-      school: "atguigu"
+      school: "xxx大学"
     };
   },
   // 计算
@@ -252,6 +255,11 @@ export const useCountStore = defineStore("count", {
 组件中读取数据
 
 ```ts
+import { useCountStore } from "@/store/count";
+import { storeToRefs } from "pinia";
+
+const countStore = useCountStore();
+
 const { increment, decrement } = countStore;
 let { sum, school, bigSum, upperSchool } = storeToRefs(countStore);
 ```
@@ -261,18 +269,59 @@ let { sum, school, bigSum, upperSchool } = storeToRefs(countStore);
 通过 store 的 `$subscribe()` 方法侦听 state 及其变化
 
 ```ts
+import { useTalkStore } from "@/store/loveTalk";
+import { storeToRefs } from "pinia";
+
+const talkStore = useTalkStore();
+const { talkList } = storeToRefs(talkStore);
+
 talkStore.$subscribe((mutate, state) => {
+  console.log("talkStore数据发生变化了");
   console.log("LoveTalk", mutate, state);
   localStorage.setItem("talk", JSON.stringify(talkList.value));
 });
 ```
 
-# store 组合式写法
+# 选项式写法
 
 ```ts
 import { defineStore } from "pinia";
 import axios from "axios";
 import { nanoid } from "nanoid";
+
+export const useTalkStore = defineStore("talk", {
+  state() {
+    return {
+      talkList: JSON.parse(localStorage.getItem("talkList") as string) || []
+      // [
+      //   { id: "1", title: "近朱者赤，近你者甜" },
+      //   { id: "2", title: "你知道我的缺点是什么吗? 是缺点你" },
+      //   { id: "3", title: "只许州官放火，不许你离开我" },
+      //   { id: "4", title: "今天我只做两件事呼吸跟想你" }
+      // ]
+    };
+  },
+  actions: {
+    async getTalk() {
+      let {
+        data: { content: title }
+      } = await axios.get("https://api.uomg.com/api/rand.qinghua?format=json");
+      let obj = {
+        id: nanoid(),
+        title
+      };
+      this.talkList.unshift(obj);
+    }
+  }
+});
+```
+
+# 组合式写法
+
+```ts
+import { defineStore } from "pinia";
+import axios from "axios";
+import { nanoid } from "nanoid"; // 随机生成id插件
 import { reactive } from "vue";
 
 export const useTalkStore = defineStore("talk", () => {
@@ -288,7 +337,10 @@ export const useTalkStore = defineStore("talk", () => {
       data: { content: title }
     } = await axios.get("https://api.uomg.com/api/rand.qinghua?format=json");
     // 把请求回来的字符串，包装成一个对象
-    let obj = { id: nanoid(), title };
+    let obj = {
+      id: nanoid(),
+      title
+    };
     // 放到数组中
     talkList.unshift(obj);
   }
