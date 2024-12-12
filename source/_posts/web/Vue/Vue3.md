@@ -2,7 +2,7 @@
 title: Vue3 语法学习
 date: 2024-11-14 17:04:45
 category:
-  - [计算机与科学, Vue]
+  - [前端, Vue3]
 tags: Vue3
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/4-2.jpg
 ---

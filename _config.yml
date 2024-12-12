@@ -69,12 +69,14 @@ index_generator:
 default_category: uncategorized
 category_map:
   计算机与科学: computer-science
+  前端: web
+  杂七杂八: other
   Java: Java
   语法: grammar
   数据库: database
-  杂七杂八: other
   C#: Csharp
   Vue: Vue
+  依赖插件: tool
 
 tag_map:
 

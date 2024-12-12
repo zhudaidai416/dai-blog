@@ -2,7 +2,7 @@
 title: 其它API
 date: 2024-12-02 14:11:14
 category:
-  - [计算机与科学, Vue]
+  - [前端, Vue3]
 tags: Vue3
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/4-6.jpg
 ---
