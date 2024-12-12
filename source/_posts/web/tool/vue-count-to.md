@@ -16,8 +16,11 @@ npm install vue-count-to
 # 使用
 
 ```html
-<count-to :start-val="0" // 起始值 :end-val="228" // 终点值 :duration="1000" //
-动画时间（毫秒） />
+<count-to 
+  :start-val="0" // 起始值 
+  :end-val="228" // 终点值 
+  :duration="1000" // 动画时间（毫秒）
+/>
 
 <script>
   import CountTo from "vue-count-to";
