@@ -1,3 +1,9 @@
+## 运行
+
+```bash
+hexo server
+```
+
 ## 主题依赖安装
 
 ```bash

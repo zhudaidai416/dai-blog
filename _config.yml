@@ -75,8 +75,9 @@ category_map:
   语法: grammar
   数据库: database
   C#: Csharp
-  Vue: Vue
+  Vue3: Vue3
   依赖插件: tool
+  React: React
 
 tag_map:
 
