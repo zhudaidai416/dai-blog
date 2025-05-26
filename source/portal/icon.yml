@@ -1,0 +1,18 @@
+- site: 阿里巴巴矢量图标库
+  url: https://www.iconfont.cn/
+  image:
+  color: "#f2c0c3"
+
+- site: Font Awesome
+  url: https://fontawesome.dashgame.com
+  color: "#f2c0c3"
+
+- site: flaticon
+  url: https://www.flaticon.com
+  image: https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg
+  color: "#f2c0c3"
+
+- site: IconPark
+  url: https://iconpark.oceanengine.com
+  image: https://lf1-cdn2-tos.bytegoofy.com/bydesign/iconparksite/static/media/logo_with_name.598fc011.svg
+  color: "#f2c0c3"

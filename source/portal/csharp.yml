@@ -10,16 +10,3 @@
 - site: 菜鸟教程
   url: https://www.runoob.com/csharp/csharp-tutorial.html
   color: "#9d5b8b"
-
-- site: 学习视频汇总
-  url: https://www.cnblogs.com/Can-daydayup/p/15046838.html#_label1
-  color: "#9d5b8b"
-
-- site: 开发者论坛
-  url: https://www.dxper.net
-  image: https://www.dxper.net/static/image/common/logo.png
-  color: "#9d5b8b"
-
-- site: XDZY博客
-  url: https://www.cnblogs.com/xdzy/p/9457738.html
-  color: "#9d5b8b"

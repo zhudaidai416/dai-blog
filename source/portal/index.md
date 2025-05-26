@@ -11,18 +11,22 @@ date: 2024-08-18 11:03:01
 
 {% linksfile portal/_data.yml %}
 
-# Vue
+# Vue2
 
-{% linksfile portal/vue.yml %}
+{% linksfile portal/vue2.yml %}
+
+# Vue3
+
+{% linksfile portal/vue3.yml %}
 
 # React
 
 {% linksfile portal/react.yml %}
 
-# 原型图
+# 图标库
 
-{% linksfile portal/axureshop.yml %}
+{% linksfile portal/icon.yml %}
 
-# 正在使用
+# 组件库
 
-{% linksfile portal/use.yml %}
+{% linksfile portal/component.yml %}
