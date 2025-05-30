@@ -14,3 +14,7 @@ date: 2025-05-26 15:48:38
 # 正在使用
 
 {% linksfile other/use.yml %}
+
+# 开源框架
+
+{% linksfile other/open.yml %}

@@ -3,6 +3,11 @@
   image: https://v5.bootcss.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png
   color: "#c38e9e"
 
+- site: Tailwind CSS
+  url: https://www.tailwindcss.cn/
+  image: https://tailwindcss.com/favicons/favicon.ico?v=4
+  color: "#c38e9e"
+
 - site: Element
   url: https://element.eleme.cn/#/zh-CN
   image: https://element-plus.org/images/element-plus-logo-small.svg
@@ -18,14 +23,19 @@
   image: https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png
   color: "#c38e9e"
 
+- site: TDesign
+  url: https://tdesign.tencent.com
+  image: https://cdc.cdn-go.cn/tdc/latest/images/tdesign.svg
+  color: "#c38e9e"
+
 - site: Echarts
   url: https://echarts.apache.org
-  image: https://echarts.apache.org/zh/images/logo.png?_v_=20240226
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/Echarts.svg
   color: "#c38e9e"
 
 - site: DataV
   url: http://datav.jiaminghi.com
-  image: http://datav.jiaminghi.com/favicon.ico
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/DataV.ico
   color: "#c38e9e"
 
 - site: Vant - Vue2 版本

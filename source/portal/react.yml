@@ -1,10 +1,11 @@
 - site: React
   url: https://zh-hans.reactjs.org
-  image: https://notes.fe-mm.com/icons/react.svg
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/React.svg
   color: "#499dd9"
 
 - site: React Router
   url: https://reactrouter.com
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/React.svg
   color: "#499dd9"
 
 - site: Redux
