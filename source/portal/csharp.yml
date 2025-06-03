@@ -1,5 +1,6 @@
 - site: 微软官方文档
   url: https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/microsoft.svg
   color: "#9d5b8b"
 
 - site: c语言中文网
@@ -9,4 +10,5 @@
 
 - site: 菜鸟教程
   url: https://www.runoob.com/csharp/csharp-tutorial.html
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/webpage.svg
   color: "#9d5b8b"

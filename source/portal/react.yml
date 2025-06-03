@@ -10,10 +10,10 @@
 
 - site: Redux
   url: https://cn.redux.js.org
-  image: https://cn.redux.js.org/img/redux.svg
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/redux.svg
   color: "#499dd9"
 
 - site: MobX
   url: https://zh.mobx.js.org
-  image: https://zh.mobx.js.org/assets/mobx.png
+  image: https://mobx.js.org/assets/mobx.png
   color: "#499dd9"

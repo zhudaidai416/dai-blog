@@ -1,5 +1,6 @@
 - site: 学习视频汇总
   url: https://www.cnblogs.com/Can-daydayup/p/15046838.html#_label1
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/webpage.svg
   color: "#ed7c68"
 
 - site: 开发者论坛
@@ -9,6 +10,7 @@
 
 - site: XDZY博客
   url: https://www.cnblogs.com/xdzy/p/9457738.html
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/webpage.svg
   color: "#ed7c68"
 
 - site: JavaGuide

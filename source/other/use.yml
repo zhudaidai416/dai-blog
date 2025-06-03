@@ -1,7 +1,7 @@
 - site: 木及简历
   desc: CDN 加速服务商
   url: https://www.mujicv.com
-  image: https://cdn.mdedit.online/static%2Fimg%2Fmuji-logo-new.png
+  image: https://daiblog.oss-cn-chengdu.aliyuncs.com/icon/muji.png
   color: "#ffd988"
 
 - site: Cloudflare
