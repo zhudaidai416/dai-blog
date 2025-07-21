@@ -13,8 +13,9 @@ timezone: ""
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://www.zhudaidai.top # https://zhudaidai416.github.io/dai-blog
-root: / # 部署在 vercel 要写root: /，部署在 github page 可删除
+#url: https://www.zhudaidai.top # https://zhudaidai416.github.io/dai-blog
+url: https://zhudaidai416.github.io/dai-blog
+root: # 部署在 vercel 要写root: /，部署在 github page 可删除
 permalink: :title/
 permalink_defaults:
 pretty_urls:
@@ -73,6 +74,7 @@ category_map:
   杂七杂八: other
   Java: Java
   语法: grammar
+  JavaWeb: JavaWeb
   数据库: database
   C#: Csharp
   Vue3: Vue3
