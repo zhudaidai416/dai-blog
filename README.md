@@ -33,5 +33,5 @@ url: https://zhudaidai416.github.io/dai-blog
 root: # 部署在 vercel 要写root: /，部署在 github page 可删除
 
 # 部署
-hexo deploy
+hexo clean && hexo deploy
 ```
