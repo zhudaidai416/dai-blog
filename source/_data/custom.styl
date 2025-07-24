@@ -8,6 +8,7 @@ a {
     cursor: url(/images/cat_pointer.cur), default;
 }
 
+
 /* 追番页样式 */
 .bangumi-active {
     background: #c6d9a3 !important;
@@ -15,41 +16,72 @@ a {
     border-radius: 10px;
     padding: 8px 10px !important;
 }
-
 .bangumi-info-item {
     border-right: 2px solid #94A270 !important;
 }
-
 .bangumi-comments>p {
     margin-left: 20px !important;
     color: #bdaead;
 }
-
 .bangumi-picture img {
     width: 100px !important;
     border-radius: 5px !important;
 }
 
+
 /* 赞赏图片 */
 #qr div {
     margin-right: 20px !important;
 }
-
 #qr img {
     width: 100px !important;
     height: 100px !important;
 }
+
 
 /* markdown 引用样式 */
 .md blockquote {
     /* background-color: #F7E7F150; */
     background-color: #EFF1F995;
 }
-
 .success {
     --note-bg: #ecf4ee;
 }
-
 .table-container table tbody td {
     text-align: center !important;
+}
+
+
+/* 链接 */
+.links .item .info .desc {
+    color: #94A270;
+}
+.links .item:hover .info .desc {
+    color: #fff ;
+}
+
+
+/* 简介栏 */
+.state .item .count {
+    color: #838858;
+}
+.state .item .name {
+    color: #b4c783;
+}
+
+
+/* 侧边菜单栏 */
+#sidebar .menu .item {
+    color: #838858 !important; /* 文字 */
+    font-weight: 540 !important;
+}
+#sidebar .menu .item .ic {
+    color: #b4c783 !important; /* 图标 */
+}
+/* 侧边菜单栏选中效果 */
+#sidebar .menu .item.active {
+    color: #fff !important;
+}
+#sidebar .menu .item.active .ic {
+    color: #fff !important;
 }

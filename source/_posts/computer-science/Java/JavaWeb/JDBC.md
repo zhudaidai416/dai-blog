@@ -4,7 +4,7 @@ date: 2025-07-17 14:43:14
 category:
   - [计算机与科学, Java, JavaWeb]
 tags: JavaWeb
-cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/1-4.jpg
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/6-3.jpg
 ---
 
 # 简介
