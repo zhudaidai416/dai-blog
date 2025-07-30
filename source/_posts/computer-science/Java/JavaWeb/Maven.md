@@ -280,8 +280,65 @@ Maven 对项目构建的生命周期划分为 3 套：
 
 ## 创建 Maven 项目
 
+![](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/创建Maven项目1.png)
+
+![](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/创建Maven项目2.png)
+
 ## 导入 Maven 项目
+
+![](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/导入Maven项目.png)
 
 安装 Maven Helper 插件
 
 ## 依赖管理
+
+### 使用坐标引入 jar 包
+
+```xml
+1、在项目的pom.xml中编写<dependencies>标签
+2、在<dependencies>标签中使用<dependency>引入坐标
+3、定义坐标的groupId，artifactId，version
+4、点击刷新按钮，使坐标生效
+
+<!-- mysql坐标 -->
+<dependencies>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.32</version>
+    </dependency>
+</dependencies>
+```
+
+具体的坐标可在该网站搜索：https://mvnrepository.com
+
+**快捷方式**：
+
+- 在 `pom.xml` 中 按 alt + insert，选择 Dependency（依赖项）
+- 在弹出的面板中搜索对应坐标，然后双击选中对应坐标
+- 点击刷新按钮，使坐标生效
+
+### 依赖范围
+
+通过设置坐标的依赖范围（scope），可以设置对应 jar 包的作用范围：编译环境、测试环境、运行环境
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+```
+
+| 依赖范围 | 编译 classpath | 测试 classpath | 运行 classpath | 例子                |
+| -------- | -------------- | -------------- | -------------- | ------------------- |
+| compile  | Y              | Y              | Y              | logback             |
+| test     | -              | Y              | -              | Junit               |
+| provided | Y              | Y              | -              | servlet-api         |
+| runtime  | -              | Y              | Y              | jdbc驱动            |
+| system   | Y              | Y              | -              | 存储在本地的 jar 包 |
+
+引入坐标不指定 `scope` 标签时，默认就是 compile  值，大部分 jar 包都是使用默认值
