@@ -4,7 +4,7 @@ date: 2025-07-22 17:07:37
 category:
   - [计算机与科学, Java, JavaWeb]
 tags: JavaWeb
-cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/1-4.jpg
+cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/6-5.jpg
 ---
 
 # [MyBatis](https://mybatis.net.cn/)
@@ -17,40 +17,39 @@ MyBatis 是一款优秀的持久层框架，用于简化 JDBC 开发
 
 官网：https://mybatis.net.cn
 
-MyBatis 本是 Apache 的一个开源项目 iBatis，2010年这个项目由 apache software foundation 迁移到了 google code，并且改名为 MyBatis ，2013年11月迁移到 Github
+MyBatis 本是 Apache 的一个开源项目 iBatis，2010 年这个项目由 apache software foundation 迁移到了 google code，并且改名为 MyBatis ，2013 年 11 月迁移到 Github
 
 **持久层：**
 
-* 负责将数据到保存到数据库的那一层代码
+- 负责将数据到保存到数据库的那一层代码
 
-  以后开发我们会将操作数据库的Java代码作为持久层。而 Mybatis 就是对 jdbc 代码进行了封装
+  以后开发我们会将操作数据库的 Java 代码作为持久层。而 Mybatis 就是对 jdbc 代码进行了封装
 
-* JavaEE 三层架构：表现层、业务层、持久层
+- JavaEE 三层架构：表现层、业务层、持久层
 
 **框架：**
 
-* 框架就是一个半成品软件，是一套可重用的、通用的、软件基础代码模型
-* 在框架的基础之上构建软件编写更加高效、规范、通用、可扩展
+- 框架就是一个半成品软件，是一套可重用的、通用的、软件基础代码模型
+- 在框架的基础之上构建软件编写更加高效、规范、通用、可扩展
 
 ## JDBC 缺点
 
-* 硬编码
+- 硬编码
 
-  * 注册驱动、获取连接
+  - 注册驱动、获取连接
 
-  * SQL 语句
+  - SQL 语句
 
-* 操作繁琐
+- 操作繁琐
 
-  * 手动设置参数
+  - 手动设置参数
 
-  * 手动封装结果集
-
+  - 手动封装结果集
 
 ## Mybatis 优化
 
-* 硬编码可以配置到配置文件
-* 操作繁琐的地方 mybatis 都自动完成
+- 硬编码可以配置到配置文件
+- 操作繁琐的地方 mybatis 都自动完成
 
 ![](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/Mybatis.png)
 
@@ -120,12 +119,12 @@ MyBatis 本是 Apache 的一个开源项目 iBatis，2010年这个项目由 apac
 >             <pattern>[%level] %blue(%d{HH:mm:ss.SSS}) %cyan([%thread]) %boldGreen(%logger{15}) - %msg %n</pattern>
 >         </encoder>
 >     </appender>
-> 
+>
 >     <logger name="com.itheima" level="DEBUG" additivity="false">
 >         <appender-ref ref="Console"/>
 >     </logger>
-> 
-> 
+>
+>
 >     <!-- level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF， 默认debug
 >       <root>可以包含零个或多个<appender-ref>元素，标识这个输出位置将会被本日志级别控制。
 >     -->
@@ -158,7 +157,7 @@ MyBatis 本是 Apache 的一个开源项目 iBatis，2010年这个项目由 apac
             </dataSource>
         </environment>
     </environments>
-    
+
     <mappers>
         <!-- 加载sql映射文件 -->
         <mapper resource="UserMapper.xml"/>
@@ -193,7 +192,7 @@ public class User {
     private String password;
     private String gender;
     private String addr;
-    
+
     // ...省略了setter和getter
 }
 ```
@@ -235,8 +234,8 @@ public class MybatisDemo {
 
 **解决 SQL 映射文件的警告提示：**
 
-* 产生的原因：Idea 和数据库没有建立连接，不识别表信息，但它并不影响程序的执行
-* 解决方式：在 Idea 中配置 MySQL 数据库连接
+- 产生的原因：Idea 和数据库没有建立连接，不识别表信息，但它并不影响程序的执行
+- 解决方式：在 Idea 中配置 MySQL 数据库连接
 
 ![解决SQL映射文件警告1](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/解决SQL映射文件警告1.png)
 
@@ -256,8 +255,8 @@ System.out.println(users);
 
 Mapper 代理方式的目的：
 
-* 解决原生方式中的硬编码
-* 简化后期执行 SQL
+- 解决原生方式中的硬编码
+- 简化后期执行 SQL
 
 ## 使用方式
 
@@ -335,10 +334,10 @@ public class MybatisDemo2 {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         // 2、获取SqlSession对象，用它来执行sql
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        
+
         // 3、执行sql
         // List<User> users = sqlSession.selectList("test.selectAll"); // 参数是一个字符串，该字符串必须是映射配置文件的namespace.id
-        
+
         // 获取UserMapper接口的代理对象
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         List<User> users = userMapper.selectAll();
@@ -356,10 +355,10 @@ public class MybatisDemo2 {
 > <mappers>
 >     <!-- 加载sql映射文件 -->
 >     <!-- <mapper resource="UserMapper.xml"/> -->
->     
+>
 >     <!-- Mapper代理方式 -->
 >     <!-- <mapper resource="com/itheima/mapper/UserMapper.xml"/> -->
-> 
+>
 >     <!-- Mapper代理方式简化写法 -->
 >     <package name="com.itheima.mapper"/>
 > </mappers>
@@ -413,7 +412,7 @@ Mybatis 提供了 <font color=red>类型别名</font>（typeAliases）可以简�
 ```xml
 <typeAliases>
     <!-- name属性的值是实体类所在包 -->
-    <package name="com.itheima.pojo"/> 
+    <package name="com.itheima.pojo"/>
 </typeAliases>
 ```
 
@@ -437,12 +436,12 @@ Mybatis 提供了 <font color=red>类型别名</font>（typeAliases）可以简�
 
 # 安装 MyBatisX 插件
 
-* MybatisX 是一款基于 IDEA 的快速开发插件，为效率而生
+- MybatisX 是一款基于 IDEA 的快速开发插件，为效率而生
 
-* 主要功能
+- 主要功能
 
-  * XML 映射配置文件和接口方法间相互跳转
-  * 根据接口方法生成 statement
+  - XML 映射配置文件和接口方法间相互跳转
+  - 根据接口方法生成 statement
 
 ![](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/MyBatisX插件1.png)
 
@@ -501,7 +500,7 @@ public class Brand {
     private String description;
     // 状态：0：禁用  1：启用
     private Integer status;
-    
+
     //...省略 setter and getter
 }
 ```
@@ -516,7 +515,6 @@ public class Brand {
 
 - 在 `com.itheima.mapper` 包下，创建 BrandMapper 接口
 
-
 ```java
 public interface BrandMapper {
     // 查询所有
@@ -527,7 +525,6 @@ public interface BrandMapper {
 ### SQL 语句
 
 - 在 reources 下创建 `com/itheima/mapper` 目录结构，并创建 `BrandMapper.xml` 的映射配置文件
-
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -545,7 +542,6 @@ public interface BrandMapper {
 
 - 在 `test\java` 下，创建 `com.itheima.test.MybatisTest` 测试类
 
-
 ```java
 @Test
 public void testSelectAll() throws IOException {
@@ -553,17 +549,17 @@ public void testSelectAll() throws IOException {
     String resource = "mybatis-config.xml";
     InputStream inputStream = Resources.getResourceAsStream(resource);
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-    
+
     // 2、获取SqlSession对象
     SqlSession sqlSession = sqlSessionFactory.openSession();
-    
+
     // 3、获取Mapper接口的代理对象
     BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
 
     // 4、执行方法
     List<Brand> brands = brandMapper.selectAll();
     System.out.println(brands);
-    
+
     // 5、释放资源
     sqlSession.close();
 }
@@ -620,7 +616,6 @@ public void testSelectAll() throws IOException {
 
 - BrandMapper 接口
 
-
 ```java
 public interface BrandMapper {
     // 查看详情
@@ -631,7 +626,6 @@ public interface BrandMapper {
 ### SQL 语句
 
 - BrandMapper.xml
-
 
 ```xml
 <select id="selectById" resultMap="brandResultMap">
@@ -645,19 +639,18 @@ public interface BrandMapper {
 
 - MybatisTest 测试类
 
-
 ```java
 @Test
 public void testSelectById() throws IOException {
     // 接收参数
     int id = 1;
-    
+
     // 省略...
-    
+
     // 4、执行方法
     Brand brand = brandMapper.selectById(id);
     System.out.println(brand);
-    
+
     // 省略...
 }
 ```
@@ -750,7 +743,6 @@ public interface BrandMapper {
 
 - BrandMapper.xml
 
-
 ```xml
 <select id="selectByCondition" resultMap="brandResultMap">
     select *
@@ -764,7 +756,6 @@ public interface BrandMapper {
 ### 测试方法
 
 - MybatisTest 测试类
-
 
 ```java
 @Test
@@ -790,7 +781,7 @@ public void testSelectByCondition() throws IOException {
     map.put("brandName", brandName);
 
     // 省略...
-    
+
     // 4、执行方法
     // 方法一：散装参数
     List<Brand> brands = brandMapper.selectByCondition(status, companyName, brandName);
@@ -799,20 +790,20 @@ public void testSelectByCondition() throws IOException {
     // 方法三：Map集合参数
     List<Brand> brands = brandMapper.selectByCondition(map);
     System.out.println(brands);
-    
+
     // 省略...
 }
 ```
 
 ### 动态 SQL
 
-* if
+- if
 
-* choose (when, otherwise)
+- choose (when, otherwise)
 
-* trim (where, set)
+- trim (where, set)
 
-* foreach
+- foreach
 
 #### if 标签
 
@@ -893,12 +884,11 @@ select * from tb_brand where and company_name like ? and brand_name like ?
 </select>
 ```
 
-## 单个条件（动态SQL）
+## 单个条件（动态 SQL）
 
 ### 接口方法
 
 - BrandMapper 接口
-
 
 ```java
 public interface BrandMapper {
@@ -910,7 +900,6 @@ public interface BrandMapper {
 ### SQL 语句
 
 - BrandMapper.xml
-
 
 ```xml
 <select id="selectByConditionSingle" resultMap="brandResultMap">
@@ -940,7 +929,6 @@ public interface BrandMapper {
 
 - MybatisTest 测试类
 
-
 ```java
 @Test
 public void testselectByConditionSingle() throws IOException {
@@ -959,12 +947,12 @@ public void testselectByConditionSingle() throws IOException {
     // brand.setBrandName(brandName);
 
     // 省略...
-    
+
     // 4、执行方法
     // 对象参数
     List<Brand> brands = brandMapper.selectByConditionSingle(brand);
     System.out.println(brands);
-    
+
     // 省略...
 }
 ```
@@ -974,7 +962,6 @@ public void testselectByConditionSingle() throws IOException {
 ### 接口方法
 
 - BrandMapper 接口
-
 
 ```java
 public interface BrandMapper {
@@ -987,7 +974,6 @@ public interface BrandMapper {
 
 - BrandMapper.xml
 
-
 ```xml
 <insert id="add">
     insert into tb_brand (brand_name, company_name, ordered, description, status)
@@ -998,7 +984,6 @@ public interface BrandMapper {
 ### 测试方法
 
 - MybatisTest 测试类
-
 
 ```java
 @Test
@@ -1060,7 +1045,6 @@ public void testAdd() throws IOException {
 
 - BrandMapper 接口
 
-
 ```java
 public interface BrandMapper {
     // 修改数据
@@ -1101,7 +1085,6 @@ set 标签可以用于动态包含需要更新的列，忽略其它不更新的�
 ### 测试方法
 
 - MybatisTest 测试类
-
 
 ```java
 @Test
@@ -1147,7 +1130,6 @@ public void testUpdate() throws IOException {
 
 - BrandMapper 接口
 
-
 ```java
 public interface BrandMapper {
     // 删除一行数据
@@ -1158,7 +1140,6 @@ public interface BrandMapper {
 ### SQL 语句
 
 - BrandMapper.xml
-
 
 ```xml
 <delete id="deleteById">
@@ -1171,7 +1152,6 @@ public interface BrandMapper {
 ### 测试方法
 
 - MybatisTest 测试类
-
 
 ```java
 @Test
@@ -1202,7 +1182,6 @@ public void testDeleteById() throws IOException {
 
 - BrandMapper 接口
 
-
 ```java
 public interface BrandMapper {
     // 批量删除：参数是一个数组，数组中存储的是多条数据的id
@@ -1216,14 +1195,14 @@ public interface BrandMapper {
 
 **foreach 标签**：用来迭代任何可迭代的对象（如数组，集合）
 
-* collection 属性：
-  * mybatis 会将数组参数，封装为一个 Map 集合
-    * 默认：array = 数组
-    * 使用@Param注解改变 Map 集合的默认 key 的名称
-* item 属性：本次迭代获取到的元素
-* separator 属性：集合项迭代之间的分隔符。`foreach` 标签不会错误地添加多余的分隔符，也就是最后一次迭代不会加分隔符
-* open 属性：拼接 SQL 语句之前拼接的语句，只会拼接一次
-* close 属性：拼接 SQL 语句之后拼接的语句，只会拼接一次
+- collection 属性：
+  - mybatis 会将数组参数，封装为一个 Map 集合
+    - 默认：array = 数组
+    - 使用@Param 注解改变 Map 集合的默认 key 的名称
+- item 属性：本次迭代获取到的元素
+- separator 属性：集合项迭代之间的分隔符。`foreach` 标签不会错误地添加多余的分隔符，也就是最后一次迭代不会加分隔符
+- open 属性：拼接 SQL 语句之前拼接的语句，只会拼接一次
+- close 属性：拼接 SQL 语句之后拼接的语句，只会拼接一次
 
 🎀
 
@@ -1257,7 +1236,6 @@ public interface BrandMapper {
 
 - MybatisTest 测试类
 
-
 ```java
 @Test
 public void testDeleteByIds() throws IOException {
@@ -1283,14 +1261,14 @@ public void testDeleteByIds() throws IOException {
 
 # Mybatis 参数传递
 
-* 多个参数
-* 单个参数
-  * POJO 类型
-  * Map 集合类型
-  * Collection 集合类型
-  * List 集合类型
-  * Array 类型
-  * 其他类型
+- 多个参数
+- 单个参数
+  - POJO 类型
+  - Map 集合类型
+  - Collection 集合类型
+  - List 集合类型
+  - Array 类型
+  - 其他类型
 
 ## 多个参数
 
@@ -1380,11 +1358,11 @@ User selectByCondition(@Param("username") String username, String password);
 
 ## 单个参数
 
-* POJO 类型：直接使用，要求<font color=red>属性名</font>和<font color=red>参数占位符名称</font>一致
+- POJO 类型：直接使用，要求<font color=red>属性名</font>和<font color=red>参数占位符名称</font>一致
 
-* Map 集合类型：直接使用，要求 <font color=red>Map 集合的键名</font>和<font color=red>参数占位符名称</font>一致
+- Map 集合类型：直接使用，要求 <font color=red>Map 集合的键名</font>和<font color=red>参数占位符名称</font>一致
 
-* Collection 集合类型：Mybatis 会将集合封装到 Map 集合
+- Collection 集合类型：Mybatis 会将集合封装到 Map 集合
 
   ```java
   // 可以使用@Param注解替换Map集合中默认的arg键名
@@ -1392,7 +1370,7 @@ User selectByCondition(@Param("username") String username, String password);
   map.put("collection"，collection集合;
   ```
 
-* List 集合类型：Mybatis 会将集合封装到 Map 集合中
+- List 集合类型：Mybatis 会将集合封装到 Map 集合中
 
   ```java
   // 可以使用@Param注解替换Map集合中默认的arg键名
@@ -1401,7 +1379,7 @@ User selectByCondition(@Param("username") String username, String password);
   map.put("list", list集合);
   ```
 
-* Array 类型：Mybatis 会将集合封装到 Map 集合中
+- Array 类型：Mybatis 会将集合封装到 Map 集合中
 
   ```java
   // 可以使用@Param注解替换Map集合中默认的arg键名
@@ -1409,7 +1387,7 @@ User selectByCondition(@Param("username") String username, String password);
   map.put("array", 数组);
   ```
 
-* 其他类型
+- 其他类型
 
   比如 int 类型，参数占位符名称叫什么都可以，尽量做到见名知意
 
@@ -1422,7 +1400,7 @@ User selectByCondition(@Param("username") String username, String password);
 public User select(int id);
 ```
 
-> :warning: 注：​注解是用来替换映射配置文件方式配置的，所以使用了注解，就不需要再映射配置文件中书写对应的 statement
+> :warning: 注：​ 注解是用来替换映射配置文件方式配置的，所以使用了注解，就不需要再映射配置文件中书写对应的 statement
 
 Mybatis 针对 CURD 操作都提供了对应的注解
 
@@ -1436,6 +1414,6 @@ Mybatis 针对 CURD 操作都提供了对应的注解
 - 注解：完成简单功能
 - 配置文件：完成复杂功能
 
-动态 SQL 就是复杂的功能，如果用注解使用的话，就需要使用到 Mybatis 提供的SQL构建器来完成，例子如下：
+动态 SQL 就是复杂的功能，如果用注解使用的话，就需要使用到 Mybatis 提供的 SQL 构建器来完成，例子如下：
 
 ![image-20210805234842497](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/image-20210805234842497.png)

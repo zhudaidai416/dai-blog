@@ -19,7 +19,7 @@ cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/4-4.jpg
 
 # 测试效果
 
-![img](C:/Users/zendow_xw/Desktop/尚硅谷vue3/images/pinia_example.gif)
+![img](https://daiblog.oss-cn-chengdu.aliyuncs.com/vue/pinia_example.gif)
 
 # 搭建 pinia 环境
 
@@ -47,7 +47,7 @@ app.mount("#app");
 
 此时开发者工具中已经有了 `pinia` 选项
 
-![img](https://cdn.nlark.com/yuque/0/2023/png/35780599/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png)
+![img](https://daiblog.oss-cn-chengdu.aliyuncs.com/vue/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png)
 
 # 存储+读取数据
 

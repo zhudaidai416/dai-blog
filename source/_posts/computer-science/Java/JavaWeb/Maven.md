@@ -7,7 +7,7 @@ tags: JavaWeb
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/6-4.jpg
 ---
 
-# 简介
+# 概述
 
 Maven 是专门用于管理和构建 Java 项目的工具
 
@@ -152,7 +152,7 @@ C:\Users\zendow_xw\.m2\repository
 修改 `conf/settings.xml` 中的 `<mirrors> 标签`
 
 ```xml
-<mirrors>    
+<mirrors>
   <mirror>
     <id>alimaven</id>
     <mirrorOf>central</mirrorOf>
@@ -338,7 +338,7 @@ Maven 对项目构建的生命周期划分为 3 套：
 | compile  | Y              | Y              | Y              | logback             |
 | test     | -              | Y              | -              | Junit               |
 | provided | Y              | Y              | -              | servlet-api         |
-| runtime  | -              | Y              | Y              | jdbc驱动            |
+| runtime  | -              | Y              | Y              | jdbc 驱动           |
 | system   | Y              | Y              | -              | 存储在本地的 jar 包 |
 
-引入坐标不指定 `scope` 标签时，默认就是 compile  值，大部分 jar 包都是使用默认值
+引入坐标不指定 `scope` 标签时，默认就是 compile 值，大部分 jar 包都是使用默认值

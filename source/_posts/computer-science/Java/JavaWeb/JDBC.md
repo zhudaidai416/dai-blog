@@ -7,7 +7,7 @@ tags: JavaWeb
 cover: https://daiblog.oss-cn-chengdu.aliyuncs.com/cover/6-3.jpg
 ---
 
-# 简介
+# 概述
 
 JDBC：使用 Java 语言操作关系型数据库的一套 API
 
