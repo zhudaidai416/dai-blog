@@ -1417,3 +1417,59 @@ Mybatis 针对 CURD 操作都提供了对应的注解
 动态 SQL 就是复杂的功能，如果用注解使用的话，就需要使用到 Mybatis 提供的 SQL 构建器来完成，例子如下：
 
 ![image-20210805234842497](https://daiblog.oss-cn-chengdu.aliyuncs.com/img/image-20210805234842497.png)
+
+# SqlSessionFactory 工具类抽取
+
+使用 Mybatis 来完成数据库的操作，重复代码：
+
+```java
+String resource = "mybatis-config.xml";
+InputStream inputStream = Resources.getResourceAsStream(resource);
+SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+```
+
+**问题（解决）**：
+
+- 代码重复（抽取工具类）
+- SqlSessionFactory 工厂只创建一次，不要重复创建（静态代码块）
+
+1、抽取工具类：创建 `src/main/java/com/itheima/until/SqlSessionFactoryUtils.java`
+
+```java
+package com.itheima.util;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class SqlSessionFactoryUtils {
+    private static SqlSessionFactory sqlSessionFactory;
+
+    static {
+        // 静态代码块会随着类的加载而自动执行，且只执行一次
+        try {
+            String resource = "mybatis-config.xml";
+            InputStream inputStream = Resources.getResourceAsStream(resource);
+            sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static SqlSessionFactory getSqlSessionFactory() {
+        return sqlSessionFactory;
+    }
+}
+```
+
+2、使用
+
+```java
+// 导包
+import com.itheima.util.SqlSessionFactoryUtils;
+
+SqlSessionFactory sqlSessionFactory =SqlSessionFactoryUtils.getSqlSessionFactory();
+```
